@@ -5,7 +5,7 @@ all: build
 
 build:
 	mkdir -p build
-	cc journal.c mongoose.c -o build/journal
+	cc journal.c mongoose.c cJSON.c -o build/journal
 
 clean:
 	rm -rf build/
