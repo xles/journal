@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <string.h>
 
+#include "cJSON.h"
 #include "colour.h"
 #include "journal.h"
 #include "mongoose.h"
@@ -16,7 +17,7 @@
 #define OPTIONS "asdf"
 
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	if (argc == 1) {
 		printf("Basic usage: journal <options> [command]\n");
@@ -29,8 +30,8 @@ int main(int argc, char *argv[])
 			break;
 
 		switch (c) {
-			case 'f':
-				printf("f\n");
+			case 'h':
+				printf("halp\n");
 				break;
 			case '?':
 				printf("dafuq?\n");
@@ -40,6 +41,8 @@ int main(int argc, char *argv[])
 
 	if (!strcmp(argv[optind],"serve")) {
 		serve();
+	} else if (!strcmp(argv[optind],"new")) {
+		new(argv);
 	} else if (!strcmp(argv[optind],"editor")) {
 		char * editor;
 		editor = getenv("EDITOR");
@@ -55,6 +58,22 @@ int main(int argc, char *argv[])
 void parse_options(char *options)
 {
 	printf("options: %s\n", options);
+}
+
+void new(char **argv)	
+{
+	char *wd;
+	if(argv[optind+1] == NULL)
+		wd = getcwd(NULL,64);
+	else {
+		if (!strncmp(&argv[optind+1][0],".",1)) {
+			wd = argv[optind+1];
+		} else {
+			sprintf(wd,"./%s", argv[optind+1]);
+		}
+	}
+
+	printf("Creating new journal in %s\n", wd);
 }
 
 void serve(void)
