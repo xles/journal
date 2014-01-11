@@ -8,6 +8,9 @@
 #include "journal.h"
 #include "mongoose.h"
 
+#define SERVE_ROOT "."
+#define SERVE_PORT "4000"
+
 int main(int argc, char *argv[])
 {
 	if (argc == 1) {
@@ -44,11 +47,14 @@ void parse_options(char *options)
 void serve(void)
 {
 	printf("Launching server on port 4000, press ^C to exit.\n");
+
 	struct mg_server *server = mg_create_server(NULL);
-	mg_set_option(server, "document_root", ".");
-	mg_set_option(server, "listening_port", "4000");
-	for (;;) 
-		mg_poll_server(server, 1000);  // Infinite loop, Ctrl-C to stop
+	mg_set_option(server, "document_root", SERVE_ROOT);
+	mg_set_option(server, "listening_port", SERVE_PORT);
+	
+	while (true) {
+		mg_poll_server(server, 1000);
+	} 
+	
 	mg_destroy_server(&server);
-	printf("Server halted\n");
 }
