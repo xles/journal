@@ -1,6 +1,11 @@
 /**
  * Journal
- *
+
+
+ * Credits:
+ *    Webserver: Mongoose, http://cesanta.com/#docs,Mongoose.md
+ *    Regex: SLRE, http://cesanta.com/#docs,SLRE.md
+ *    JSON: cJSON, http://cjson.sourceforge.net/
  */
 #include <stdlib.h>
 #include <stdio.h>
