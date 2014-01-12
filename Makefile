@@ -1,5 +1,17 @@
 INSTALL_PATH?=/usr/local
 
+SOURCE_FILES = 	journal.c \
+		slre.c \
+		cJSON.c \
+		sundown/markdown.c \
+		sundown/autolink.c \
+		sundown/buffer.c \
+		sundown/stack.c \
+		sundown/html.c \
+		sundown/houdini_html_e.c \
+		sundown/houdini_href_e.c \
+		mongoose.c
+
 all: build
 #	some stuff
 
@@ -9,7 +21,7 @@ setup:
 	mkdir -p build
 
 compile:
-	gcc journal.c mongoose.c cJSON.c -o build/journal
+	gcc $(SOURCE_FILES) -o build/journal
 
 clean:
 	rm -rf build/
