@@ -1,11 +1,15 @@
 INSTALL_PATH?=/usr/local
 
 all: build
-	#some stuff
+#	some stuff
 
-build:
+build: setup compile
+
+setup:
 	mkdir -p build
-	cc journal.c mongoose.c cJSON.c -o build/journal
+
+compile:
+	gcc journal.c mongoose.c cJSON.c -o build/journal
 
 clean:
 	rm -rf build/
