@@ -12,6 +12,7 @@
 #include <unistd.h>
 #include <string.h>
 
+#include "slre.h"
 #include "cJSON.h"
 #include "colour.h"
 #include "journal.h"
@@ -25,7 +26,7 @@
 int main(int argc, char **argv)
 {
 	if (argc == 1) {
-		printf("Basic usage: journal <options> [command]\n");
+		usage();
 		exit(1);
 	}
 
@@ -94,4 +95,13 @@ void serve(void)
 	} 
 	
 	mg_destroy_server(&server);
+}
+
+void usage(void)
+{
+	printf("Basic usage: journal <options> [command]\n");
+	printf( "foo "
+		"bar "
+		"baz\n"
+	);
 }
