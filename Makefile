@@ -12,6 +12,8 @@ SOURCE_FILES = 	journal.c \
 		sundown/houdini_href_e.c \
 		mongoose.c
 
+#CFLAGS = -std=c99
+
 all: build
 #	some stuff
 
@@ -21,7 +23,7 @@ setup:
 	mkdir -p build
 
 compile:
-	gcc $(SOURCE_FILES) -o build/journal
+	gcc $(SOURCE_FILES) -o build/journal $(CFLAGS)
 
 clean:
 	rm -rf build/

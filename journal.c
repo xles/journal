@@ -2,7 +2,7 @@
  * Journal
  *
  *
- * Credits:
+ * Credits for embeded components:
  *    Webserver: Mongoose, http://cesanta.com/#docs,Mongoose.md
  *    Regex: SLRE, http://cesanta.com/#docs,SLRE.md
  *    JSON: cJSON, http://cjson.sourceforge.net/
@@ -13,6 +13,8 @@
 #include <unistd.h>
 #include <string.h>
 #include <dirent.h>
+#include <time.h>
+#include <stdbool.h>
 
 #include "colour.h"
 #include "slre.h"
@@ -55,6 +57,7 @@ int main(int argc, char **argv)
 	} else if (!strcmp(argv[optind],"test")) {
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
+		new_post();
 	} else if (!strcmp(argv[optind],"new")) {
 		new(argv);
 	} else if (!strcmp(argv[optind],"editor")) {
@@ -69,23 +72,38 @@ int main(int argc, char **argv)
 	}
 }
 
-/*
-public function new_post()
-{
-	echo "Creating a new post\nTitle: ";
-	$title = trim(fgets(STDIN));
 
-	echo "Publish date [".date('Y-m-d')."]: ";
-	$date = trim(fgets(STDIN));
-	if(empty($date))
+int new_post(void)
+{
+	char title[128] = "";
+	printf("Creating a new journal entry\n");
+	
+	while(empty(title)) {
+		printf("Title: ");
+		fgets(title, sizeof(title), stdin);
+		trim(title);
+	}
+	
+	printf("Le title: \"%s\"\n", title);
+	
+	time_t t = time(NULL);
+	struct tm *my_time = localtime(&t);
+
+	char buff[70];
+
+	strftime(buff, sizeof(buff), "%Y-%m-%d", my_time);
+	printf("Publish date [%s]: ",buff);
+//	$date = trim(fgets(STDIN));
+/*
+	if (empty($date))
 		$date = date('Y-m-d');
 
-	echo "Category [Uncategorized]: ";
+	printf("Category [Uncategorized]: ");
 	$category = trim(fgets(STDIN));
 	if(empty($category))
 		$category = 'Uncategorized';
 
-	echo "Tags (separate by commas): ";
+	printf("Tags (separate by commas): ");
 	$tags = array_map('trim',(explode(',', fgets(STDIN))));
 
 	$atom_id = 'tag:'.$this->config['syndication']['url'];
@@ -108,8 +126,10 @@ public function new_post()
 	system('subl -w ./'.$filename);
 
 	exit("Blog post saved as $filename.\n");
-}
+	return 0;
 */
+}
+
 
 int test_markdown(char *file)
 {
