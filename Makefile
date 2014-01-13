@@ -3,7 +3,7 @@ INSTALL_PATH?=/usr/local
 SOURCE_FILES = 	journal.c \
 		validate.c \
 		slre.c \
-		cJSON.c \
+		frozen.c \
 		sundown/markdown.c \
 		sundown/autolink.c \
 		sundown/buffer.c \
@@ -13,7 +13,7 @@ SOURCE_FILES = 	journal.c \
 		sundown/houdini_href_e.c \
 		mongoose.c
 
-#CFLAGS = -std=c99
+CFLAGS = -std=c99
 
 all: build
 #	some stuff
