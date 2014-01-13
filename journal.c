@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <dirent.h>
 
 #include "colour.h"
 #include "slre.h"
@@ -52,7 +53,8 @@ int main(int argc, char **argv)
 	if (!strcmp(argv[optind],"serve")) {
 		serve();
 	} else if (!strcmp(argv[optind],"test")) {
-		test_markdown(argv[optind+1]);
+//		test_markdown(argv[optind+1]);
+//		system("pwd");
 	} else if (!strcmp(argv[optind],"new")) {
 		new(argv);
 	} else if (!strcmp(argv[optind],"editor")) {
@@ -67,10 +69,47 @@ int main(int argc, char **argv)
 	}
 }
 
-void parse_options(char *options)
+/*
+public function new_post()
 {
-	printf("options: %s\n", options);
+	echo "Creating a new post\nTitle: ";
+	$title = trim(fgets(STDIN));
+
+	echo "Publish date [".date('Y-m-d')."]: ";
+	$date = trim(fgets(STDIN));
+	if(empty($date))
+		$date = date('Y-m-d');
+
+	echo "Category [Uncategorized]: ";
+	$category = trim(fgets(STDIN));
+	if(empty($category))
+		$category = 'Uncategorized';
+
+	echo "Tags (separate by commas): ";
+	$tags = array_map('trim',(explode(',', fgets(STDIN))));
+
+	$atom_id = 'tag:'.$this->config['syndication']['url'];
+	$atom_id += ','.$date.':'.md5($title);
+
+	$json = ['title'    => $title,
+		 'category' => $category,
+		 'tags'     => $tags,
+		 'pubdate'  => $date,
+		 'slug'     => $this->slug($title), 
+		 'layout'   => 'post',
+		 'atom_id'  => $atom_id];
+
+	$md  = "Post goes here\n\n";
+	$md .= "---EOF---\n";
+	$md .= json_encode($json, JSON_PRETTY_PRINT);
+		
+	$filename = 'posts/'.$date.'_'.$json['slug'].'.md';
+	file_put_contents($filename, $md);
+	system('subl -w ./'.$filename);
+
+	exit("Blog post saved as $filename.\n");
 }
+*/
 
 int test_markdown(char *file)
 {
@@ -126,18 +165,26 @@ int test_markdown(char *file)
 
 void new(char **argv)	
 {
-	char *wd;
-	if(argv[optind+1] == NULL)
-		wd = getcwd(NULL,64);
-	else {
-		if (!strncmp(&argv[optind+1][0],".",1)) {
-			wd = argv[optind+1];
+	char *cwd;
+	cwd = getcwd(NULL,64);
+	if (argv[optind+1] != NULL) {
+		if (!strncmp(&argv[optind+1][0],"/",1)) {
+			cwd = argv[optind+1];
 		} else {
-			sprintf(wd,"./%s", argv[optind+1]);
+			if (!strncmp(&argv[optind+1][1],"/",1)) {
+				sprintf(cwd,"%s/%s",cwd,argv[optind+1]+2);
+			} else {
+				sprintf(cwd,"%s/%s",cwd,argv[optind+1]);
+			}
 		}
 	}
 
-	printf("Creating new journal in %s\n", wd);
+	DIR *dir = opendir(".journal");
+	if (dir) {
+		printf("A .journal exists in directory '%s'\n", cwd);
+		return;
+	}
+	printf("Initializing new journal in '%s'\n", cwd);
 }
 
 void serve(void)
