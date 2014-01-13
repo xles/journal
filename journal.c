@@ -16,10 +16,12 @@
 #include <time.h>
 #include <stdbool.h>
 
+#include "journal.h"
 #include "colour.h"
+#include "validate.h"
+ 
 #include "slre.h"
 #include "cJSON.h"
-#include "journal.h"
 #include "mongoose.h"
 #include "sundown/markdown.h"
 #include "sundown/buffer.h"
@@ -69,6 +71,7 @@ int main(int argc, char **argv)
 			ANSI_COLOR_RESET);		
 	} else {
 		printf("Invalid operand\n");
+		usage();
 	}
 }
 
@@ -76,28 +79,31 @@ int main(int argc, char **argv)
 int new_post(void)
 {
 	char title[128] = "";
+	char date[64] = "";
+	char fnow[64];
+
 	printf("Creating a new journal entry\n");
 	
-	while(empty(title)) {
+	while (empty(title)) {
 		printf("Title: ");
 		fgets(title, sizeof(title), stdin);
 		trim(title);
 	}
 	
-	printf("Le title: \"%s\"\n", title);
-	
 	time_t t = time(NULL);
-	struct tm *my_time = localtime(&t);
+	struct tm *now = localtime(&t);
 
-	char buff[70];
+	strftime(fnow, sizeof(fnow), "%Y-%m-%d", now);
 
-	strftime(buff, sizeof(buff), "%Y-%m-%d", my_time);
-	printf("Publish date [%s]: ",buff);
-//	$date = trim(fgets(STDIN));
+	while(val_date(date)) {
+		printf("Publish date [%s]: ",fnow);
+		fgets(date, sizeof(date), stdin);
+		trim(date);
+		if (empty(date)) {
+			sprintf(date, "%s", fnow);
+		}
+	}
 /*
-	if (empty($date))
-		$date = date('Y-m-d');
-
 	printf("Category [Uncategorized]: ");
 	$category = trim(fgets(STDIN));
 	if(empty($category))
@@ -126,10 +132,9 @@ int new_post(void)
 	system('subl -w ./'.$filename);
 
 	exit("Blog post saved as $filename.\n");
-	return 0;
 */
+	return 0;
 }
-
 
 int test_markdown(char *file)
 {

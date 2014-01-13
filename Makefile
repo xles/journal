@@ -1,6 +1,7 @@
 INSTALL_PATH?=/usr/local
 
 SOURCE_FILES = 	journal.c \
+		validate.c \
 		slre.c \
 		cJSON.c \
 		sundown/markdown.c \
