@@ -82,6 +82,7 @@ int new_post(void)
 	char category[64] = "";
 	char date[64] = "";
 	char fnow[64];
+	char **tags;
 
 	printf("Creating a new journal entry\n");
 	
@@ -116,7 +117,7 @@ int new_post(void)
 
 /*
 	printf("Tags (separate by commas): ");
-	$tags = array_map('trim',(explode(',', fgets(STDIN))));
+	fgets(tags, sizeof(tags), stdin);
 
 	$atom_id = 'tag:'.$this->config['syndication']['url'];
 	$atom_id += ','.$date.':'.md5($title);
@@ -135,10 +136,15 @@ int new_post(void)
 		
 	$filename = 'posts/'.$date.'_'.$json['slug'].'.md';
 	file_put_contents($filename, $md);
-	system('subl -w ./'.$filename);
-
-	exit("Blog post saved as $filename.\n");
 */
+	printf("Opening journal entry with default editor...");
+	char syscall[128], *filename = "test/syntax.md";
+
+	sprintf(syscall, "$EDITOR %s", filename);
+	system(syscall);
+	puts("done.");
+
+	printf("Journal entry saved as ./journal/posts/%s\n", filename);
 	return 0;
 }
 
