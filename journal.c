@@ -21,7 +21,7 @@
 #include "validate.h"
  
 #include "slre.h"
-#include "cJSON.h"
+#include "frozen.h"
 #include "mongoose.h"
 #include "sundown/markdown.h"
 #include "sundown/buffer.h"
@@ -79,6 +79,7 @@ int main(int argc, char **argv)
 int new_post(void)
 {
 	char title[128] = "";
+	char category[64] = "";
 	char date[64] = "";
 	char fnow[64];
 
@@ -95,7 +96,7 @@ int new_post(void)
 
 	strftime(fnow, sizeof(fnow), "%Y-%m-%d", now);
 
-	while(val_date(date)) {
+	while (val_date(date)) {
 		printf("Publish date [%s]: ",fnow);
 		fgets(date, sizeof(date), stdin);
 		trim(date);
@@ -103,12 +104,17 @@ int new_post(void)
 			sprintf(date, "%s", fnow);
 		}
 	}
-/*
-	printf("Category [Uncategorized]: ");
-	$category = trim(fgets(STDIN));
-	if(empty($category))
-		$category = 'Uncategorized';
 
+	printf("Category [Uncategorized]: ");
+	fgets(category, sizeof(category), stdin);
+	trim(category);
+	if (empty(category)) {
+		sprintf(category, "%s", "Uncategorized");
+	}
+
+//	printf("category: \"%s\"\n", category);
+
+/*
 	printf("Tags (separate by commas): ");
 	$tags = array_map('trim',(explode(',', fgets(STDIN))));
 
