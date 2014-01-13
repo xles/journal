@@ -33,9 +33,18 @@ int val_date(char *date)
 		
 		switch (month) {
 			case 2: 
-				if (day > 29) {
-					puts("Too many days");
-					return 1;
+				if (((year % 4 == 0) && (year % 100 != 0))
+					|| (year % 400 == 0)) {
+					if (day > 29) {
+						puts("Too many days");
+						return 1;
+					}
+					
+				} else {
+					if (day > 28) {
+						puts("Too many days");
+						return 1;
+					}
 				}
 				break;
 			case 3:
