@@ -1,4 +1,6 @@
-INSTALL_PATH?=/usr/local
+INSTALL_PATH? = /usr/local
+          CC? = cc
+
 
 SOURCE_FILES = 	journal.c \
 		validate.c \
@@ -23,21 +25,22 @@ build: setup compile
 setup:
 	mkdir -p build
 
+
 compile:
-	gcc $(SOURCE_FILES) -o build/journal $(CFLAGS)
+	$(CC) $(SOURCE_FILES) -o build/journal $(CFLAGS)
 
 clean:
 	rm -rf build/
 
 install:
-	#mv journal $INSTALL_PATH/bin
-	#mv libraries $INSTALL_PATH/lib or $INSTALL_PATH/lib/yourappname
-	#mv journal.1 $INSTALL_PATH/share/man/man1
-	#other docs go in $INSTALL_PATH/share/yourappname	
-	#mv journal.conf $INSTALL_PATH/etc/yourappname
-	#mv headers $INSTALL_PATH/include/yourappname
+#	cp build/journal $INSTALL_PATH/bin
+#	cp libraries $INSTALL_PATH/lib or $INSTALL_PATH/lib/journal
+#	cp journal.1 $INSTALL_PATH/share/man/man1
+#	cp journal.md journal.pdf $INSTALL_PATH/share/journal	
+#	cp journal.conf $INSTALL_PATH/etc/journal
+#	cp headers $INSTALL_PATH/include/journal
 
 uninstall:
-	#rm $INSTALL_PATH/bin/journal
-	#rm $INSTALL_PATH/share/man/man1/journal.1
-	#etc
+#	rm -rf $(INSTALL_PATH)/bin/journal
+#	rm -rf $(INSTALL_PATH)/share/man/man1/journal.1
+#	rm -rf $(INSTALL_PATH)/etc/journal
