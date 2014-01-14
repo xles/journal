@@ -28,9 +28,10 @@
 
 #ifdef _WIN32
  #define NIX 0
+ #define getcwd(a,b) _getcwd(a,b)
 #else
  #include "mongoose.h"
- #define　NIX 1
+ #define NIX 1
 #endif
 
 #define SERVE_ROOT "."
@@ -212,7 +213,7 @@ int test_markdown(char *file)
 void init(char **argv)	
 {
 	char *cwd;
-	cwd = _getcwd(NULL,64);
+	cwd = getcwd(NULL,64);
 	if (argv[optind+1] != NULL) {
 		if (!strncmp(&argv[optind+1][0],"/",1)) {
 			cwd = argv[optind+1];
