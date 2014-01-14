@@ -14,17 +14,21 @@ SOURCE_FILES = 	journal.c \
 		sundown/houdini_html_e.c \
 		sundown/houdini_href_e.c \
 		mongoose.c
+#		build/embed.data
+
+EMBED_SOURCE =  test/syntax.md
 
 CFLAGS = -std=c99
 
-all: build
+all: compile
 #	some stuff
 
 build: setup compile
 
 setup:
 	mkdir -p build
-
+	$(CC) embed.c -o build/embed
+	build/embed $(EMBED_SOURCE) > build/embed.data
 
 compile:
 	$(CC) $(SOURCE_FILES) -o build/journal $(CFLAGS)
