@@ -43,7 +43,8 @@ int main(int argc, char *argv[]) {
 		if ((fp = fopen(argv[i], "rb")) == NULL) {
 			exit(EXIT_FAILURE);
 		} else {
-			printf("#include <stddef.h>\n\n"
+			printf( "#include <stddef.h>\n"
+				"#include <string.h>\n\n"
 				"static const unsigned char v%d[] = {", i);
 			for (j = 0; (ch = fgetc(fp)) != EOF; j++) {
 				if ((j % 10) == 0) {
