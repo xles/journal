@@ -22,10 +22,16 @@
  
 #include "slre.h"
 #include "frozen.h"
-#include "mongoose.h"
 #include "sundown/markdown.h"
 #include "sundown/buffer.h"
 #include "sundown/html.h"
+
+#ifdef _WIN32
+ #define NIX 0
+#else
+ #include "mongoose.h"
+ #define　NIX 1
+#endif
 
 #define SERVE_ROOT "."
 #define SERVE_PORT "4000"
@@ -55,7 +61,10 @@ int main(int argc, char **argv)
 	}
 
 	if (!strcmp(argv[optind],"serve")) {
-		serve();
+		if(NIX)
+			serve();
+		else 
+			puts("Webserver not supported on windows");
 	} else if (!strcmp(argv[optind],"test")) {
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
@@ -203,7 +212,7 @@ int test_markdown(char *file)
 void init(char **argv)	
 {
 	char *cwd;
-	cwd = getcwd(NULL,64);
+	cwd = _getcwd(NULL,64);
 	if (argv[optind+1] != NULL) {
 		if (!strncmp(&argv[optind+1][0],"/",1)) {
 			cwd = argv[optind+1];
@@ -226,6 +235,8 @@ void init(char **argv)
 
 void serve(void)
 {
+	if(!NIX)
+		return;
 	printf("Launching server on port 4000, press ^C to exit.\n");
 
 	struct mg_server *server = mg_create_server(NULL);

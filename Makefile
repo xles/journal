@@ -1,6 +1,8 @@
-INSTALL_PATH? = /usr/local
-          CC? = cc
+INSTALL_PATH? =/usr/local
+          CC? =cc
+      CFLAGS? =
 
+CFLAGS += -std=c99
 
 SOURCE_FILES = 	journal.c \
 		validate.c \
@@ -14,11 +16,17 @@ SOURCE_FILES = 	journal.c \
 		sundown/houdini_html_e.c \
 		sundown/houdini_href_e.c \
 		build/embed_data.c
-#		mongoose.c
 
 EMBED_SOURCE =  test/syntax.md
 
-CFLAGS? = -std=c99
+ifeq ($(OS),Windows_NT)
+    CFLAGS += -U__STRICT_ANSI__ -D_NO_OLDNAMES
+else
+    CFLAGS += -pthread
+    SOURCE_FILES += mongoose.c
+endif
+
+
 
 all: compile
 #	some stuff
