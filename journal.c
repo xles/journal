@@ -60,8 +60,8 @@ int main(int argc, char **argv)
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
 		new_post();
-	} else if (!strcmp(argv[optind],"new")) {
-		new(argv);
+	} else if (!strcmp(argv[optind],"init")) {
+		init(argv);
 	} else if (!strcmp(argv[optind],"editor")) {
 		char * editor;
 		editor = getenv("EDITOR");
@@ -200,7 +200,7 @@ int test_markdown(char *file)
 }
 
 
-void new(char **argv)	
+void init(char **argv)	
 {
 	char *cwd;
 	cwd = getcwd(NULL,64);
