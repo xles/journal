@@ -241,9 +241,11 @@ void serve(void)
 
 void usage(void)
 {
-	printf("Basic usage: journal <options> [command]\n");
-	printf( "foo "
-		"bar "
-		"baz\n"
+	printf(
+	"usage: journal [-BPSXeiknqrstv] [-C directory] [-D variable]\n"
+	"\t[-d flags] [-E variable] [-f makefile] [-I directory]\n"
+	"\t[-j max_jobs] [-m directory] [-V variable]\n"
+	"\t[variable=value] [target ...]\n"
 	);
+//	printf("Basic usage: journal <options> [command]\n");
 }
