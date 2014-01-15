@@ -8,7 +8,8 @@ The UNIX user's personal log and diary.
 The `journal` project is (will be) a proper command line utility for
 UNIX systems to produce static HTML weblogs (aka "_blogs_") from
 [Markdown](http://daringfireball.net/projects/markdown/) formatted text 
-documents.
+documents.  All this while staying true to proper UNIX (not GNU) 
+design-conventions.
 
 ## Installation
 
@@ -36,7 +37,7 @@ That's it, you don't even have to run clean if you don't want to.
 To be determined.  It will probably be something along the lines of:
 
 ```
-usage: journal [-options] <command> [<argument>, ...]
+usage: journal [-options] <command> [<argument> ...]
 ```
 
 ## Copyright
