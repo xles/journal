@@ -92,8 +92,8 @@ int new_post(void)
 	char category[64] = "";
 	char date[64] = "";
 	char fnow[64];
-	char **tags;
-
+	char tags[128];
+/*
 	printf("Creating a new journal entry\n");
 	
 	while (empty(title)) {
@@ -124,11 +124,27 @@ int new_post(void)
 	}
 
 //	printf("category: \"%s\"\n", category);
-
-/*
+*/
 	printf("Tags (separate by commas): ");
 	fgets(tags, sizeof(tags), stdin);
 
+	char *tmp = tags, *tok = NULL, *foo[128];
+	int i = 0, noftags = 0;
+	
+	tok = strtok(&tmp[0], ",");
+	while (tok) {
+		trim(tok);
+		foo[i] = tok;
+		tok = strtok(NULL, ",");
+		i++;
+	}
+	noftags = i;
+	printf("foo is: %lu\n",sizeof(foo));
+	for (i = 0; i < noftags; i++) {
+		printf("%d : %s\n",i, foo[i]);
+	}
+
+/*
 	$atom_id = 'tag:'.$this->config['syndication']['url'];
 	$atom_id += ','.$date.':'.md5($title);
 

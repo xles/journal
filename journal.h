@@ -2,12 +2,12 @@
 
 /* Dummy functions to bypass mongoose when building on windows. */
 #ifdef _WIN32
-	struct mg_server;
-	struct mg_server *mg_create_server(void *foo){}
-	const char *mg_set_option(struct mg_server *foo, 
-		const char *opt, const char *val){}
-	unsigned int mg_poll_server(struct mg_server *foo, int bar){}
-	void mg_destroy_server(struct mg_server **foo){}
+struct mg_server;
+struct mg_server *mg_create_server(void *foo){}
+const char *mg_set_option(struct mg_server *foo, 
+const char *opt, const char *val){}
+unsigned int mg_poll_server(struct mg_server *foo, int bar){}
+void mg_destroy_server(struct mg_server **foo){}
 #endif
 
 
@@ -47,13 +47,13 @@ bool empty(char *str)
 In file included from journal.c:19:0:
 journal.h:5:18: error: expected identifier or '(' before '=' token
  struct mg_server = {};
-                  ^
+		  ^
 journal.h:7:27: error: expected '{' before '*' token
  void mg_set_option(mg_server baz, char *foo, int bar){}
-                           ^
+			   ^
 journal.h:9:28: error: expected '{' before '*' token
  void mg_poll_server( *mg_server, int foo){}
-                            ^
+			    ^
 journal.c: In function 'init':
 journal.c:215:2: warning: implicit declaration of function 'getcwd' [-Wimplicit-
 function-declaration]
@@ -66,14 +66,14 @@ enabled by default]
 journal.c: In function 'serve':
 journal.c:242:9: error: too many arguments to function 'mg_create_server'
   struct mg_server *server = mg_create_server(NULL);
-         ^
+	 ^
 In file included from journal.c:19:0:
 journal.h:6:6: note: declared here
  void mg_create_server(void){}
       ^
 journal.c:242:29: error: void value not ignored as it ought to be
   struct mg_server *server = mg_create_server(NULL);
-                             ^
+			     ^
 journal.c:243:2: warning: passing argument 1 of 'mg_set_option' from incompatibl
 e pointer type [enabled by default]
   mg_set_option(server, "document_root", SERVE_ROOT);
