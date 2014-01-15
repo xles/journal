@@ -11,6 +11,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdbool.h>
+
 
 #include "validate.h"
 
@@ -79,4 +83,28 @@ int val_date(char *date)
 		puts("Warning: Invalid date format.");
 		return 1;
 	}
+}
+
+void trim(char *str)
+{
+	char * _str = str;
+	if (strlen(_str) == 0) return;
+
+	while (isspace(_str[strlen(_str)-1]))
+		_str[strlen(_str)-1] = '\0';
+
+	while (isspace(_str[0]))
+		_str++;
+
+	sprintf(str,"%s",_str);
+
+	return;
+}
+
+bool empty(char *str)
+{
+	if (strlen(str) == 0) 
+		return true;
+	else
+		return false;
 }

@@ -21,7 +21,6 @@
 #include <string.h>
 #include <dirent.h>
 #include <time.h>
-#include <stdbool.h>
 
 #include "journal.h"
 #include "colour.h"

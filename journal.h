@@ -8,14 +8,12 @@
  *    Main header file for the journal project.
  */
 
-#include <ctype.h>
-
 /* Dummy functions to bypass mongoose when building on windows. */
 #ifdef _WIN32
 struct mg_server;
 struct mg_server *mg_create_server(void *foo){}
 const char *mg_set_option(struct mg_server *foo, 
-const char *opt, const char *val){}
+	const char *opt, const char *val){}
 unsigned int mg_poll_server(struct mg_server *foo, int bar){}
 void mg_destroy_server(struct mg_server **foo){}
 #endif
@@ -39,30 +37,6 @@ void usage(void);
 int test_markdown(char *file);
 int new_post(void);
 int val_date(char *date);
-
-void trim(char *str)
-{
-	char * _str = str;
-	if (strlen(_str) == 0) return;
-
-	while (isspace(_str[strlen(_str)-1]))
-		_str[strlen(_str)-1] = '\0';
-
-	while (isspace(_str[0]))
-		_str++;
-
-	sprintf(str,"%s",_str);
-
-	return;
-}
-
-bool empty(char *str)
-{
-	if (strlen(str) == 0) 
-		return true;
-	else
-		return false;
-}
 
 /*
 In file included from journal.c:19:0:

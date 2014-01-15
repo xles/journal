@@ -8,4 +8,8 @@
  *    Input validation function declarations for the journal project.
  */
 
+#include <stdbool.h>
+
 int val_date(char *date);
+void trim(char *str);
+bool empty(char *str);
