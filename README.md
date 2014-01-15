@@ -6,11 +6,19 @@ The UNIX user's personal log and diary.
 ## About
 
 The `journal` project is (will be) a proper command line utility for
-UNIX systems to produce static HTML weblogs (aka "_blogs_").
+UNIX systems to produce static HTML weblogs (aka "_blogs_") from
+[Markdown](http://daringfireball.net/projects/markdown/) formatted text 
+documents.
 
 ## Installation
 
 **Don't** even try, it's not even finished yet.
+
+However, when it is finished:
+
+`make install clean`
+
+That's it, you don't even have to run clean if you don't want to.
 
 ### Prerequistites
 
@@ -33,4 +41,4 @@ usage: journal [-options] <command> [<argument>, ...]
 
 ## Copyright
 
-Copyright (c) 2014, xles, see LICENSE for details.
+Copyright (c) 2014, xles, see [LICENSE](LICENSE) for details.
