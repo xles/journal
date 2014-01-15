@@ -34,11 +34,10 @@
 #include "sundown/html.h"
 
 #ifdef _WIN32
- #define NIX 0
  #define getcwd(a,b) _getcwd(a,b)
 #else
+ #define _WIN32 0
  #include "mongoose.h"
- #define NIX 1
 #endif
 
 #define SERVE_ROOT "."
@@ -69,10 +68,10 @@ int main(int argc, char **argv)
 	}
 
 	if (!strcmp(argv[optind],"serve")) {
-		if(NIX)
-			serve();
-		else 
+		if(_WIN32)
 			puts("Webserver not supported on windows");
+		else 
+			serve();
 	} else if (!strcmp(argv[optind],"test")) {
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
@@ -180,14 +179,21 @@ int new_post(void)
 	$filename = 'posts/'.$date.'_'.$json['slug'].'.md';
 	file_put_contents($filename, $md);
 */
-	printf("Opening journal entry with default editor...");
-	char syscall[128], *filename = "test/syntax.md";
+		char syscall[128], *filename = "test/syntax.md";
+	if(getenv("EDITOR") == NULL) {
+		puts("Unable to detect default editor.");
+		printf("Journal entry saved as ./journal/posts/%s\n", 
+			filename);
+	} else {
+		printf("Opening journal entry with default editor...");
 
-	sprintf(syscall, "$EDITOR %s", filename);
-	system(syscall);
-	puts("done.");
+		sprintf(syscall, "%s %s", getenv("EDITOR"), filename);
+		system(syscall);
+		puts("done.");
+		printf("Journal entry saved as ./journal/posts/%s\n", 
+			filename);
+	}
 
-	printf("Journal entry saved as ./journal/posts/%s\n", filename);
 	return 0;
 }
 
@@ -269,7 +275,7 @@ void init(char **argv)
 
 void serve(void)
 {
-	if(!NIX)
+	if(_WIN32)
 		return;
 	printf("Launching server on port 4000, press ^C to exit.\n");
 
