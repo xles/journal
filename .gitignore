@@ -1,5 +1,6 @@
 build/*
 #test/*
+.journal/*
 
 # Object files
 *.o
