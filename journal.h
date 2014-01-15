@@ -30,13 +30,18 @@ struct journal_post {
 	struct journal_tags tags;
 };
 
+/**
+ * File embedder, courtesy of Sergey Lyubka.
+ */
+const char *find_embedded_file(const char *file_name, size_t *size);
+
 void parse_options(char *options);
 void init(char **argv);
 void serve(void);
 void usage(void);
 int test_markdown(char *file);
 int new_post(void);
-int val_date(char *date);
+int mkpage(void);
 
 /*
 In file included from journal.c:19:0:

@@ -74,7 +74,8 @@ int main(int argc, char **argv)
 	} else if (!strcmp(argv[optind],"test")) {
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
-		new_post();
+//		new_post();
+		mkpage();
 	} else if (!strcmp(argv[optind],"init")) {
 		init(argv);
 	} else if (!strcmp(argv[optind],"editor")) {
@@ -88,6 +89,15 @@ int main(int argc, char **argv)
 		printf("Invalid operand\n");
 		usage();
 	}
+}
+
+int mkpage(void)
+{
+	size_t size;
+	const char *data = find_embedded_file("test/syntax.md", &size);	
+
+	printf("file:\n%s\n", data);
+	return 0;
 }
 
 
@@ -178,12 +188,18 @@ int new_post(void)
 	$filename = 'posts/'.$date.'_'.$json['slug'].'.md';
 	file_put_contents($filename, $md);
 */
-		char syscall[128], *filename = "test/syntax.md";
-	if(getenv("EDITOR") == NULL) {
+	char syscall[128], *filename = "test/syntax.md";
+	if (getenv("EDITOR") == NULL && getenv("VISUAL") == NULL) {
 		puts("Unable to detect default editor.");
 		printf("Journal entry saved as ./journal/posts/%s\n", 
 			filename);
 	} else {
+		char *editor;
+		if (getenv("EDITOR") != NULL)
+			editor = getenv("EDITOR");
+		else
+			editor = getenv("VISUAL");
+
 		printf("Opening journal entry with default editor...");
 
 		sprintf(syscall, "%s %s", getenv("EDITOR"), filename);
