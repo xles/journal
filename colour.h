@@ -1,3 +1,14 @@
+/**
+ * Journal, the UNIX user's personal log and diary.
+ *
+ * Copyright (c) 2014 xles, 
+ *    see LICENSE file for details.
+ *
+ * colour.h
+ *    ANSI terminal colour macros, "inspired by" and/or stolen from
+ *    color.h in the [git project](http://git-scm.com/).
+ */
+
 /*  2 + (2 * num_attrs) + 8 + 1 + 8 + 'm' + NUL */
 /* "\033[1;2;4;5;7;38;5;2xx;48;5;2xxm\0" */
 /*

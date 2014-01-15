@@ -1,3 +1,13 @@
+/**
+ * Journal, the UNIX user's personal log and diary.
+ *
+ * Copyright (c) 2014 xles, 
+ *    see LICENSE file for details.
+ *
+ * validate.c
+ *    Input validation function definitions for the journal project.
+ */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>

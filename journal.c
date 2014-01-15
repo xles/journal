@@ -1,13 +1,20 @@
 /**
- * Journal
+ * Journal, the UNIX user's personal log and diary.
  *
+ * Copyright (c) 2014 xles, 
+ *    see LICENSE file for details.
+ * 
+ * journal.c
+ *    Main source file for the journal project.
  *
  * Credits for embeded components:
  *    Webserver: Mongoose, http://cesanta.com/#docs,Mongoose.md
  *    Regex: SLRE, http://cesanta.com/#docs,SLRE.md
  *    JSON: cJSON, http://cjson.sourceforge.net/
  *    Markdown: Sundown, https://github.com/vmg/sundown
+ * See respective project for further copyright and license information.
  */
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>

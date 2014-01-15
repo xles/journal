@@ -1,3 +1,13 @@
+/**
+ * Journal, the UNIX user's personal log and diary.
+ *
+ * Copyright (c) 2014 xles, 
+ *    see LICENSE file for details.
+ *
+ * journal.h
+ *    Main header file for the journal project.
+ */
+
 #include <ctype.h>
 
 /* Dummy functions to bypass mongoose when building on windows. */
