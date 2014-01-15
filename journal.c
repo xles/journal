@@ -88,47 +88,55 @@ int main(int argc, char **argv)
 
 int new_post(void)
 {
-	char title[128] = "";
-	char category[64] = "";
-	char date[64] = "";
+
+	struct journal_post post;
+	char buff[512] = "";
 	char fnow[64];
-	char tags[128];
-/*
+
 	printf("Creating a new journal entry\n");
 	
-	while (empty(title)) {
+/*
+	while (empty(buff)) {
 		printf("Title: ");
-		fgets(title, sizeof(title), stdin);
-		trim(title);
+		fgets(buff, sizeof(buff), stdin);
+		trim(buff);
 	}
+
+	strcpy(post.title, buff);
 	
+
 	time_t t = time(NULL);
 	struct tm *now = localtime(&t);
 
 	strftime(fnow, sizeof(fnow), "%Y-%m-%d", now);
 
-	while (val_date(date)) {
+	while (val_date(buff)) {
 		printf("Publish date [%s]: ",fnow);
-		fgets(date, sizeof(date), stdin);
-		trim(date);
-		if (empty(date)) {
-			sprintf(date, "%s", fnow);
+		fgets(buff, sizeof(buff), stdin);
+		trim(buff);
+		if (empty(buff)) {
+			sprintf(buff, "%s", fnow);
 		}
 	}
+	strcpy(post.date, buff);
+*/
+
 
 	printf("Category [Uncategorized]: ");
-	fgets(category, sizeof(category), stdin);
-	trim(category);
-	if (empty(category)) {
-		sprintf(category, "%s", "Uncategorized");
+	fgets(buff, sizeof(buff), stdin);
+	trim(buff);
+	if (empty(buff)) {
+		sprintf(buff, "%s", "Uncategorized");
 	}
+	strcpy(post.category, buff);
+	printf("post.category: \"%s\"\n", post.category);
 
-//	printf("category: \"%s\"\n", category);
-*/
+
+/*
 	printf("Tags (separate by commas): ");
-	fgets(tags, sizeof(tags), stdin);
+	fgets(buff, sizeof(buff), stdin);
 
-	char *tmp = tags, *tok = NULL, *foo[128];
+	char *tmp = buff, *tok = NULL, *foo[128];
 	int i = 0, noftags = 0;
 	
 	tok = strtok(&tmp[0], ",");
@@ -141,8 +149,10 @@ int new_post(void)
 	noftags = i;
 	printf("foo is: %lu\n",sizeof(foo));
 	for (i = 0; i < noftags; i++) {
-		printf("%d : %s\n",i, foo[i]);
+		printf("%d : \"%s\"\n",i, foo[i]);
 	}
+	strcpy(post.tags, buff);
+*/
 
 /*
 	$atom_id = 'tag:'.$this->config['syndication']['url'];

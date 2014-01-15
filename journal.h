@@ -10,6 +10,17 @@ unsigned int mg_poll_server(struct mg_server *foo, int bar){}
 void mg_destroy_server(struct mg_server **foo){}
 #endif
 
+struct journal_tags {
+	struct journal_tags *next;
+	char *name;
+};
+
+struct journal_post {
+	char title[128];
+	char category[128];
+	char date[128];
+	struct journal_tags tags;
+};
 
 void parse_options(char *options);
 void init(char **argv);
