@@ -76,7 +76,8 @@ int main(int argc, char **argv)
 	} else if (!strcmp(argv[optind],"test")) {
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
-		mkpage();
+//		mkpage();
+		runscript();
 	} else if (!strcmp(argv[optind],"new")) {
 		new_post();
 	} else if (!strcmp(argv[optind],"init")) {
@@ -94,12 +95,24 @@ int main(int argc, char **argv)
 	}
 }
 
+int runscript(void)
+{
+	system(".journal/posts/shit.sh");
+	return 0;
+}
+
 int mkpage(void)
 {
 	size_t size;
 	const char *data = find_embedded_file("test/syntax.md", &size);	
 
-	printf("file:\n%s\n", data);
+	FILE *fp = fopen(".journal/posts/syntax.md", "w+");
+
+	fputs(data, fp);
+
+	fclose(fp);
+
+//	printf("file:\n%s\n", data);
 	return 0;
 }
 
@@ -109,11 +122,11 @@ int new_post(void)
 
 	struct journal_post post;
 	char buff[512] = "";
+/*
 	char fnow[64];
 
 	printf("Creating a new journal entry\n");
 	
-/*
 	while (empty(buff)) {
 		printf("Title: ");
 		fgets(buff, sizeof(buff), stdin);
@@ -293,6 +306,7 @@ void init(char **argv)
 		return;
 	}
 	mkdir(".journal/posts", 0755);
+	mkpage();
 	puts("Successfully initialized a new journal.");
 }
 
