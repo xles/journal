@@ -11,7 +11,7 @@
  *    Webserver: Mongoose, http://cesanta.com/#docs,Mongoose.md
  *    Regex: SLRE, http://cesanta.com/#docs,SLRE.md
  *    JSON: cJSON, http://cjson.sourceforge.net/
- *    Markdown: Sundown, https://github.com/vmg/sundown
+ *    Markdown: Hoedown, https://github.com/hoedown/hoedown
  * See respective project for further copyright and license information.
  */
 
@@ -30,9 +30,9 @@
  
 #include "slre.h"
 #include "frozen.h"
-#include "sundown/markdown.h"
-#include "sundown/buffer.h"
-#include "sundown/html.h"
+#include "hoedown/markdown.h"
+#include "hoedown/buffer.h"
+#include "hoedown/html.h"
 
 #ifdef _WIN32
  #define getcwd(a,b) _getcwd(a,b)
@@ -76,10 +76,11 @@ int main(int argc, char **argv)
 		else 
 			serve();
 	} else if (!strcmp(argv[optind],"test")) {
+		test_markdown("test/syntax.md");
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
 //		mkpage();
-		runscript();
+//		runscript();
 	} else if (!strcmp(argv[optind],"new")) {
 		new_post();
 	} else if (!strcmp(argv[optind],"init")) {
@@ -233,53 +234,41 @@ int new_post(void)
 
 int test_markdown(char *file)
 {
-	struct buf *ib, *ob;
-	int ret;
+	hoedown_buffer *ib, *ob;
 	FILE *in = stdin;
-
-	struct sd_callbacks callbacks;
-	struct html_renderopt options;
-	struct sd_markdown *markdown;
 
 	in = fopen(file, "r");
 	if (!in) {
-		if(file == NULL) {
-			fprintf(stderr, "No file specified\n");
-		} else {
-			fprintf(stderr, "Unable to open input file: "
-					"\"%s\"\n", file);
+		if (!in) {
+			fprintf(stderr, "Unable to open input file \"%s\": %s\n", file, strerror(errno));
+			return 1;
 		}
-		return 1;
 	}
 
+
 	/* reading everything */
-	ib = bufnew(1024);
-	bufgrow(ib, 1024);
-	while ((ret = fread(ib->data + ib->size, 1, ib->asize - ib->size, in)) > 0) {
-		ib->size += ret;
-		bufgrow(ib, ib->size + 1024);
+	ib = hoedown_buffer_new(1024);
+	while (!feof(in) && !ferror(in)) {
+		hoedown_buffer_grow(ib, ib->size + 1024);
+		ib->size += fread(ib->data + ib->size, 1, 1024, in);
 	}
 
 	if (in != stdin)
 		fclose(in);
 
-	/* performing markdown parsing */
-	ob = bufnew(64);
+	/* performing SmartyPants parsing */
+	ob = hoedown_buffer_new(64);
 
-	sdhtml_renderer(&callbacks, &options, 0);
-	markdown = sd_markdown_new(0, 16, &callbacks, &options);
-
-	sd_markdown_render(ob, ib->data, ib->size, markdown);
-	sd_markdown_free(markdown);
+	hoedown_html_smartypants(ob, ib->data, ib->size);
 
 	/* writing the result to stdout */
-	ret = fwrite(ob->data, 1, ob->size, stdout);
+	(void)fwrite(ob->data, 1, ob->size, stdout);
 
 	/* cleanup */
-	bufrelease(ib);
-	bufrelease(ob);
+	hoedown_buffer_free(ib);
+	hoedown_buffer_free(ob);
 
-	return (ret < 0) ? -1 : 0;
+	return ferror(stdout);
 }
 
 

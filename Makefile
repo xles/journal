@@ -9,13 +9,14 @@ SOURCE_FILES = 	journal.c \
 		validate.c \
 		slre.c \
 		frozen.c \
-		sundown/markdown.c \
-		sundown/autolink.c \
-		sundown/buffer.c \
-		sundown/stack.c \
-		sundown/html.c \
-		sundown/houdini_html_e.c \
-		sundown/houdini_href_e.c \
+		hoedown/markdown.c \
+		hoedown/autolink.c \
+		hoedown/buffer.c \
+		hoedown/stack.c \
+		hoedown/html.c \
+		hoedown/html_blocks.c \
+		hoedown/html_smartypants.c \
+		hoedown/escape.c \
 		build/embed_data.c
 
 EMBED_SOURCE =  test/syntax.md
