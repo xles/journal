@@ -21,6 +21,8 @@
 #include <string.h>
 #include <dirent.h>
 #include <time.h>
+#include <sys/stat.h>
+#include <errno.h>
 
 #include "journal.h"
 #include "colour.h"
@@ -74,8 +76,9 @@ int main(int argc, char **argv)
 	} else if (!strcmp(argv[optind],"test")) {
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
-//		new_post();
 		mkpage();
+	} else if (!strcmp(argv[optind],"new")) {
+		new_post();
 	} else if (!strcmp(argv[optind],"init")) {
 		init(argv);
 	} else if (!strcmp(argv[optind],"editor")) {
@@ -190,7 +193,8 @@ int new_post(void)
 */
 	char syscall[128], *filename = "test/syntax.md";
 	if (getenv("EDITOR") == NULL && getenv("VISUAL") == NULL) {
-		puts("Unable to detect default editor.");
+		puts("Unable to detect default editor.\n"
+			"Are EDITOR or VISUAL set?");
 		printf("Journal entry saved as ./journal/posts/%s\n", 
 			filename);
 	} else {
@@ -279,13 +283,17 @@ void init(char **argv)
 			}
 		}
 	}
-
-	DIR *dir = opendir(".journal");
-	if (dir) {
-		printf("A .journal exists in directory '%s'\n", cwd);
+	printf("Initializing new journal in '%s'\n", cwd);
+	char target[strlen(cwd)+10];
+	strncpy(target,cwd,sizeof(target));
+	snprintf(target,sizeof(target),"%s/%s",target,".journal");
+	int result = mkdir(target, 0755);
+	if (result < 0) {
+	 	printf("Error: %s in '%s'\n", strerror(errno), cwd);
 		return;
 	}
-	printf("Initializing new journal in '%s'\n", cwd);
+	mkdir(".journal/posts", 0755);
+	puts("Successfully initialized a new journal.");
 }
 
 void serve(void)
