@@ -2,7 +2,7 @@ INSTALL_PATH?=/usr/local
           CC?=cc
       CFLAGS?=
 
-CFLAGS += -std=c99
+CFLAGS += -std=c99 -Wall
 
 PROGRAM = journal
 SOURCE_FILES = 	journal.c \
