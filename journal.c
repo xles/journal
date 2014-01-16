@@ -36,8 +36,10 @@
 
 #ifdef _WIN32
  #define getcwd(a,b) _getcwd(a,b)
+ #define _mkdir(a,b) mkdir(a)
 #else
  #define _WIN32 0
+ #define _mkdir(a,b) mkdir(a,b)
  #include "mongoose.h"
 #endif
 
@@ -300,7 +302,7 @@ void init(char **argv)
 	char target[strlen(cwd)+10];
 	strncpy(target,cwd,sizeof(target));
 	snprintf(target,sizeof(target),"%s/%s",target,".journal");
-	int result = mkdir(target, 0755);
+	int result = _mkdir(target, 0755);
 	if (result < 0) {
 	 	printf("Error: %s in '%s'\n", strerror(errno), cwd);
 		return;
@@ -312,7 +314,7 @@ void init(char **argv)
 		"allow from 127.0.0.1\n",fp);
 	fclose(fp);
 
-	mkdir(".journal/posts", 0755);
+	_mkdir(".journal/posts", 0755);
 	mkpage();
 	puts("Successfully initialized a new journal.");
 }
