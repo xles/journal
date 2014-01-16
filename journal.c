@@ -305,6 +305,13 @@ void init(char **argv)
 	 	printf("Error: %s in '%s'\n", strerror(errno), cwd);
 		return;
 	}
+	FILE *fp = fopen(".journal/.htaccess", "w+");
+
+	fputs( "order deny,allow\n"
+		"deny from all\n"
+		"allow from 127.0.0.1\n",fp);
+	fclose(fp);
+
 	mkdir(".journal/posts", 0755);
 	mkpage();
 	puts("Successfully initialized a new journal.");
