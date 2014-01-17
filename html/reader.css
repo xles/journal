@@ -1,0 +1,262 @@
+
+article { counter-reset: a_head; }
+h2 { counter-reset: b_head; }
+h3 { counter-reset: c_head; }
+h4 { counter-reset: d_head; }
+h5 { counter-reset: e_head; }
+h2:before {
+	content: 
+		counter(a_head) ". ";
+	counter-increment: a_head;
+}
+h3:before {
+	content: 
+		counter(a_head) "." 
+		counter(b_head) " ";
+	counter-increment: b_head;
+}
+h4:before {
+	content: 
+		counter(a_head) "." 
+		counter(b_head) "." 
+		counter(c_head) " ";
+	counter-increment: c_head;
+}
+h5:before {
+	font-style: normal;
+	content: 
+		counter(a_head) "." 
+		counter(b_head) "." 
+		counter(c_head) "." 
+		counter(d_head) " ";
+	counter-increment: d_head;
+}
+h6:before {
+	content: 
+		counter(a_head) "." 
+		counter(b_head) "." 
+		counter(c_head) "." 
+		counter(d_head) "." 
+		counter(e_head) " ";
+	counter-increment: e_head;
+}
+/**/
+@font-face {
+	font-family: ornaments;
+	src: url('Nymphette.ttf');
+}
+@media all {
+	body {
+		font-family: 'Constantia', 'Georgia', Serif;
+		font-size: 12pt;
+		line-height: 1.5em;
+	}
+	p {
+		margin:0;
+		text-align: justify;
+		white-space: inherit;
+	}
+	span.lining-figs {
+		font-family: 'Cambria', 'Times New Roman', Serif;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: normal;
+		margin: 0;
+		padding: 0;
+		padding-top: 	0;
+		line-height: 	1.5em;
+		margin-bottom: 1.5em;
+		font-size: 1em; 
+	}
+	p + h2, p + h3, p + h4, p + h5 {
+		margin-top: 1.5em;	
+	}
+	h6 + p, p + h6 {
+		position: relative;
+		top:1.5em;
+	}
+	h6 + p {
+		padding-bottom: 1.5em;
+	}
+	h1 {
+		text-align: center;
+		text-transform: capitalize;
+	}
+	h1:before { content: "k"; }
+	h1:after  { content: "l"; }
+	h1:before, h1:after {
+	/*
+		content: "\2767";
+		content: "~";
+	*/
+		text-transform: none;
+		font-family: 'ornaments';
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+	}
+	h2 { 
+		letter-spacing: 0.1em;
+		font-family: 'Cambria', 'Times New Roman', Serif;
+		text-transform: uppercase;
+	}
+	h3 { 
+		font-weight:  bold; 
+	}
+	h4 { 
+		letter-spacing: 0.1em;
+		text-transform: lowercase;
+		font-variant: small-caps; 
+	}
+	h5 { 
+		font-style: italic;
+	}
+	h6 { 
+		float: left;
+		margin: 0;
+		margin-right: 0.1em;
+		padding: 0;
+		text-transform: lowercase;
+		font-variant: small-caps;
+		letter-spacing: 0.1em;
+	}
+	abbr, acronym {
+		text-transform: lowercase;
+		font-variant: small-caps;
+		letter-spacing: 0.1em;
+	}
+	hr {
+		height:1.5em;
+		border:0;
+		text-align:center;
+		margin:1.5em;
+		/*
+		font-size: 1.17em;
+		*/
+	}
+	hr:before {
+		content: "\2042";
+		text-align: center;
+	}
+	
+	blockquote {
+		margin: 1em 0 1em 0;
+		padding: 0.5em 2em 0.5em 1.5em;
+		border-left: 0.5em solid #EEE8D8;
+	}
+}
+@media screen, tv, projection {
+	html {
+		background-color: #EEE8D8;
+		height:100%;
+	}
+	p + p {
+		margin-top: 1.5em;
+	}
+	foo {
+		-webkit-columns: 2;
+		-webkit-column-rule: 1px solid #000;
+		-webkit-column-gap: 2em;
+		overflow: scroll;
+		height: 30rem;
+	}
+	a {
+		color: #999;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	body {
+		width: 33em;
+		padding: 2em;
+		padding-top: 11%;
+		padding-bottom: 22%;
+		margin: auto;
+		background-color: #FFFFF0;
+		color: #333;
+	}
+	body > footer {
+		font-variant: small-caps;
+		letter-spacing: 0.1em;
+		margin-top: 2em;
+		border-top: 1px solid #EEE8D8;
+		padding: 1em;
+		font-size:0.8em;
+		text-align: center;
+	}
+}
+
+@media tv, projection {
+	body {
+		font-size: 17px;
+	}
+}
+@media tv and (min-width: 1280px), projection and (min-width: 1280px) {
+	body {
+		font-size: 34px;
+	}
+}
+@media tv and (min-width: 1920px), projection and (min-width: 1920px) {
+	body {
+		font-size: 51px;
+	}
+}
+
+@media print {
+	html, body {
+		padding:0;
+		margin:0;
+		width: 100%;
+	}
+	p {
+		font-size: 12pt;
+		padding:0;
+		text-align: justify;
+	}
+	p + p {
+		text-indent: 1.5em;
+	}
+	@page {
+	
+		margin-top: 11%;
+		margin-bottom: 22%;
+	/*
+		margin-left: 1in;
+		margin-right: 1in;
+		padding-top: 1in;
+		padding-bottom: 1in;
+		font-family: Georgia, Serif;
+	*/
+		color: #000;
+		background-color: #000;
+		widows:4;
+		orphans:4;
+		counter-increment: page;
+	}
+	@page :left {
+		margin-left: 22%;
+		margin-right: 11%;
+		@bottom-left {
+			content: counter(page);
+		}
+	}
+
+	@page :right {
+		margin-left: 11%;
+		margin-right: 22%;
+		@bottom-right {
+			content: counter(page);
+		}
+	}
+	h2 {
+		page-break-before: right;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		page-break-after: avoid;
+	}
+	a {
+	}
+	footer, nav {
+		display: none;
+	}
+}

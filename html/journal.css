@@ -1,0 +1,106 @@
+html,body {
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	background-color: #FFFFF0;
+	color:#333;
+	font-family: 'Constantia', 'Georgia', Serif;
+}
+article {
+	width: 40em;
+	padding-left:2em;
+	padding-right:2em;
+	margin-bottom: 2em;
+}
+article > header {
+	display: block;
+}
+article > header > a > h1 {
+	display: inherit;
+	color:#333;
+}
+article > header > a > h1:hover {
+	text-decoration: none;
+	color:#999;
+}
+article > header time {
+	padding-left: 0.5em;
+	color:#ccc;
+}
+article > header time:before {
+	content: "«";
+	padding-right: 0.5em;
+}
+article > header + p {
+	margin-top: 1.5em;
+}
+article p {
+	text-align: justify;
+}
+article:last-of-type {
+	padding-bottom: 10em;
+}
+article pre {
+	padding-left: 1em;
+}
+article code {
+	font-size: 0.8em;
+	line-height: 1.5em;
+}
+nav {
+	padding-top: 6em;
+	top:0;
+	height:100%;
+	background-color: #EEE8D8;
+	left:44em;
+	right:0;
+	position:fixed;
+}
+nav > a {
+	display:block;
+	padding-left:2em;
+	line-height: 1.5em;
+}
+nav > a > time:before {
+	content:" - ";
+}
+nav > a > time {
+	color:#ccc;
+}
+nav > hr {
+	width:70%;
+	border-bottom:0.1em #ccc dashed;
+	height:0;
+	margin-top: 0.7;
+	margin-bottom: 0.7;
+}
+nav > hr:before {
+	content:none;
+}
+footer {
+	font-variant: small-caps;
+	font-size:0.8em;
+	letter-spacing: 0.1em;
+	position: fixed;
+	right:1em;
+	bottom:1em;
+	color:#ccc;
+}
+body > header > p {
+	font-size: 2em;
+	margin:0;
+	padding-left:1rem;
+	padding-top:1em;
+	text-align: right;
+	width: 42rem;
+}
+body > header > p + p {
+	padding-top:0;
+	padding-bottom:2em;
+	padding-left: 0em;
+	margin:0;
+	font-size: 1em;
+	font-style: italic;
+	color:#999;
+}
