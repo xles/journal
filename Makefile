@@ -1,8 +1,8 @@
 INSTALL_PATH?=/usr/local
-          CC?=cc
-      CFLAGS?=
+CC?=gcc
+CFLAGS?=
 
-CFLAGS += -std=c99 -Wall
+#CFLAGS += -std=c99 -Wall
 
 PROGRAM = journal
 SOURCE_FILES = 	journal.c \
@@ -25,7 +25,7 @@ EMBED_SOURCE =  test/syntax.md
 ifeq ($(OS),Windows_NT)
 	CFLAGS += -U__STRICT_ANSI__ -D_NO_OLDNAMES
 else
-	CFLAGS += -pthread
+	CFLAGS += -std=c99 -Wall -pthread
 	SOURCE_FILES += mongoose.c
 endif
 
