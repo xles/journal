@@ -272,7 +272,7 @@ int test_markdown(char *file)
 	hoedown_html_renderer_free(renderer);
 
 
-	//hoedown_html_smartypants(ob, ib->data, ib->size);
+	hoedown_html_smartypants(ob, ob->data, ob->size);
 
 	/* writing the result to stdout */
 	(void)fwrite(ob->data, 1, ob->size, stdout);
