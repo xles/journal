@@ -237,6 +237,9 @@ int test_markdown(char *file)
 	hoedown_buffer *ib, *ob;
 	FILE *in = stdin;
 
+	hoedown_renderer *renderer;
+	hoedown_markdown *markdown;
+
 	in = fopen(file, "r");
 	if (!in) {
 		if (!in) {
@@ -259,7 +262,17 @@ int test_markdown(char *file)
 	/* performing SmartyPants parsing */
 	ob = hoedown_buffer_new(64);
 
-	hoedown_html_smartypants(ob, ib->data, ib->size);
+	
+	renderer = hoedown_html_renderer_new(0, 0);
+	markdown = hoedown_markdown_new(0, 16, renderer);
+
+	hoedown_markdown_render(ob, ib->data, ib->size, markdown);
+
+	hoedown_markdown_free(markdown);
+	hoedown_html_renderer_free(renderer);
+
+
+	//hoedown_html_smartypants(ob, ib->data, ib->size);
 
 	/* writing the result to stdout */
 	(void)fwrite(ob->data, 1, ob->size, stdout);
