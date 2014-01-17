@@ -1,3 +1,24 @@
+* {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin:0;
+	padding:0;
+	border:0;
+}
+ol { counter-reset: item }
+ol li { display: block;}
+ol li:before { 
+	content: counters(item, ".") " "; 
+	counter-increment: item 
+}
+ol ol, ul ul {
+	margin-bottom: 0;
+	padding-left: 1.5em;
+}
+ol, ul {
+	padding-left: 0em;
+	margin-bottom: 1.5em;
+}
 
 article { counter-reset: a_head; }
 h2 { counter-reset: b_head; }
@@ -6,20 +27,20 @@ h4 { counter-reset: d_head; }
 h5 { counter-reset: e_head; }
 h2:before {
 	content: 
-		counter(a_head) ". ";
+		counter(a_head) ".\00a0";
 	counter-increment: a_head;
 }
 h3:before {
 	content: 
 		counter(a_head) "." 
-		counter(b_head) " ";
+		counter(b_head) "\00a0";
 	counter-increment: b_head;
 }
 h4:before {
 	content: 
 		counter(a_head) "." 
 		counter(b_head) "." 
-		counter(c_head) " ";
+		counter(c_head) "\00a0";
 	counter-increment: c_head;
 }
 h5:before {
@@ -28,7 +49,7 @@ h5:before {
 		counter(a_head) "." 
 		counter(b_head) "." 
 		counter(c_head) "." 
-		counter(d_head) " ";
+		counter(d_head) "\00a0";
 	counter-increment: d_head;
 }
 h6:before {
@@ -37,10 +58,11 @@ h6:before {
 		counter(b_head) "." 
 		counter(c_head) "." 
 		counter(d_head) "." 
-		counter(e_head) " ";
+		counter(e_head) "\00a0";
 	counter-increment: e_head;
 }
-/**/
+/*
+ */
 @font-face {
 	font-family: ornaments;
 	src: url('Nymphette.ttf');
@@ -63,8 +85,8 @@ h6:before {
 		font-weight: normal;
 		margin: 0;
 		padding: 0;
-		padding-top: 	0;
-		line-height: 	1.5em;
+		padding-top: 0;
+		line-height: 1.5em;
 		margin-bottom: 1.5em;
 		font-size: 1em; 
 	}
@@ -72,8 +94,8 @@ h6:before {
 		margin-top: 1.5em;	
 	}
 	h6 + p, p + h6 {
-		position: relative;
-		top:1.5em;
+/*		position: relative; */
+		margin-top:1.5em;
 	}
 	h6 + p {
 		padding-bottom: 1.5em;
@@ -119,7 +141,7 @@ h6:before {
 		font-variant: small-caps;
 		letter-spacing: 0.1em;
 	}
-	abbr, acronym {
+	abbr {
 		text-transform: lowercase;
 		font-variant: small-caps;
 		letter-spacing: 0.1em;

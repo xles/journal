@@ -1,3 +1,13 @@
+h2:before, 
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+	position: absolute;
+	left: 0;
+	width: 5em;
+	text-align: right;
+}
 html,body {
 	height:100%;
 	width:100%;
@@ -7,39 +17,76 @@ html,body {
 	color:#333;
 	font-family: 'Constantia', 'Georgia', Serif;
 }
+body > header {
+	width: 42em;
+}
+body > header > p {
+	font-size: 2em;
+	line-height: 3rem;
+	margin:0;
+	padding-right:0rem;
+	padding-top:0em;
+	text-align: right;
+}
+body > header > p + p {
+	padding-top:0;
+	line-height: 1.5em;
+	padding-right:2rem;
+	padding-bottom:1.5em;
+	margin:0;
+	font-size: 1em;
+	font-style: italic;
+	color:#999;
+}
+main {
+	width: 35em;
+	padding-bottom: 10em;
+	padding-right: 4em;
+	padding-left: 5em;
+}
+main > footer {
+	display: block;
+	text-align: right;
+	color:#ccc;
+	position: relative;
+	top:1.5em;
+}
 article {
-	width: 40em;
-	padding-left:2em;
-	padding-right:2em;
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 article > header {
 	display: block;
 }
+article > header > a {
+	display: block;
+}
+article > header > a:hover {
+	text-decoration: none;
+}
 article > header > a > h1 {
-	display: inherit;
+	display: inline;
 	color:#333;
 }
-article > header > a > h1:hover {
-	text-decoration: none;
-	color:#999;
+article > header > a:hover > h1 {
+	color:#ccc;
 }
 article > header time {
 	padding-left: 0.5em;
 	color:#ccc;
 }
 article > header time:before {
-	content: "«";
+	content: "\00ab";
 	padding-right: 0.5em;
 }
 article > header + p {
 	margin-top: 1.5em;
 }
+article > footer {
+	color:#ccc;
+	text-align: right;
+}
 article p {
 	text-align: justify;
-}
-article:last-of-type {
-	padding-bottom: 10em;
 }
 article pre {
 	padding-left: 1em;
@@ -48,7 +95,7 @@ article code {
 	font-size: 0.8em;
 	line-height: 1.5em;
 }
-nav {
+body > nav {
 	padding-top: 6em;
 	top:0;
 	height:100%;
@@ -57,28 +104,28 @@ nav {
 	right:0;
 	position:fixed;
 }
-nav > a {
+body > nav > a {
 	display:block;
 	padding-left:2em;
 	line-height: 1.5em;
 }
-nav > a > time:before {
+body > nav > a > time:before {
 	content:" - ";
 }
-nav > a > time {
+body > nav > a > time {
 	color:#ccc;
 }
-nav > hr {
+body > nav > hr {
 	width:70%;
 	border-bottom:0.1em #ccc dashed;
 	height:0;
 	margin-top: 0.7;
 	margin-bottom: 0.7;
 }
-nav > hr:before {
+body > nav > hr:before {
 	content:none;
 }
-footer {
+body > footer {
 	font-variant: small-caps;
 	font-size:0.8em;
 	letter-spacing: 0.1em;
@@ -86,21 +133,4 @@ footer {
 	right:1em;
 	bottom:1em;
 	color:#ccc;
-}
-body > header > p {
-	font-size: 2em;
-	margin:0;
-	padding-left:1rem;
-	padding-top:1em;
-	text-align: right;
-	width: 42rem;
-}
-body > header > p + p {
-	padding-top:0;
-	padding-bottom:2em;
-	padding-left: 0em;
-	margin:0;
-	font-size: 1em;
-	font-style: italic;
-	color:#999;
 }
