@@ -9,6 +9,8 @@ SOURCE_FILES = 	journal.c \
 		validate.c \
 		slre.c \
 		frozen.c \
+		sha1c.c \
+		sha1hl.c \
 		hoedown/markdown.c \
 		hoedown/autolink.c \
 		hoedown/buffer.c \

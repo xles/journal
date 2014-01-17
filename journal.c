@@ -8,6 +8,7 @@
  *    Main source file for the journal project.
  *
  * Credits for embeded components:
+ *    SHA: libmd, http://freebsd.org/
  *    Webserver: Mongoose, http://cesanta.com/#docs,Mongoose.md
  *    Regex: SLRE, http://cesanta.com/#docs,SLRE.md
  *    JSON: cJSON, http://cjson.sourceforge.net/
@@ -23,6 +24,7 @@
 #include <time.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include "sha.h"
 
 #include "journal.h"
 #include "colour.h"
@@ -47,6 +49,9 @@
 #define SERVE_PORT "4000"
 #define OPTIONS "asdf"
 
+#define TEST_BLOCK_SIZE		8000
+#define TEST_BYTES		10000000
+#define TEST_BLOCKS		(TEST_BYTES/TEST_BLOCK_SIZE)
 
 int main(int argc, char **argv)
 {
@@ -76,11 +81,11 @@ int main(int argc, char **argv)
 		else 
 			serve();
 	} else if (!strcmp(argv[optind],"test")) {
-		test_markdown("test/syntax.md");
+//		test_markdown("test/syntax.md");
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
 //		mkpage();
-//		runscript();
+		runscript();
 	} else if (!strcmp(argv[optind],"new")) {
 		new_post();
 	} else if (!strcmp(argv[optind],"init")) {
@@ -100,7 +105,17 @@ int main(int argc, char **argv)
 
 int runscript(void)
 {
-	system(".journal/posts/shit.sh");
+	void *buff; 
+	char *string = "";
+
+	fflush(stdout); 
+
+	buff = malloc(8000); 
+
+	SHA1_Data(string,strlen(string),buff);
+
+	printf("%s : %d\n", string, strlen(buff));
+//	system(".journal/posts/shit.sh");
 	return 0;
 }
 
@@ -221,7 +236,7 @@ int new_post(void)
 			editor = getenv("VISUAL");
 
 		printf("Opening journal entry with default editor...");
-
+		fflush(stdout);
 		sprintf(syscall, "%s %s", getenv("EDITOR"), filename);
 		system(syscall);
 		puts("done.");
