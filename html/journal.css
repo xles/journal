@@ -1,3 +1,7 @@
+@font-face {
+	font-family: ornaments;
+	src: url('Nymphette.ttf');
+}
 h2:before, 
 h3:before,
 h4:before,
@@ -8,14 +12,20 @@ h6:before {
 	width: 5em;
 	text-align: right;
 }
+h1 {
+	text-align: center;
+}
+h1:before { content: "k"; }
+h1:after  { content: "l"; }
+h1:before, h1:after {
+	text-transform: none;
+	font-family: 'ornaments';
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+}
+
 html,body {
-	height:100%;
 	width:100%;
-	margin:0;
-	padding:0;
-	background-color: #FFFFF0;
-	color:#333;
-	font-family: 'Constantia', 'Georgia', Serif;
 }
 body > header {
 	width: 42em;
@@ -23,13 +33,9 @@ body > header {
 body > header > p {
 	font-size: 2em;
 	line-height: 3rem;
-	margin:0;
-	padding-right:0rem;
-	padding-top:0em;
 	text-align: right;
 }
 body > header > p + p {
-	padding-top:0;
 	line-height: 1.5em;
 	padding-right:2rem;
 	padding-bottom:1.5em;
@@ -56,6 +62,8 @@ article {
 }
 article > header {
 	display: block;
+	border-top: 0.1em #EEE8D8 solid;
+	line-height: 1.4em;
 }
 article > header > a {
 	display: block;
@@ -88,13 +96,6 @@ article > footer {
 article p {
 	text-align: justify;
 }
-article pre {
-	padding-left: 1em;
-}
-article code {
-	font-size: 0.8em;
-	line-height: 1.5em;
-}
 body > nav {
 	padding-top: 6em;
 	top:0;
@@ -118,9 +119,9 @@ body > nav > a > time {
 body > nav > hr {
 	width:70%;
 	border-bottom:0.1em #ccc dashed;
-	height:0;
-	margin-top: 0.7;
-	margin-bottom: 0.7;
+	height:0.1em;
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
 }
 body > nav > hr:before {
 	content:none;

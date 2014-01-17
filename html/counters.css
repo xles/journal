@@ -1,0 +1,49 @@
+@media all {
+	ol { counter-reset: item }
+	ol li { display: block;}
+	ol li:before { 
+		content: counters(item, ".") " "; 
+		counter-increment: item 
+	}
+	article { counter-reset: a_head; }
+	h2 { counter-reset: b_head; }
+	h3 { counter-reset: c_head; }
+	h4 { counter-reset: d_head; }
+	h5 { counter-reset: e_head; }
+	h2:before {
+		content: 
+			counter(a_head) ".\00a0";
+		counter-increment: a_head;
+	}
+	h3:before {
+		content: 
+			counter(a_head) "." 
+			counter(b_head) "\00a0";
+		counter-increment: b_head;
+	}
+	h4:before {
+		content: 
+			counter(a_head) "." 
+			counter(b_head) "." 
+			counter(c_head) "\00a0";
+		counter-increment: c_head;
+	}
+	h5:before {
+		font-style: normal;
+		content: 
+			counter(a_head) "." 
+			counter(b_head) "." 
+			counter(c_head) "." 
+			counter(d_head) "\00a0";
+		counter-increment: d_head;
+	}
+	h6:before {
+		content: 
+			counter(a_head) "." 
+			counter(b_head) "." 
+			counter(c_head) "." 
+			counter(d_head) "." 
+			counter(e_head) "\00a0";
+		counter-increment: e_head;
+	}
+}
