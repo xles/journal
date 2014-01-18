@@ -9,6 +9,8 @@
  *    color.h in the [git project](http://git-scm.com/).
  */
 
+#ifndef COLOUR_H
+#define COLOUR_H
 /*  2 + (2 * num_attrs) + 8 + 1 + 8 + 'm' + NUL */
 /* "\033[1;2;4;5;7;38;5;2xx;48;5;2xxm\0" */
 /*
@@ -93,3 +95,5 @@ Background colors
 #define ANSI_COLOR_NEVER  0
 #define ANSI_COLOR_ALWAYS 1
 #define ANSI_COLOR_AUTO   2
+
+#endif
