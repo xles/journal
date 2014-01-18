@@ -6,6 +6,7 @@ CFLAGS?=
 
 PROGRAM = journal
 SOURCE_FILES = 	journal.c \
+		cmd_*.c \
 		validate.c \
 		slre.c \
 		frozen.c \
