@@ -87,20 +87,42 @@
 		content: "\2042";
 		text-align: center;
 	}
-	
 	blockquote {
 		margin: 1em 0 1em 0;
 		padding: 0.5em 2em 0.5em 1.5em;
 		border-left: 0.5em solid #EEE8D8;
 	}
-	pre {
-		margin-top: 1.5em;
-		margin-bottom: 1.5em;
-		padding-left: 1.5em;
+	mark {
+		background-color: #FFCFC7;
+		opacity: 0.8;
 	}
-	code {
+	pre {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		padding-left: 0.5rem;
+		background-color: #Fcf6e6;
 		font-size: 0.8em;
-		line-height: 1.5em;
+		line-height: 1.5rem;
+	}
+	p > code {
+		font-size: 0.8em;
+		line-height: 1.5rem;
+		background-color: #F7EfDf;
+		padding-right: 0.2rem;
+		padding-left: 0.2rem;
+	}
+	kbd, /* User input */
+	kbd > kbd > samp { /* Computer generated user input (menus) */
+	}
+	kbd > kbd { /* Literal keypress input. */
+	}
+	kbd > samp { /* Computer generated user input */
+	}
+	samp { /* Computer output */
+	}
+	samp > kbd { /* Computer echoed user input (shell commands) */
 	}
 }
 @media screen, tv, projection {
