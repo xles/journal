@@ -85,7 +85,7 @@ int main(int argc, char **argv)
 //		test_markdown(argv[optind+1]);
 //		system("pwd");
 //		mkpage();
-		runscript();
+		runscript(argv[optind+1]);
 	} else if (!strcmp(argv[optind],"new")) {
 		new_post();
 	} else if (!strcmp(argv[optind],"init")) {
@@ -103,18 +103,20 @@ int main(int argc, char **argv)
 	}
 }
 
-int runscript(void)
+int runscript(char *string)
 {
+	if(empty(string))
+		return 1;
 	void *buff; 
-	char *string = "";
 
 	fflush(stdout); 
 
-	buff = malloc(8000); 
+	buff = malloc(40); 
 
-	SHA1_Data(string,strlen(string),buff);
+	//SHA1_Data(string,strlen(string),buff);
+	SHA1_File(string,buff);
 
-	printf("%s : %d\n", string, strlen(buff));
+	printf("%s :\n %s\n", string, buff);
 //	system(".journal/posts/shit.sh");
 	return 0;
 }

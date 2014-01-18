@@ -42,7 +42,7 @@ void usage(void);
 int test_markdown(char *file);
 int new_post(void);
 int mkpage(void);
-int runscript(void);
+int runscript(char *string);
 
 /*
 In file included from journal.c:19:0:
