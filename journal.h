@@ -8,6 +8,9 @@
  *    Main header file for the journal project.
  */
 
+#ifndef JOURNAL_H
+#define JOURNAL_H
+
 /* Dummy functions to bypass mongoose when building on windows. */
 #ifdef _WIN32
 struct mg_server;
@@ -43,6 +46,8 @@ int test_markdown(char *file);
 int new_post(void);
 int mkpage(void);
 int runscript(char *string);
+
+#endif
 
 /*
 In file included from journal.c:19:0:
