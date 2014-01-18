@@ -7,10 +7,12 @@ h3:before,
 h4:before,
 h5:before,
 h6:before {
+	font-size: 1rem;
 	position: absolute;
 	left: 0;
 	width: 5em;
 	text-align: right;
+	font-variant: normal;
 }
 h1 {
 	text-align: center;
@@ -23,12 +25,22 @@ h1:before, h1:after {
 	padding-left: 0.5em;
 	padding-right: 0.5em;
 }
-
+@media tv, projection {
+	body > nav {
+		display:none;
+	}
+}
 html,body {
 	width:100%;
 }
+body {
+	width: 41em;
+	padding-right: 4em;
+	padding-left: 5em;
+	padding-bottom: 10em;
+}
 body > header {
-	width: 42em;
+	width: 43em;
 }
 body > header > p {
 	font-size: 2em;
@@ -44,18 +56,52 @@ body > header > p + p {
 	font-style: italic;
 	color:#999;
 }
-main {
-	width: 35em;
-	padding-bottom: 10em;
-	padding-right: 4em;
-	padding-left: 5em;
+body > nav {
+	padding-top: 6em;
+	top:0;
+	height:100%;
+	background-color: #EEE8D8;
+	left:50em;
+	width:20em;
+	position:fixed;
 }
+body > nav > a {
+	display:block;
+	padding-left:2em;
+	line-height: 1.5em;
+}
+body > nav > a > time:before {
+	content:" - ";
+}
+body > nav > a > time {
+	color:#ccc;
+}
+body > nav > hr {
+	width:70%;
+	border-bottom:0.1em #ccc dashed;
+	height:0.1em;
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+}
+body > nav > hr:before {
+	content:none;
+}
+body > footer {
+	font-variant: small-caps;
+	font-size:0.8em;
+	letter-spacing: 0.1em;
+	position: fixed;
+	right:1em;
+	bottom:1em;
+	color:#ccc;
+}
+
 main > footer {
 	display: block;
 	text-align: right;
 	color:#ccc;
 	position: relative;
-	top:1.5em;
+	top:3em;
 }
 article {
 	margin-bottom: 3em;
@@ -95,43 +141,4 @@ article > footer {
 }
 article p {
 	text-align: justify;
-}
-body > nav {
-	padding-top: 6em;
-	top:0;
-	height:100%;
-	background-color: #EEE8D8;
-	left:44em;
-	right:0;
-	position:fixed;
-}
-body > nav > a {
-	display:block;
-	padding-left:2em;
-	line-height: 1.5em;
-}
-body > nav > a > time:before {
-	content:" - ";
-}
-body > nav > a > time {
-	color:#ccc;
-}
-body > nav > hr {
-	width:70%;
-	border-bottom:0.1em #ccc dashed;
-	height:0.1em;
-	margin-top: 0.7em;
-	margin-bottom: 0.7em;
-}
-body > nav > hr:before {
-	content:none;
-}
-body > footer {
-	font-variant: small-caps;
-	font-size:0.8em;
-	letter-spacing: 0.1em;
-	position: fixed;
-	right:1em;
-	bottom:1em;
-	color:#ccc;
 }
