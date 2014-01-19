@@ -25,37 +25,38 @@
  * but it is close enough.
  */
 
-#define COLOR_MAXLEN 40
+#define COLOUR_MAXLEN 40
 
-#define ANSI_COLOR_NORMAL   ""
-#define ANSI_COLOR_START    "\033["
-#define ANSI_COLOR_END      "m"
-#define ANSI_COLOR_RESET    "\033[m"
-#define ANSI_COLOR_BOLD     "\033[1m"
+#define ANSI_COLOUR_NORMAL   ""
+#define ANSI_COLOUR_START    "\033["
+#define ANSI_COLOUR_END      "m"
+#define ANSI_COLOUR_RESET    "\033[m"
+#define ANSI_COLOUR_BOLD     "\033[1m"
+#define ANSI_COLOUR_REVERSE  "\033[7m"
 
-#define ANSI_COLOR_RED           "\033[31m"
-#define ANSI_COLOR_GREEN         "\033[32m"
-#define ANSI_COLOR_YELLOW        "\033[33m"
-#define ANSI_COLOR_BLUE          "\033[34m"
-#define ANSI_COLOR_MAGENTA       "\033[35m"
-#define ANSI_COLOR_CYAN          "\033[36m"
+#define ANSI_COLOUR_RED           "\033[31m"
+#define ANSI_COLOUR_GREEN         "\033[32m"
+#define ANSI_COLOUR_YELLOW        "\033[33m"
+#define ANSI_COLOUR_BLUE          "\033[34m"
+#define ANSI_COLOUR_MAGENTA       "\033[35m"
+#define ANSI_COLOUR_CYAN          "\033[36m"
 
-#define ANSI_COLOR_BOLD_RED      "\033[1;31m"
-#define ANSI_COLOR_BOLD_GREEN    "\033[1;32m"
-#define ANSI_COLOR_BOLD_YELLOW   "\033[1;33m"
-#define ANSI_COLOR_BOLD_BLUE     "\033[1;34m"
-#define ANSI_COLOR_BOLD_MAGENTA  "\033[1;35m"
-#define ANSI_COLOR_BOLD_CYAN     "\033[1;36m"
+#define ANSI_COLOUR_BOLD_RED      "\033[1;31m"
+#define ANSI_COLOUR_BOLD_GREEN    "\033[1;32m"
+#define ANSI_COLOUR_BOLD_YELLOW   "\033[1;33m"
+#define ANSI_COLOUR_BOLD_BLUE     "\033[1;34m"
+#define ANSI_COLOUR_BOLD_MAGENTA  "\033[1;35m"
+#define ANSI_COLOUR_BOLD_CYAN     "\033[1;36m"
 
-#define ANSI_COLOR_BG_RED        "\033[41m"
-#define ANSI_COLOR_BG_GREEN      "\033[42m"
-#define ANSI_COLOR_BG_YELLOW     "\033[43m"
-#define ANSI_COLOR_BG_BLUE       "\033[44m"
-#define ANSI_COLOR_BG_MAGENTA    "\033[45m"
-#define ANSI_COLOR_BG_CYAN       "\033[46m"
+#define ANSI_COLOUR_BG_RED        "\033[41m"
+#define ANSI_COLOUR_BG_GREEN      "\033[42m"
+#define ANSI_COLOUR_BG_YELLOW     "\033[43m"
+#define ANSI_COLOUR_BG_BLUE       "\033[44m"
+#define ANSI_COLOUR_BG_MAGENTA    "\033[45m"
+#define ANSI_COLOUR_BG_CYAN       "\033[46m"
 
 /* A special value meaning "no color selected" */
-#define ANSI_COLOR_NIL "NIL"
+#define ANSI_COLOUR_NIL "NIL"
 
 /*
 0        All attributes off
@@ -91,9 +92,9 @@ Background colors
  * returned from git_config_colorbool. The "auto" value can be returned from
  * config_colorbool, and will be converted by want_color() into either 0 or 1.
  */
-#define ANSI_COLOR_UNKNOWN -1
-#define ANSI_COLOR_NEVER  0
-#define ANSI_COLOR_ALWAYS 1
-#define ANSI_COLOR_AUTO   2
+#define ANSI_COLOUR_UNKNOWN -1
+#define ANSI_COLOUR_NEVER  0
+#define ANSI_COLOUR_ALWAYS 1
+#define ANSI_COLOUR_AUTO   2
 
 #endif

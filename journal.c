@@ -23,7 +23,6 @@
 #include <errno.h>
 
 #include "journal.h"
-#include "colour.h"
  
 #include "slre.h"
 
@@ -67,10 +66,7 @@ int main(int argc, char **argv)
 	} else if (!strcmp(argv[optind],"editor")) {
 		char * editor;
 		editor = getenv("EDITOR");
-		printf("Your default editor is: '%s%s%s'\n", 
-			ANSI_COLOR_MAGENTA, 
-			editor, 
-			ANSI_COLOR_RESET);		
+		printf("Your default editor is: '%s'\n", editor);
 	} else {
 		printf("Invalid operand\n");
 		usage();
