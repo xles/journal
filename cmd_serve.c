@@ -8,13 +8,10 @@
  *    Main source file for the journal project.
  */
 
-#ifndef _WIN32
-
 #include <stdio.h>
 #include "journal.h"
 #include "colour.h"
 
-#define _WIN32 0
 #include "mongoose.h"
 
 #define SERVE_ROOT "."
@@ -22,10 +19,6 @@
 
 int cmd_serve(int arc, char **argv)
 {
-	if(_WIN32) {
-		puts("Webserver not supported on windows");
-		return 1;
-	}
 	printf("Launching server on port 4000, press "
 		ANSI_COLOUR_BOLD "^C" ANSI_COLOUR_RESET " to exit.\n");
 
@@ -40,5 +33,3 @@ int cmd_serve(int arc, char **argv)
 	mg_destroy_server(&server);
 	return 0;
 }
-
-#endif

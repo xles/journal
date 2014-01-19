@@ -11,16 +11,6 @@
 #ifndef JOURNAL_H
 #define JOURNAL_H
 
-/* Dummy functions to bypass mongoose when building on windows. */
-#ifdef _WIN32
-struct mg_server;
-struct mg_server *mg_create_server(void *foo){}
-const char *mg_set_option(struct mg_server *foo, 
-	const char *opt, const char *val){}
-unsigned int mg_poll_server(struct mg_server *foo, int bar){}
-void mg_destroy_server(struct mg_server **foo){}
-#endif
-
 struct journal_tags {
 	struct journal_tags *next;
 	char *name;

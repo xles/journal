@@ -10,6 +10,7 @@ SOURCE_FILES = 	journal.c \
 		validate.c \
 		slre.c \
 		frozen.c \
+		mongoose.c \
 		sha1c.c \
 		sha1hl.c \
 		hoedown/*.c \
@@ -22,7 +23,6 @@ ifeq ($(OS),Windows_NT)
 	CFLAGS += -U__STRICT_ANSI__ -D_NO_OLDNAMES -I/d/lib/sfu/SDK/usr/inlcude -I/d/lib/sfu/SDK/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3/include/
 else
 	CFLAGS += -std=c99 -Wall -pthread
-	SOURCE_FILES += mongoose.c
 endif
 
 
