@@ -12,21 +12,14 @@ SOURCE_FILES = 	journal.c \
 		frozen.c \
 		sha1c.c \
 		sha1hl.c \
-		hoedown/markdown.c \
-		hoedown/autolink.c \
-		hoedown/buffer.c \
-		hoedown/stack.c \
-		hoedown/html.c \
-		hoedown/html_blocks.c \
-		hoedown/html_smartypants.c \
-		hoedown/escape.c \
+		hoedown/*.c \
 		build/embed_data.c
 
 EMBED_SOURCE =  test/syntax.md
 
 # gmake specific syntax, please fix me.
 ifeq ($(OS),Windows_NT)
-	CFLAGS += -U__STRICT_ANSI__ -D_NO_OLDNAMES
+	CFLAGS += -U__STRICT_ANSI__ -D_NO_OLDNAMES -I/d/lib/sfu/SDK/usr/inlcude -I/d/lib/sfu/SDK/opt/gcc.3.3/lib/gcc-lib/i586-pc-interix3/3.3/include/
 else
 	CFLAGS += -std=c99 -Wall -pthread
 	SOURCE_FILES += mongoose.c
