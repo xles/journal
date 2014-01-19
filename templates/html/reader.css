@@ -96,33 +96,71 @@
 		background-color: #FFCFC7;
 		opacity: 0.8;
 	}
+	article > samp, section > samp, 
+	article > code, section > code, 
 	pre {
+		display: block;
+		white-space: pre-wrap;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
 		padding-left: 0.5rem;
 		background-color: #Fcf6e6;
-		font-size: 0.8em;
+		font-size: 0.8rem;
 		line-height: 1.5rem;
 	}
 	p > code {
-		font-size: 0.8em;
+		font-size: 0.8rem;
 		line-height: 1.5rem;
 		background-color: #F7EfDf;
 		padding-right: 0.3rem;
 		padding-left: 0.3rem;
 	}
-	kbd, /* User input */
 	kbd > kbd > samp { /* Computer generated user input (menus) */
 	}
-	kbd > kbd { /* Literal keypress input. */
+	p > kbd > kbd { /* Literal keypress input. */
+		border: 0.1em #C7C1A7 solid;
+	/*
+		border: 0.1em #999 solid;
+	*/
+	}
+	p > kbd > kbd {
+		background-color: #FFFFF0;
+		padding-right: 0.3rem;
+		padding-left: 0.3rem;
+		font-size: 0.8rem;
+	}
+	article > samp {
+		color: #999;
+	}
+	article > samp > kbd > kbd {
+		font-weight: bold;
 	}
 	kbd > samp { /* Computer generated user input */
 	}
-	samp { /* Computer output */
+	p > samp { /* Computer output */
+		color:#FFFFF0;
+		background-color: #C7C1A7;
+		font-size: 0.8rem;
+		padding-right: 0.3rem;
+		padding-left: 0.3rem;
+	}
+	p > kbd { /* User input */
+		background-color: #Fcf6e6;
+		line-height: 1.5rem;
+		font-size: 0.8rem;
+		padding-right: 0.3rem;
+		padding-left: 0.3rem;
+	}
+	kbd.usr:before {
+		content: "%\00a0";
+	}
+	kbd.su:before {
+		content: "#\00a0";
 	}
 	samp > kbd { /* Computer echoed user input (shell commands) */
+		color:#000;
 	}
 }
 @media screen, tv, projection {
@@ -133,7 +171,7 @@
 		background-color: #FFFFF0;
 		color: #333;
 	}
-	p + p {
+	p + * {
 		margin-top: 1.5em;
 	}
 	a {
