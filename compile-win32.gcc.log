@@ -1,0 +1,1850 @@
+In file included from journal.c:21:
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:37: error: syntax error before "off_t"
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:38: error: syntax error before "off_t"
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h: In function `ftruncate':
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: `__fd' undeclared (first use in this function)
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: (Each undeclared identifier is reported only once
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: for each function it appears in.)
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: `__length' undeclared (first use in this function)
+In file included from cmd_build.c:16:
+sha.h:63:23: sys/cdefs.h: No such file or directory
+In file included from cmd_build.c:16:
+sha.h:74: error: syntax error before "u_int32_t"
+sha.h:74: warning: no semicolon at end of struct or union
+sha.h:75: warning: data definition has no type or storage class
+sha.h:76: error: syntax error before "data"
+sha.h:76: warning: data definition has no type or storage class
+sha.h:78: error: syntax error before '}' token
+sha.h:78: warning: data definition has no type or storage class
+sha.h:82: error: syntax error before "void"
+sha.h:82: error: syntax error before '*' token
+sha.h:83: error: syntax error before '*' token
+sha.h:84: error: syntax error before "SHA_CTX"
+sha.h:85: error: syntax error before '*' token
+sha.h:87: error: syntax error before "off_t"
+sha.h:89: error: syntax error before '*' token
+sha.h:90: error: syntax error before '*' token
+sha.h:91: error: syntax error before "SHA_CTX"
+sha.h:92: error: syntax error before '*' token
+sha.h:94: error: syntax error before "off_t"
+In file included from cmd_build.c:17:
+frozen.h:25: error: syntax error before "struct"
+In file included from cmd_init.c:14:
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:37: error: syntax error before "off_t"
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:38: error: syntax error before "off_t"
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h: In function `ftruncate':
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: `__fd' undeclared (first use in this function)
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: (Each undeclared identifier is reported only once
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: for each function it appears in.)
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: `__length' undeclared (first use in this function)
+In file included from cmd_new.c:15:
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:37: error: syntax error before "off_t"
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:38: error: syntax error before "off_t"
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h: In function `ftruncate':
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: `__fd' undeclared (first use in this function)
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: (Each undeclared identifier is reported only once
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: for each function it appears in.)
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: `__length' undeclared (first use in this function)
+sha1c.c:59:23: sys/cdefs.h: No such file or directory
+sha1c.c:60: error: syntax error before string constant
+sha1c.c:60: warning: data definition has no type or storage class
+sha1c.c:70:28: machine/endian.h: No such file or directory
+In file included from sha1c.c:74:
+sha.h:74: error: syntax error before "u_int32_t"
+sha.h:74: warning: no semicolon at end of struct or union
+sha.h:75: warning: data definition has no type or storage class
+sha.h:76: error: syntax error before "data"
+sha.h:76: warning: data definition has no type or storage class
+sha.h:78: error: syntax error before '}' token
+sha.h:78: warning: data definition has no type or storage class
+sha.h:82: error: syntax error before "void"
+sha.h:82: error: syntax error before '*' token
+sha.h:83: error: syntax error before '*' token
+sha.h:84: error: syntax error before "SHA_CTX"
+sha.h:85: error: syntax error before '*' token
+sha.h:87: error: syntax error before "off_t"
+sha.h:89: error: syntax error before '*' token
+sha.h:90: error: syntax error before '*' token
+sha.h:91: error: syntax error before "SHA_CTX"
+sha.h:92: error: syntax error before '*' token
+sha.h:94: error: syntax error before "off_t"
+sha1c.c:85: error: syntax error before "char"
+sha1c.c:106: error: syntax error before '*' token
+sha1c.c:133: error: syntax error before "SHA_CTX"
+sha1c.c:133: warning: data definition has no type or storage class
+sha1c.c:134: error: syntax error before '{' token
+sha1c.c:147: error: syntax error before "SHA_CTX"
+sha1c.c:147: warning: data definition has no type or storage class
+sha1c.c:150: error: syntax error before '{' token
+sha1c.c:153: error: syntax error before "l"
+sha1c.c:153: warning: data definition has no type or storage class
+sha1c.c:154: error: conflicting types for 'data'
+sha.h:76: error: previous declaration of 'data' was here
+sha1c.c:154: error: initializer element is not constant
+sha1c.c:156: error: syntax error before "if"
+sha1c.c:158: error: request for member `Nl' in something not a structure or union
+sha1c.c:158: warning: data definition has no type or storage class
+sha1c.c:159: error: syntax error before "if"
+sha1c.c:167: error: request for member `num' in something not a structure or union
+sha1c.c:167: warning: data definition has no type or storage class
+sha1c.c:168: error: request for member `num' in something not a structure or union
+sha1c.c:168: warning: data definition has no type or storage class
+sha1c.c:170: error: syntax error before "if"
+sha1c.c:174: error: variable-size type declared outside of any function
+sha1c.c:174: error: variable-sized object may not be initialized
+sha1c.c:174: warning: data definition has no type or storage class
+sha1c.c:175: error: syntax error before "for"
+sha1c.c:178: error: variable-size type declared outside of any function
+sha1c.c:178: error: variable-sized object may not be initialized
+sha1c.c:178: warning: data definition has no type or storage class
+sha1c.c:179: error: syntax error before '}' token
+sha1c.c:182: error: syntax error before numeric constant
+sha1c.c:182: error: conflicting types for 'sha1_block'
+sha1c.c:106: error: previous declaration of 'sha1_block' was here
+sha1c.c:182: error: conflicting types for 'sha1_block'
+sha1c.c:106: error: previous declaration of 'sha1_block' was here
+sha1c.c:182: warning: data definition has no type or storage class
+sha1c.c:183: error: syntax error before '->' token
+sha1c.c:193: error: variable-size type declared outside of any function
+sha1c.c:193: error: variable-sized object may not be initialized
+sha1c.c:193: warning: data definition has no type or storage class
+sha1c.c:194: error: syntax error before '}' token
+sha1c.c:198: error: request for member `num' in something not a structure or union
+sha1c.c:198: warning: data definition has no type or storage class
+sha1c.c:199: error: redefinition of 'l'
+sha1c.c:158: error: previous definition of 'l' was here
+sha1c.c:199: error: initializer element is not constant
+sha1c.c:199: warning: data definition has no type or storage class
+sha1c.c:200: error: syntax error before '{' token
+sha1c.c:201: error: variable-size type declared outside of any function
+sha1c.c:201: error: variable-sized object may not be initialized
+sha1c.c:201: warning: data definition has no type or storage class
+sha1c.c:202: error: syntax error before "for"
+sha1c.c:203: error: variable-size type declared outside of any function
+sha1c.c:203: error: variable-sized object may not be initialized
+sha1c.c:203: warning: data definition has no type or storage class
+sha1c.c:203: error: syntax error before '}' token
+sha1c.c:206: error: syntax error before '+=' token
+sha1c.c:207: error: variable-size type declared outside of any function
+sha1c.c:207: error: variable-sized object may not be initialized
+sha1c.c:207: warning: data definition has no type or storage class
+sha1c.c:208: error: syntax error before '}' token
+sha1c.c:227: error: syntax error before '(' token
+sha1c.c:227: error: conflicting types for 'data'
+sha1c.c:154: error: previous definition of 'data' was here
+sha1c.c:227: error: conflicting types for 'data'
+sha1c.c:154: error: previous definition of 'data' was here
+sha1c.c:227: error: syntax error before ')' token
+sha1c.c:236: error: conflicting types for 'p'
+sha1c.c:207: error: previous declaration of 'p' was here
+sha1c.c:236: error: request for member `data' in something not a structure or union
+sha1c.c:236: warning: data definition has no type or storage class
+sha1c.c:237: error: syntax error before "while"
+sha1c.c:245: warning: data definition has no type or storage class
+sha1c.c:245: error: syntax error before '--' token
+sha1c.c:247: error: conflicting types for 'p'
+sha1c.c:236: error: previous definition of 'p' was here
+sha1c.c:247: error: conflicting types for 'p'
+sha1c.c:236: error: previous definition of 'p' was here
+sha1c.c:247: error: invalid initializer
+sha1c.c:247: warning: data definition has no type or storage class
+sha1c.c:247: error: syntax error before '}' token
+sha1c.c:248: error: conflicting types for 'p'
+sha1c.c:247: error: previous definition of 'p' was here
+sha1c.c:248: error: conflicting types for 'p'
+sha1c.c:236: error: previous definition of 'p' was here
+sha1c.c:248: error: invalid initializer
+sha1c.c:248: warning: data definition has no type or storage class
+sha1c.c:248: error: syntax error before '}' token
+sha1c.c:249: error: conflicting types for 'p'
+sha1c.c:248: error: previous definition of 'p' was here
+sha1c.c:249: error: conflicting types for 'p'
+sha1c.c:236: error: previous definition of 'p' was here
+sha1c.c:249: error: invalid initializer
+sha1c.c:249: warning: data definition has no type or storage class
+sha1c.c:249: error: syntax error before '}' token
+sha1c.c:250: error: conflicting types for 'p'
+sha1c.c:249: error: previous definition of 'p' was here
+sha1c.c:250: error: conflicting types for 'p'
+sha1c.c:236: error: previous definition of 'p' was here
+sha1c.c:250: error: invalid initializer
+sha1c.c:250: warning: data definition has no type or storage class
+sha1c.c:250: error: syntax error before '}' token
+sha1c.c:251: error: syntax error before '+=' token
+sha1c.c:253: error: conflicting types for 'p'
+sha1c.c:250: error: previous definition of 'p' was here
+sha1c.c:253: error: redefinition of 'p'
+sha1c.c:236: error: previous definition of 'p' was here
+sha1c.c:253: error: request for member `data' in something not a structure or union
+sha1c.c:253: warning: data definition has no type or storage class
+sha1c.c:266: error: syntax error before numeric constant
+sha1c.c:266: warning: data definition has no type or storage class
+sha1c.c:267: error: syntax error before '-=' token
+sha1c.c:269: error: redefinition of 'ec'
+sha1c.c:198: error: previous definition of 'ec' was here
+sha1c.c:269: error: initializer element is not constant
+sha1c.c:269: warning: data definition has no type or storage class
+sha1c.c:270: error: syntax error before '->' token
+sha1c.c:271: error: initializer element is not constant
+sha1c.c:271: warning: data definition has no type or storage class
+sha1c.c:272: error: syntax error before '&=' token
+sha1c.c:275: error: variable-size type declared outside of any function
+sha1c.c:275: error: variable-sized object may not be initialized
+sha1c.c:275: error: conflicting types for 'p'
+sha1c.c:253: error: previous definition of 'p' was here
+sha1c.c:275: error: conflicting types for 'p'
+sha1c.c:236: error: previous definition of 'p' was here
+sha1c.c:275: warning: data definition has no type or storage class
+sha1c.c:275: error: syntax error before '}' token
+sha1c.c:276: error: syntax error before '+=' token
+sha1c.c:277: error: variable-size type declared outside of any function
+sha1c.c:277: error: variable-sized object may not be initialized
+sha1c.c:277: warning: data definition has no type or storage class
+sha1c.c:278: error: syntax error before '}' token
+sha1c.c:281: error: syntax error before "SHA_CTX"
+sha1c.c:281: warning: data definition has no type or storage class
+sha1c.c:283: error: syntax error before '{' token
+sha1c.c:291: error: syntax error before numeric constant
+sha1c.c:291: error: conflicting types for 'memcpy'
+sha1c.c:291: error: conflicting types for 'memcpy'
+sha1c.c:291: warning: data definition has no type or storage class
+sha1c.c:293: warning: initialization makes integer from pointer without a cast
+sha1c.c:293: warning: data definition has no type or storage class
+sha1c.c:294: error: syntax error before "for"
+sha1c.c:294: warning: data definition has no type or storage class
+sha1c.c:294: error: syntax error before '--' token
+sha1c.c:296: error: conflicting types for 'q'
+sha1c.c:293: error: previous definition of 'q' was here
+sha1c.c:296: error: invalid initializer
+sha1c.c:296: warning: data definition has no type or storage class
+sha1c.c:296: error: syntax error before '}' token
+sha1c.c:297: error: conflicting types for 'q'
+sha1c.c:296: error: previous definition of 'q' was here
+sha1c.c:297: error: conflicting types for 'q'
+sha1c.c:296: error: previous definition of 'q' was here
+sha1c.c:297: error: invalid initializer
+sha1c.c:297: warning: data definition has no type or storage class
+sha1c.c:297: error: syntax error before '}' token
+sha1c.c:298: error: conflicting types for 'q'
+sha1c.c:297: error: previous definition of 'q' was here
+sha1c.c:298: error: conflicting types for 'q'
+sha1c.c:296: error: previous definition of 'q' was here
+sha1c.c:298: error: invalid initializer
+sha1c.c:298: warning: data definition has no type or storage class
+sha1c.c:298: error: syntax error before '}' token
+sha1c.c:299: error: conflicting types for 'q'
+sha1c.c:298: error: previous definition of 'q' was here
+sha1c.c:299: error: conflicting types for 'q'
+sha1c.c:296: error: previous definition of 'q' was here
+sha1c.c:299: error: invalid initializer
+sha1c.c:299: warning: data definition has no type or storage class
+sha1c.c:299: error: syntax error before '}' token
+sha1c.c:300: error: syntax error before '+=' token
+sha1c.c:314: error: syntax error before numeric constant
+sha1c.c:314: warning: data definition has no type or storage class
+sha1c.c:321: error: syntax error before "SHA_CTX"
+sha1c.c:321: warning: data definition has no type or storage class
+sha1c.c:322: error: syntax error before '*' token
+sha1c.c:322: warning: data definition has no type or storage class
+sha1c.c:324: error: syntax error before '{' token
+sha1c.c:326: warning: data definition has no type or storage class
+sha1c.c:328: error: request for member `h0' in something not a structure or union
+sha1c.c:328: warning: data definition has no type or storage class
+sha1c.c:329: error: request for member `h1' in something not a structure or union
+sha1c.c:329: warning: data definition has no type or storage class
+sha1c.c:330: error: request for member `h2' in something not a structure or union
+sha1c.c:330: warning: data definition has no type or storage class
+sha1c.c:331: error: request for member `h3' in something not a structure or union
+sha1c.c:331: warning: data definition has no type or storage class
+sha1c.c:332: error: request for member `h4' in something not a structure or union
+sha1c.c:332: warning: data definition has no type or storage class
+sha1c.c:334: error: syntax error before "for"
+sha1c.c:336: error: redefinition of 'B'
+sha1c.c:329: error: previous definition of 'B' was here
+sha1c.c:336: error: initializer element is not constant
+sha1c.c:336: warning: data definition has no type or storage class
+sha1c.c:337: error: redefinition of 'E'
+sha1c.c:332: error: previous definition of 'E' was here
+sha1c.c:337: error: `T' undeclared here (not in a function)
+sha1c.c:337: error: initializer element is not constant
+sha1c.c:337: warning: data definition has no type or storage class
+sha1c.c:337: error: redefinition of 'A'
+sha1c.c:328: error: previous definition of 'A' was here
+sha1c.c:337: error: initializer element is not constant
+sha1c.c:337: warning: data definition has no type or storage class
+sha1c.c:338: error: redefinition of 'D'
+sha1c.c:331: error: previous definition of 'D' was here
+sha1c.c:338: warning: data definition has no type or storage class
+sha1c.c:338: error: initializer element is not constant
+sha1c.c:338: warning: data definition has no type or storage class
+sha1c.c:339: error: redefinition of 'C'
+sha1c.c:330: error: previous definition of 'C' was here
+sha1c.c:339: error: initializer element is not constant
+sha1c.c:339: warning: data definition has no type or storage class
+sha1c.c:339: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:339: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:339: error: initializer element is not constant
+sha1c.c:339: warning: data definition has no type or storage class
+sha1c.c:340: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:340: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:340: error: initializer element is not constant
+sha1c.c:340: warning: data definition has no type or storage class
+sha1c.c:340: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:340: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:340: error: initializer element is not constant
+sha1c.c:340: warning: data definition has no type or storage class
+sha1c.c:341: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:341: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:341: error: initializer element is not constant
+sha1c.c:341: warning: data definition has no type or storage class
+sha1c.c:341: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:341: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:341: error: initializer element is not constant
+sha1c.c:341: warning: data definition has no type or storage class
+sha1c.c:342: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:342: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:342: error: initializer element is not constant
+sha1c.c:342: warning: data definition has no type or storage class
+sha1c.c:342: error: redefinition of 'B'
+sha1c.c:340: error: previous definition of 'B' was here
+sha1c.c:342: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:342: error: initializer element is not constant
+sha1c.c:342: warning: data definition has no type or storage class
+sha1c.c:343: error: redefinition of 'E'
+sha1c.c:339: error: previous definition of 'E' was here
+sha1c.c:343: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:343: error: initializer element is not constant
+sha1c.c:343: warning: data definition has no type or storage class
+sha1c.c:343: error: redefinition of 'A'
+sha1c.c:341: error: previous definition of 'A' was here
+sha1c.c:343: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:343: error: initializer element is not constant
+sha1c.c:343: warning: data definition has no type or storage class
+sha1c.c:344: error: redefinition of 'D'
+sha1c.c:340: error: previous definition of 'D' was here
+sha1c.c:344: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:344: error: initializer element is not constant
+sha1c.c:344: warning: data definition has no type or storage class
+sha1c.c:344: error: redefinition of 'T'
+sha1c.c:342: error: previous definition of 'T' was here
+sha1c.c:344: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:344: error: initializer element is not constant
+sha1c.c:344: warning: data definition has no type or storage class
+sha1c.c:345: error: redefinition of 'C'
+sha1c.c:341: error: previous definition of 'C' was here
+sha1c.c:345: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:345: error: initializer element is not constant
+sha1c.c:345: warning: data definition has no type or storage class
+sha1c.c:345: error: redefinition of 'E'
+sha1c.c:343: error: previous definition of 'E' was here
+sha1c.c:345: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:345: error: initializer element is not constant
+sha1c.c:345: warning: data definition has no type or storage class
+sha1c.c:346: error: redefinition of 'B'
+sha1c.c:342: error: previous definition of 'B' was here
+sha1c.c:346: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:346: error: initializer element is not constant
+sha1c.c:346: warning: data definition has no type or storage class
+sha1c.c:346: error: redefinition of 'D'
+sha1c.c:344: error: previous definition of 'D' was here
+sha1c.c:346: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:346: error: initializer element is not constant
+sha1c.c:346: warning: data definition has no type or storage class
+sha1c.c:347: error: redefinition of 'A'
+sha1c.c:343: error: previous definition of 'A' was here
+sha1c.c:347: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:347: error: initializer element is not constant
+sha1c.c:347: warning: data definition has no type or storage class
+sha1c.c:347: error: redefinition of 'C'
+sha1c.c:345: error: previous definition of 'C' was here
+sha1c.c:347: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:347: error: initializer element is not constant
+sha1c.c:347: warning: data definition has no type or storage class
+sha1c.c:348: error: redefinition of 'T'
+sha1c.c:344: error: previous definition of 'T' was here
+sha1c.c:348: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:348: error: initializer element is not constant
+sha1c.c:348: warning: data definition has no type or storage class
+sha1c.c:348: error: redefinition of 'B'
+sha1c.c:346: error: previous definition of 'B' was here
+sha1c.c:348: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:348: error: initializer element is not constant
+sha1c.c:348: warning: data definition has no type or storage class
+sha1c.c:349: error: redefinition of 'E'
+sha1c.c:345: error: previous definition of 'E' was here
+sha1c.c:349: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:349: error: initializer element is not constant
+sha1c.c:349: warning: data definition has no type or storage class
+sha1c.c:349: error: redefinition of 'A'
+sha1c.c:347: error: previous definition of 'A' was here
+sha1c.c:349: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:349: error: initializer element is not constant
+sha1c.c:349: warning: data definition has no type or storage class
+sha1c.c:350: error: redefinition of 'D'
+sha1c.c:346: error: previous definition of 'D' was here
+sha1c.c:350: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:350: error: initializer element is not constant
+sha1c.c:350: warning: data definition has no type or storage class
+sha1c.c:350: error: redefinition of 'T'
+sha1c.c:348: error: previous definition of 'T' was here
+sha1c.c:350: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:350: error: initializer element is not constant
+sha1c.c:350: warning: data definition has no type or storage class
+sha1c.c:351: error: redefinition of 'C'
+sha1c.c:347: error: previous definition of 'C' was here
+sha1c.c:351: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:351: error: initializer element is not constant
+sha1c.c:351: warning: data definition has no type or storage class
+sha1c.c:351: error: redefinition of 'E'
+sha1c.c:349: error: previous definition of 'E' was here
+sha1c.c:351: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:351: error: initializer element is not constant
+sha1c.c:351: warning: data definition has no type or storage class
+sha1c.c:352: error: redefinition of 'B'
+sha1c.c:348: error: previous definition of 'B' was here
+sha1c.c:352: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:352: error: initializer element is not constant
+sha1c.c:352: warning: data definition has no type or storage class
+sha1c.c:352: error: conflicting types for 'X'
+sha1c.c:326: error: previous declaration of 'X' was here
+sha1c.c:352: error: invalid initializer
+sha1c.c:352: warning: data definition has no type or storage class
+sha1c.c:352: error: syntax error before '+=' token
+sha1c.c:352: error: redefinition of 'D'
+sha1c.c:350: error: previous definition of 'D' was here
+sha1c.c:352: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:352: error: initializer element is not constant
+sha1c.c:352: warning: data definition has no type or storage class
+sha1c.c:353: error: redefinition of 'A'
+sha1c.c:349: error: previous definition of 'A' was here
+sha1c.c:353: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:353: error: initializer element is not constant
+sha1c.c:353: warning: data definition has no type or storage class
+sha1c.c:353: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:353: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:353: error: invalid initializer
+sha1c.c:353: warning: data definition has no type or storage class
+sha1c.c:353: error: syntax error before '+=' token
+sha1c.c:353: error: redefinition of 'C'
+sha1c.c:351: error: previous definition of 'C' was here
+sha1c.c:353: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:353: error: initializer element is not constant
+sha1c.c:353: warning: data definition has no type or storage class
+sha1c.c:354: error: redefinition of 'T'
+sha1c.c:350: error: previous definition of 'T' was here
+sha1c.c:354: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:354: error: initializer element is not constant
+sha1c.c:354: warning: data definition has no type or storage class
+sha1c.c:354: error: conflicting types for 'X'
+sha1c.c:353: error: previous definition of 'X' was here
+sha1c.c:354: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:354: error: invalid initializer
+sha1c.c:354: warning: data definition has no type or storage class
+sha1c.c:354: error: syntax error before '+=' token
+sha1c.c:354: error: redefinition of 'B'
+sha1c.c:352: error: previous definition of 'B' was here
+sha1c.c:354: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:354: error: initializer element is not constant
+sha1c.c:354: warning: data definition has no type or storage class
+sha1c.c:355: error: redefinition of 'E'
+sha1c.c:351: error: previous definition of 'E' was here
+sha1c.c:355: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:355: error: initializer element is not constant
+sha1c.c:355: warning: data definition has no type or storage class
+sha1c.c:355: error: conflicting types for 'X'
+sha1c.c:354: error: previous definition of 'X' was here
+sha1c.c:355: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:355: error: invalid initializer
+sha1c.c:355: warning: data definition has no type or storage class
+sha1c.c:355: error: syntax error before '+=' token
+sha1c.c:355: error: redefinition of 'A'
+sha1c.c:353: error: previous definition of 'A' was here
+sha1c.c:355: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:355: error: initializer element is not constant
+sha1c.c:355: warning: data definition has no type or storage class
+sha1c.c:357: error: redefinition of 'D'
+sha1c.c:352: error: previous definition of 'D' was here
+sha1c.c:357: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:357: error: initializer element is not constant
+sha1c.c:357: warning: data definition has no type or storage class
+sha1c.c:357: error: conflicting types for 'X'
+sha1c.c:355: error: previous definition of 'X' was here
+sha1c.c:357: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:357: error: invalid initializer
+sha1c.c:357: warning: data definition has no type or storage class
+sha1c.c:357: error: syntax error before '+=' token
+sha1c.c:357: error: redefinition of 'T'
+sha1c.c:354: error: previous definition of 'T' was here
+sha1c.c:357: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:357: error: initializer element is not constant
+sha1c.c:357: warning: data definition has no type or storage class
+sha1c.c:358: error: redefinition of 'C'
+sha1c.c:353: error: previous definition of 'C' was here
+sha1c.c:358: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:358: error: initializer element is not constant
+sha1c.c:358: warning: data definition has no type or storage class
+sha1c.c:358: error: conflicting types for 'X'
+sha1c.c:357: error: previous definition of 'X' was here
+sha1c.c:358: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:358: error: invalid initializer
+sha1c.c:358: warning: data definition has no type or storage class
+sha1c.c:358: error: syntax error before '+=' token
+sha1c.c:358: error: redefinition of 'E'
+sha1c.c:355: error: previous definition of 'E' was here
+sha1c.c:358: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:358: error: initializer element is not constant
+sha1c.c:358: warning: data definition has no type or storage class
+sha1c.c:359: error: redefinition of 'B'
+sha1c.c:354: error: previous definition of 'B' was here
+sha1c.c:359: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:359: error: initializer element is not constant
+sha1c.c:359: warning: data definition has no type or storage class
+sha1c.c:359: error: conflicting types for 'X'
+sha1c.c:358: error: previous definition of 'X' was here
+sha1c.c:359: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:359: error: invalid initializer
+sha1c.c:359: warning: data definition has no type or storage class
+sha1c.c:359: error: syntax error before '+=' token
+sha1c.c:359: error: redefinition of 'D'
+sha1c.c:357: error: previous definition of 'D' was here
+sha1c.c:359: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:359: error: initializer element is not constant
+sha1c.c:359: warning: data definition has no type or storage class
+sha1c.c:360: error: redefinition of 'A'
+sha1c.c:355: error: previous definition of 'A' was here
+sha1c.c:360: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:360: error: initializer element is not constant
+sha1c.c:360: warning: data definition has no type or storage class
+sha1c.c:360: error: conflicting types for 'X'
+sha1c.c:359: error: previous definition of 'X' was here
+sha1c.c:360: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:360: error: invalid initializer
+sha1c.c:360: warning: data definition has no type or storage class
+sha1c.c:360: error: syntax error before '+=' token
+sha1c.c:360: error: redefinition of 'C'
+sha1c.c:358: error: previous definition of 'C' was here
+sha1c.c:360: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:360: error: initializer element is not constant
+sha1c.c:360: warning: data definition has no type or storage class
+sha1c.c:361: error: redefinition of 'T'
+sha1c.c:357: error: previous definition of 'T' was here
+sha1c.c:361: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:361: error: initializer element is not constant
+sha1c.c:361: warning: data definition has no type or storage class
+sha1c.c:361: error: conflicting types for 'X'
+sha1c.c:360: error: previous definition of 'X' was here
+sha1c.c:361: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:361: error: invalid initializer
+sha1c.c:361: warning: data definition has no type or storage class
+sha1c.c:361: error: syntax error before '+=' token
+sha1c.c:361: error: redefinition of 'B'
+sha1c.c:359: error: previous definition of 'B' was here
+sha1c.c:361: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:361: error: initializer element is not constant
+sha1c.c:361: warning: data definition has no type or storage class
+sha1c.c:362: error: redefinition of 'E'
+sha1c.c:358: error: previous definition of 'E' was here
+sha1c.c:362: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:362: error: initializer element is not constant
+sha1c.c:362: warning: data definition has no type or storage class
+sha1c.c:362: error: conflicting types for 'X'
+sha1c.c:361: error: previous definition of 'X' was here
+sha1c.c:362: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:362: error: invalid initializer
+sha1c.c:362: warning: data definition has no type or storage class
+sha1c.c:362: error: syntax error before '+=' token
+sha1c.c:362: error: redefinition of 'A'
+sha1c.c:360: error: previous definition of 'A' was here
+sha1c.c:362: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:362: error: initializer element is not constant
+sha1c.c:362: warning: data definition has no type or storage class
+sha1c.c:363: error: redefinition of 'D'
+sha1c.c:359: error: previous definition of 'D' was here
+sha1c.c:363: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:363: error: initializer element is not constant
+sha1c.c:363: warning: data definition has no type or storage class
+sha1c.c:363: error: conflicting types for 'X'
+sha1c.c:362: error: previous definition of 'X' was here
+sha1c.c:363: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:363: error: invalid initializer
+sha1c.c:363: warning: data definition has no type or storage class
+sha1c.c:363: error: syntax error before '+=' token
+sha1c.c:363: error: redefinition of 'T'
+sha1c.c:361: error: previous definition of 'T' was here
+sha1c.c:363: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:363: error: initializer element is not constant
+sha1c.c:363: warning: data definition has no type or storage class
+sha1c.c:364: error: redefinition of 'C'
+sha1c.c:360: error: previous definition of 'C' was here
+sha1c.c:364: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:364: error: initializer element is not constant
+sha1c.c:364: warning: data definition has no type or storage class
+sha1c.c:364: error: conflicting types for 'X'
+sha1c.c:363: error: previous definition of 'X' was here
+sha1c.c:364: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:364: error: invalid initializer
+sha1c.c:364: warning: data definition has no type or storage class
+sha1c.c:364: error: syntax error before '+=' token
+sha1c.c:364: error: redefinition of 'E'
+sha1c.c:362: error: previous definition of 'E' was here
+sha1c.c:364: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:364: error: initializer element is not constant
+sha1c.c:364: warning: data definition has no type or storage class
+sha1c.c:365: error: redefinition of 'B'
+sha1c.c:361: error: previous definition of 'B' was here
+sha1c.c:365: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:365: error: initializer element is not constant
+sha1c.c:365: warning: data definition has no type or storage class
+sha1c.c:365: error: conflicting types for 'X'
+sha1c.c:364: error: previous definition of 'X' was here
+sha1c.c:365: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:365: error: invalid initializer
+sha1c.c:365: warning: data definition has no type or storage class
+sha1c.c:365: error: syntax error before '+=' token
+sha1c.c:365: error: redefinition of 'D'
+sha1c.c:363: error: previous definition of 'D' was here
+sha1c.c:365: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:365: error: initializer element is not constant
+sha1c.c:365: warning: data definition has no type or storage class
+sha1c.c:366: error: redefinition of 'A'
+sha1c.c:362: error: previous definition of 'A' was here
+sha1c.c:366: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:366: error: initializer element is not constant
+sha1c.c:366: warning: data definition has no type or storage class
+sha1c.c:366: error: conflicting types for 'X'
+sha1c.c:365: error: previous definition of 'X' was here
+sha1c.c:366: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:366: error: invalid initializer
+sha1c.c:366: warning: data definition has no type or storage class
+sha1c.c:366: error: syntax error before '+=' token
+sha1c.c:366: error: redefinition of 'C'
+sha1c.c:364: error: previous definition of 'C' was here
+sha1c.c:366: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:366: error: initializer element is not constant
+sha1c.c:366: warning: data definition has no type or storage class
+sha1c.c:367: error: redefinition of 'T'
+sha1c.c:363: error: previous definition of 'T' was here
+sha1c.c:367: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:367: error: initializer element is not constant
+sha1c.c:367: warning: data definition has no type or storage class
+sha1c.c:367: error: conflicting types for 'X'
+sha1c.c:366: error: previous definition of 'X' was here
+sha1c.c:367: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:367: error: invalid initializer
+sha1c.c:367: warning: data definition has no type or storage class
+sha1c.c:367: error: syntax error before '+=' token
+sha1c.c:367: error: redefinition of 'B'
+sha1c.c:365: error: previous definition of 'B' was here
+sha1c.c:367: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:367: error: initializer element is not constant
+sha1c.c:367: warning: data definition has no type or storage class
+sha1c.c:368: error: redefinition of 'E'
+sha1c.c:364: error: previous definition of 'E' was here
+sha1c.c:368: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:368: error: initializer element is not constant
+sha1c.c:368: warning: data definition has no type or storage class
+sha1c.c:368: error: conflicting types for 'X'
+sha1c.c:367: error: previous definition of 'X' was here
+sha1c.c:368: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:368: error: invalid initializer
+sha1c.c:368: warning: data definition has no type or storage class
+sha1c.c:368: error: syntax error before '+=' token
+sha1c.c:368: error: redefinition of 'A'
+sha1c.c:366: error: previous definition of 'A' was here
+sha1c.c:368: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:368: error: initializer element is not constant
+sha1c.c:368: warning: data definition has no type or storage class
+sha1c.c:369: error: redefinition of 'D'
+sha1c.c:365: error: previous definition of 'D' was here
+sha1c.c:369: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:369: error: initializer element is not constant
+sha1c.c:369: warning: data definition has no type or storage class
+sha1c.c:369: error: conflicting types for 'X'
+sha1c.c:368: error: previous definition of 'X' was here
+sha1c.c:369: error: redefinition of 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:369: error: invalid initializer
+sha1c.c:369: warning: data definition has no type or storage class
+sha1c.c:369: error: syntax error before '+=' token
+sha1c.c:369: error: redefinition of 'T'
+sha1c.c:367: error: previous definition of 'T' was here
+sha1c.c:369: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:369: error: initializer element is not constant
+sha1c.c:369: warning: data definition has no type or storage class
+sha1c.c:370: error: redefinition of 'C'
+sha1c.c:366: error: previous definition of 'C' was here
+sha1c.c:370: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:370: error: initializer element is not constant
+sha1c.c:370: warning: data definition has no type or storage class
+sha1c.c:370: error: conflicting types for 'X'
+sha1c.c:369: error: previous definition of 'X' was here
+sha1c.c:370: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:370: error: invalid initializer
+sha1c.c:370: warning: data definition has no type or storage class
+sha1c.c:370: error: syntax error before '+=' token
+sha1c.c:370: error: redefinition of 'E'
+sha1c.c:368: error: previous definition of 'E' was here
+sha1c.c:370: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:370: error: initializer element is not constant
+sha1c.c:370: warning: data definition has no type or storage class
+sha1c.c:371: error: redefinition of 'B'
+sha1c.c:367: error: previous definition of 'B' was here
+sha1c.c:371: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:371: error: initializer element is not constant
+sha1c.c:371: warning: data definition has no type or storage class
+sha1c.c:371: error: conflicting types for 'X'
+sha1c.c:370: error: previous definition of 'X' was here
+sha1c.c:371: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:371: error: invalid initializer
+sha1c.c:371: warning: data definition has no type or storage class
+sha1c.c:371: error: syntax error before '+=' token
+sha1c.c:371: error: redefinition of 'D'
+sha1c.c:369: error: previous definition of 'D' was here
+sha1c.c:371: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:371: error: initializer element is not constant
+sha1c.c:371: warning: data definition has no type or storage class
+sha1c.c:372: error: redefinition of 'A'
+sha1c.c:368: error: previous definition of 'A' was here
+sha1c.c:372: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:372: error: initializer element is not constant
+sha1c.c:372: warning: data definition has no type or storage class
+sha1c.c:372: error: conflicting types for 'X'
+sha1c.c:371: error: previous definition of 'X' was here
+sha1c.c:372: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:372: error: invalid initializer
+sha1c.c:372: warning: data definition has no type or storage class
+sha1c.c:372: error: syntax error before '+=' token
+sha1c.c:372: error: redefinition of 'C'
+sha1c.c:370: error: previous definition of 'C' was here
+sha1c.c:372: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:372: error: initializer element is not constant
+sha1c.c:372: warning: data definition has no type or storage class
+sha1c.c:373: error: redefinition of 'T'
+sha1c.c:369: error: previous definition of 'T' was here
+sha1c.c:373: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:373: error: initializer element is not constant
+sha1c.c:373: warning: data definition has no type or storage class
+sha1c.c:373: error: conflicting types for 'X'
+sha1c.c:372: error: previous definition of 'X' was here
+sha1c.c:373: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:373: error: invalid initializer
+sha1c.c:373: warning: data definition has no type or storage class
+sha1c.c:373: error: syntax error before '+=' token
+sha1c.c:373: error: redefinition of 'B'
+sha1c.c:371: error: previous definition of 'B' was here
+sha1c.c:373: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:373: error: initializer element is not constant
+sha1c.c:373: warning: data definition has no type or storage class
+sha1c.c:374: error: redefinition of 'E'
+sha1c.c:370: error: previous definition of 'E' was here
+sha1c.c:374: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:374: error: initializer element is not constant
+sha1c.c:374: warning: data definition has no type or storage class
+sha1c.c:374: error: conflicting types for 'X'
+sha1c.c:373: error: previous definition of 'X' was here
+sha1c.c:374: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:374: error: invalid initializer
+sha1c.c:374: warning: data definition has no type or storage class
+sha1c.c:374: error: syntax error before '+=' token
+sha1c.c:374: error: redefinition of 'A'
+sha1c.c:372: error: previous definition of 'A' was here
+sha1c.c:374: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:374: error: initializer element is not constant
+sha1c.c:374: warning: data definition has no type or storage class
+sha1c.c:375: error: redefinition of 'D'
+sha1c.c:371: error: previous definition of 'D' was here
+sha1c.c:375: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:375: error: initializer element is not constant
+sha1c.c:375: warning: data definition has no type or storage class
+sha1c.c:375: error: conflicting types for 'X'
+sha1c.c:374: error: previous definition of 'X' was here
+sha1c.c:375: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:375: error: invalid initializer
+sha1c.c:375: warning: data definition has no type or storage class
+sha1c.c:375: error: syntax error before '+=' token
+sha1c.c:375: error: redefinition of 'T'
+sha1c.c:373: error: previous definition of 'T' was here
+sha1c.c:375: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:375: error: initializer element is not constant
+sha1c.c:375: warning: data definition has no type or storage class
+sha1c.c:376: error: redefinition of 'C'
+sha1c.c:372: error: previous definition of 'C' was here
+sha1c.c:376: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:376: error: initializer element is not constant
+sha1c.c:376: warning: data definition has no type or storage class
+sha1c.c:376: error: conflicting types for 'X'
+sha1c.c:375: error: previous definition of 'X' was here
+sha1c.c:376: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:376: error: invalid initializer
+sha1c.c:376: warning: data definition has no type or storage class
+sha1c.c:376: error: syntax error before '+=' token
+sha1c.c:376: error: redefinition of 'E'
+sha1c.c:374: error: previous definition of 'E' was here
+sha1c.c:376: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:376: error: initializer element is not constant
+sha1c.c:376: warning: data definition has no type or storage class
+sha1c.c:378: error: redefinition of 'B'
+sha1c.c:373: error: previous definition of 'B' was here
+sha1c.c:378: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:378: error: initializer element is not constant
+sha1c.c:378: warning: data definition has no type or storage class
+sha1c.c:378: error: conflicting types for 'X'
+sha1c.c:376: error: previous definition of 'X' was here
+sha1c.c:378: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:378: error: invalid initializer
+sha1c.c:378: warning: data definition has no type or storage class
+sha1c.c:378: error: syntax error before '+=' token
+sha1c.c:378: error: redefinition of 'D'
+sha1c.c:375: error: previous definition of 'D' was here
+sha1c.c:378: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:378: error: initializer element is not constant
+sha1c.c:378: warning: data definition has no type or storage class
+sha1c.c:379: error: redefinition of 'A'
+sha1c.c:374: error: previous definition of 'A' was here
+sha1c.c:379: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:379: error: initializer element is not constant
+sha1c.c:379: warning: data definition has no type or storage class
+sha1c.c:379: error: conflicting types for 'X'
+sha1c.c:378: error: previous definition of 'X' was here
+sha1c.c:379: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:379: error: invalid initializer
+sha1c.c:379: warning: data definition has no type or storage class
+sha1c.c:379: error: syntax error before '+=' token
+sha1c.c:379: error: redefinition of 'C'
+sha1c.c:376: error: previous definition of 'C' was here
+sha1c.c:379: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:379: error: initializer element is not constant
+sha1c.c:379: warning: data definition has no type or storage class
+sha1c.c:380: error: redefinition of 'T'
+sha1c.c:375: error: previous definition of 'T' was here
+sha1c.c:380: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:380: error: initializer element is not constant
+sha1c.c:380: warning: data definition has no type or storage class
+sha1c.c:380: error: conflicting types for 'X'
+sha1c.c:379: error: previous definition of 'X' was here
+sha1c.c:380: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:380: error: invalid initializer
+sha1c.c:380: warning: data definition has no type or storage class
+sha1c.c:380: error: syntax error before '+=' token
+sha1c.c:380: error: redefinition of 'B'
+sha1c.c:378: error: previous definition of 'B' was here
+sha1c.c:380: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:380: error: initializer element is not constant
+sha1c.c:380: warning: data definition has no type or storage class
+sha1c.c:381: error: redefinition of 'E'
+sha1c.c:376: error: previous definition of 'E' was here
+sha1c.c:381: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:381: error: initializer element is not constant
+sha1c.c:381: warning: data definition has no type or storage class
+sha1c.c:381: error: conflicting types for 'X'
+sha1c.c:380: error: previous definition of 'X' was here
+sha1c.c:381: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:381: error: invalid initializer
+sha1c.c:381: warning: data definition has no type or storage class
+sha1c.c:381: error: syntax error before '+=' token
+sha1c.c:381: error: redefinition of 'A'
+sha1c.c:379: error: previous definition of 'A' was here
+sha1c.c:381: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:381: error: initializer element is not constant
+sha1c.c:381: warning: data definition has no type or storage class
+sha1c.c:382: error: redefinition of 'D'
+sha1c.c:378: error: previous definition of 'D' was here
+sha1c.c:382: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:382: error: initializer element is not constant
+sha1c.c:382: warning: data definition has no type or storage class
+sha1c.c:382: error: conflicting types for 'X'
+sha1c.c:381: error: previous definition of 'X' was here
+sha1c.c:382: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:382: error: invalid initializer
+sha1c.c:382: warning: data definition has no type or storage class
+sha1c.c:382: error: syntax error before '+=' token
+sha1c.c:382: error: redefinition of 'T'
+sha1c.c:380: error: previous definition of 'T' was here
+sha1c.c:382: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:382: error: initializer element is not constant
+sha1c.c:382: warning: data definition has no type or storage class
+sha1c.c:383: error: redefinition of 'C'
+sha1c.c:379: error: previous definition of 'C' was here
+sha1c.c:383: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:383: error: initializer element is not constant
+sha1c.c:383: warning: data definition has no type or storage class
+sha1c.c:383: error: conflicting types for 'X'
+sha1c.c:382: error: previous definition of 'X' was here
+sha1c.c:383: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:383: error: invalid initializer
+sha1c.c:383: warning: data definition has no type or storage class
+sha1c.c:383: error: syntax error before '+=' token
+sha1c.c:383: error: redefinition of 'E'
+sha1c.c:381: error: previous definition of 'E' was here
+sha1c.c:383: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:383: error: initializer element is not constant
+sha1c.c:383: warning: data definition has no type or storage class
+sha1c.c:384: error: redefinition of 'B'
+sha1c.c:380: error: previous definition of 'B' was here
+sha1c.c:384: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:384: error: initializer element is not constant
+sha1c.c:384: warning: data definition has no type or storage class
+sha1c.c:384: error: conflicting types for 'X'
+sha1c.c:383: error: previous definition of 'X' was here
+sha1c.c:384: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:384: error: invalid initializer
+sha1c.c:384: warning: data definition has no type or storage class
+sha1c.c:384: error: syntax error before '+=' token
+sha1c.c:384: error: redefinition of 'D'
+sha1c.c:382: error: previous definition of 'D' was here
+sha1c.c:384: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:384: error: initializer element is not constant
+sha1c.c:384: warning: data definition has no type or storage class
+sha1c.c:385: error: redefinition of 'A'
+sha1c.c:381: error: previous definition of 'A' was here
+sha1c.c:385: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:385: error: initializer element is not constant
+sha1c.c:385: warning: data definition has no type or storage class
+sha1c.c:385: error: conflicting types for 'X'
+sha1c.c:384: error: previous definition of 'X' was here
+sha1c.c:385: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:385: error: invalid initializer
+sha1c.c:385: warning: data definition has no type or storage class
+sha1c.c:385: error: syntax error before '+=' token
+sha1c.c:385: error: redefinition of 'C'
+sha1c.c:383: error: previous definition of 'C' was here
+sha1c.c:385: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:385: error: initializer element is not constant
+sha1c.c:385: warning: data definition has no type or storage class
+sha1c.c:386: error: redefinition of 'T'
+sha1c.c:382: error: previous definition of 'T' was here
+sha1c.c:386: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:386: error: initializer element is not constant
+sha1c.c:386: warning: data definition has no type or storage class
+sha1c.c:386: error: conflicting types for 'X'
+sha1c.c:385: error: previous definition of 'X' was here
+sha1c.c:386: error: redefinition of 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:386: error: invalid initializer
+sha1c.c:386: warning: data definition has no type or storage class
+sha1c.c:386: error: syntax error before '+=' token
+sha1c.c:386: error: redefinition of 'B'
+sha1c.c:384: error: previous definition of 'B' was here
+sha1c.c:386: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:386: error: initializer element is not constant
+sha1c.c:386: warning: data definition has no type or storage class
+sha1c.c:387: error: redefinition of 'E'
+sha1c.c:383: error: previous definition of 'E' was here
+sha1c.c:387: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:387: error: initializer element is not constant
+sha1c.c:387: warning: data definition has no type or storage class
+sha1c.c:387: error: conflicting types for 'X'
+sha1c.c:386: error: previous definition of 'X' was here
+sha1c.c:387: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:387: error: invalid initializer
+sha1c.c:387: warning: data definition has no type or storage class
+sha1c.c:387: error: syntax error before '+=' token
+sha1c.c:387: error: redefinition of 'A'
+sha1c.c:385: error: previous definition of 'A' was here
+sha1c.c:387: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:387: error: initializer element is not constant
+sha1c.c:387: warning: data definition has no type or storage class
+sha1c.c:388: error: redefinition of 'D'
+sha1c.c:384: error: previous definition of 'D' was here
+sha1c.c:388: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:388: error: initializer element is not constant
+sha1c.c:388: warning: data definition has no type or storage class
+sha1c.c:388: error: conflicting types for 'X'
+sha1c.c:387: error: previous definition of 'X' was here
+sha1c.c:388: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:388: error: invalid initializer
+sha1c.c:388: warning: data definition has no type or storage class
+sha1c.c:388: error: syntax error before '+=' token
+sha1c.c:388: error: redefinition of 'T'
+sha1c.c:386: error: previous definition of 'T' was here
+sha1c.c:388: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:388: error: initializer element is not constant
+sha1c.c:388: warning: data definition has no type or storage class
+sha1c.c:389: error: redefinition of 'C'
+sha1c.c:385: error: previous definition of 'C' was here
+sha1c.c:389: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:389: error: initializer element is not constant
+sha1c.c:389: warning: data definition has no type or storage class
+sha1c.c:389: error: conflicting types for 'X'
+sha1c.c:388: error: previous definition of 'X' was here
+sha1c.c:389: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:389: error: invalid initializer
+sha1c.c:389: warning: data definition has no type or storage class
+sha1c.c:389: error: syntax error before '+=' token
+sha1c.c:389: error: redefinition of 'E'
+sha1c.c:387: error: previous definition of 'E' was here
+sha1c.c:389: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:389: error: initializer element is not constant
+sha1c.c:389: warning: data definition has no type or storage class
+sha1c.c:390: error: redefinition of 'B'
+sha1c.c:386: error: previous definition of 'B' was here
+sha1c.c:390: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:390: error: initializer element is not constant
+sha1c.c:390: warning: data definition has no type or storage class
+sha1c.c:390: error: conflicting types for 'X'
+sha1c.c:389: error: previous definition of 'X' was here
+sha1c.c:390: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:390: error: invalid initializer
+sha1c.c:390: warning: data definition has no type or storage class
+sha1c.c:390: error: syntax error before '+=' token
+sha1c.c:390: error: redefinition of 'D'
+sha1c.c:388: error: previous definition of 'D' was here
+sha1c.c:390: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:390: error: initializer element is not constant
+sha1c.c:390: warning: data definition has no type or storage class
+sha1c.c:391: error: redefinition of 'A'
+sha1c.c:387: error: previous definition of 'A' was here
+sha1c.c:391: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:391: error: initializer element is not constant
+sha1c.c:391: warning: data definition has no type or storage class
+sha1c.c:391: error: conflicting types for 'X'
+sha1c.c:390: error: previous definition of 'X' was here
+sha1c.c:391: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:391: error: invalid initializer
+sha1c.c:391: warning: data definition has no type or storage class
+sha1c.c:391: error: syntax error before '+=' token
+sha1c.c:391: error: redefinition of 'C'
+sha1c.c:389: error: previous definition of 'C' was here
+sha1c.c:391: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:391: error: initializer element is not constant
+sha1c.c:391: warning: data definition has no type or storage class
+sha1c.c:392: error: redefinition of 'T'
+sha1c.c:388: error: previous definition of 'T' was here
+sha1c.c:392: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:392: error: initializer element is not constant
+sha1c.c:392: warning: data definition has no type or storage class
+sha1c.c:392: error: conflicting types for 'X'
+sha1c.c:391: error: previous definition of 'X' was here
+sha1c.c:392: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:392: error: invalid initializer
+sha1c.c:392: warning: data definition has no type or storage class
+sha1c.c:392: error: syntax error before '+=' token
+sha1c.c:392: error: redefinition of 'B'
+sha1c.c:390: error: previous definition of 'B' was here
+sha1c.c:392: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:392: error: initializer element is not constant
+sha1c.c:392: warning: data definition has no type or storage class
+sha1c.c:393: error: redefinition of 'E'
+sha1c.c:389: error: previous definition of 'E' was here
+sha1c.c:393: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:393: error: initializer element is not constant
+sha1c.c:393: warning: data definition has no type or storage class
+sha1c.c:393: error: conflicting types for 'X'
+sha1c.c:392: error: previous definition of 'X' was here
+sha1c.c:393: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:393: error: invalid initializer
+sha1c.c:393: warning: data definition has no type or storage class
+sha1c.c:393: error: syntax error before '+=' token
+sha1c.c:393: error: redefinition of 'A'
+sha1c.c:391: error: previous definition of 'A' was here
+sha1c.c:393: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:393: error: initializer element is not constant
+sha1c.c:393: warning: data definition has no type or storage class
+sha1c.c:394: error: redefinition of 'D'
+sha1c.c:390: error: previous definition of 'D' was here
+sha1c.c:394: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:394: error: initializer element is not constant
+sha1c.c:394: warning: data definition has no type or storage class
+sha1c.c:394: error: conflicting types for 'X'
+sha1c.c:393: error: previous definition of 'X' was here
+sha1c.c:394: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:394: error: invalid initializer
+sha1c.c:394: warning: data definition has no type or storage class
+sha1c.c:394: error: syntax error before '+=' token
+sha1c.c:394: error: redefinition of 'T'
+sha1c.c:392: error: previous definition of 'T' was here
+sha1c.c:394: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:394: error: initializer element is not constant
+sha1c.c:394: warning: data definition has no type or storage class
+sha1c.c:395: error: redefinition of 'C'
+sha1c.c:391: error: previous definition of 'C' was here
+sha1c.c:395: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:395: error: initializer element is not constant
+sha1c.c:395: warning: data definition has no type or storage class
+sha1c.c:395: error: conflicting types for 'X'
+sha1c.c:394: error: previous definition of 'X' was here
+sha1c.c:395: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:395: error: invalid initializer
+sha1c.c:395: warning: data definition has no type or storage class
+sha1c.c:395: error: syntax error before '+=' token
+sha1c.c:395: error: redefinition of 'E'
+sha1c.c:393: error: previous definition of 'E' was here
+sha1c.c:395: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:395: error: initializer element is not constant
+sha1c.c:395: warning: data definition has no type or storage class
+sha1c.c:396: error: redefinition of 'B'
+sha1c.c:392: error: previous definition of 'B' was here
+sha1c.c:396: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:396: error: initializer element is not constant
+sha1c.c:396: warning: data definition has no type or storage class
+sha1c.c:396: error: conflicting types for 'X'
+sha1c.c:395: error: previous definition of 'X' was here
+sha1c.c:396: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:396: error: invalid initializer
+sha1c.c:396: warning: data definition has no type or storage class
+sha1c.c:396: error: syntax error before '+=' token
+sha1c.c:396: error: redefinition of 'D'
+sha1c.c:394: error: previous definition of 'D' was here
+sha1c.c:396: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:396: error: initializer element is not constant
+sha1c.c:396: warning: data definition has no type or storage class
+sha1c.c:397: error: redefinition of 'A'
+sha1c.c:393: error: previous definition of 'A' was here
+sha1c.c:397: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:397: error: initializer element is not constant
+sha1c.c:397: warning: data definition has no type or storage class
+sha1c.c:397: error: conflicting types for 'X'
+sha1c.c:396: error: previous definition of 'X' was here
+sha1c.c:397: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:397: error: invalid initializer
+sha1c.c:397: warning: data definition has no type or storage class
+sha1c.c:397: error: syntax error before '+=' token
+sha1c.c:397: error: redefinition of 'C'
+sha1c.c:395: error: previous definition of 'C' was here
+sha1c.c:397: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:397: error: initializer element is not constant
+sha1c.c:397: warning: data definition has no type or storage class
+sha1c.c:399: error: redefinition of 'T'
+sha1c.c:394: error: previous definition of 'T' was here
+sha1c.c:399: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:399: error: initializer element is not constant
+sha1c.c:399: warning: data definition has no type or storage class
+sha1c.c:399: error: conflicting types for 'X'
+sha1c.c:397: error: previous definition of 'X' was here
+sha1c.c:399: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:399: error: invalid initializer
+sha1c.c:399: warning: data definition has no type or storage class
+sha1c.c:399: error: redefinition of 'T'
+sha1c.c:399: error: previous definition of 'T' was here
+sha1c.c:399: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:399: error: initializer element is not constant
+sha1c.c:399: warning: data definition has no type or storage class
+sha1c.c:399: error: redefinition of 'B'
+sha1c.c:396: error: previous definition of 'B' was here
+sha1c.c:399: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:399: error: initializer element is not constant
+sha1c.c:399: warning: data definition has no type or storage class
+sha1c.c:400: error: redefinition of 'E'
+sha1c.c:395: error: previous definition of 'E' was here
+sha1c.c:400: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:400: error: initializer element is not constant
+sha1c.c:400: warning: data definition has no type or storage class
+sha1c.c:400: error: conflicting types for 'X'
+sha1c.c:399: error: previous definition of 'X' was here
+sha1c.c:400: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:400: error: invalid initializer
+sha1c.c:400: warning: data definition has no type or storage class
+sha1c.c:400: error: redefinition of 'E'
+sha1c.c:400: error: previous definition of 'E' was here
+sha1c.c:400: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:400: error: initializer element is not constant
+sha1c.c:400: warning: data definition has no type or storage class
+sha1c.c:400: error: redefinition of 'A'
+sha1c.c:397: error: previous definition of 'A' was here
+sha1c.c:400: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:400: error: initializer element is not constant
+sha1c.c:400: warning: data definition has no type or storage class
+sha1c.c:401: error: redefinition of 'D'
+sha1c.c:396: error: previous definition of 'D' was here
+sha1c.c:401: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:401: error: initializer element is not constant
+sha1c.c:401: warning: data definition has no type or storage class
+sha1c.c:401: error: conflicting types for 'X'
+sha1c.c:400: error: previous definition of 'X' was here
+sha1c.c:401: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:401: error: invalid initializer
+sha1c.c:401: warning: data definition has no type or storage class
+sha1c.c:401: error: redefinition of 'D'
+sha1c.c:401: error: previous definition of 'D' was here
+sha1c.c:401: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:401: error: initializer element is not constant
+sha1c.c:401: warning: data definition has no type or storage class
+sha1c.c:401: error: redefinition of 'T'
+sha1c.c:399: error: previous definition of 'T' was here
+sha1c.c:401: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:401: error: initializer element is not constant
+sha1c.c:401: warning: data definition has no type or storage class
+sha1c.c:402: error: redefinition of 'C'
+sha1c.c:397: error: previous definition of 'C' was here
+sha1c.c:402: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:402: error: initializer element is not constant
+sha1c.c:402: warning: data definition has no type or storage class
+sha1c.c:402: error: conflicting types for 'X'
+sha1c.c:401: error: previous definition of 'X' was here
+sha1c.c:402: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:402: error: invalid initializer
+sha1c.c:402: warning: data definition has no type or storage class
+sha1c.c:402: error: redefinition of 'C'
+sha1c.c:402: error: previous definition of 'C' was here
+sha1c.c:402: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:402: error: initializer element is not constant
+sha1c.c:402: warning: data definition has no type or storage class
+sha1c.c:402: error: redefinition of 'E'
+sha1c.c:400: error: previous definition of 'E' was here
+sha1c.c:402: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:402: error: initializer element is not constant
+sha1c.c:402: warning: data definition has no type or storage class
+sha1c.c:403: error: redefinition of 'B'
+sha1c.c:399: error: previous definition of 'B' was here
+sha1c.c:403: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:403: error: initializer element is not constant
+sha1c.c:403: warning: data definition has no type or storage class
+sha1c.c:403: error: conflicting types for 'X'
+sha1c.c:402: error: previous definition of 'X' was here
+sha1c.c:403: error: redefinition of 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:403: error: invalid initializer
+sha1c.c:403: warning: data definition has no type or storage class
+sha1c.c:403: error: redefinition of 'B'
+sha1c.c:403: error: previous definition of 'B' was here
+sha1c.c:403: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:403: error: initializer element is not constant
+sha1c.c:403: warning: data definition has no type or storage class
+sha1c.c:403: error: redefinition of 'D'
+sha1c.c:401: error: previous definition of 'D' was here
+sha1c.c:403: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:403: error: initializer element is not constant
+sha1c.c:403: warning: data definition has no type or storage class
+sha1c.c:404: error: redefinition of 'A'
+sha1c.c:400: error: previous definition of 'A' was here
+sha1c.c:404: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:404: error: initializer element is not constant
+sha1c.c:404: warning: data definition has no type or storage class
+sha1c.c:404: error: conflicting types for 'X'
+sha1c.c:403: error: previous definition of 'X' was here
+sha1c.c:404: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:404: error: invalid initializer
+sha1c.c:404: warning: data definition has no type or storage class
+sha1c.c:404: error: redefinition of 'A'
+sha1c.c:404: error: previous definition of 'A' was here
+sha1c.c:404: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:404: error: initializer element is not constant
+sha1c.c:404: warning: data definition has no type or storage class
+sha1c.c:404: error: redefinition of 'C'
+sha1c.c:402: error: previous definition of 'C' was here
+sha1c.c:404: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:404: error: initializer element is not constant
+sha1c.c:404: warning: data definition has no type or storage class
+sha1c.c:405: error: redefinition of 'T'
+sha1c.c:401: error: previous definition of 'T' was here
+sha1c.c:405: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:405: error: initializer element is not constant
+sha1c.c:405: warning: data definition has no type or storage class
+sha1c.c:405: error: conflicting types for 'X'
+sha1c.c:404: error: previous definition of 'X' was here
+sha1c.c:405: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:405: error: invalid initializer
+sha1c.c:405: warning: data definition has no type or storage class
+sha1c.c:405: error: redefinition of 'T'
+sha1c.c:405: error: previous definition of 'T' was here
+sha1c.c:405: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:405: error: initializer element is not constant
+sha1c.c:405: warning: data definition has no type or storage class
+sha1c.c:405: error: redefinition of 'B'
+sha1c.c:403: error: previous definition of 'B' was here
+sha1c.c:405: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:405: error: initializer element is not constant
+sha1c.c:405: warning: data definition has no type or storage class
+sha1c.c:406: error: redefinition of 'E'
+sha1c.c:402: error: previous definition of 'E' was here
+sha1c.c:406: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:406: error: initializer element is not constant
+sha1c.c:406: warning: data definition has no type or storage class
+sha1c.c:406: error: conflicting types for 'X'
+sha1c.c:405: error: previous definition of 'X' was here
+sha1c.c:406: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:406: error: invalid initializer
+sha1c.c:406: warning: data definition has no type or storage class
+sha1c.c:406: error: redefinition of 'E'
+sha1c.c:406: error: previous definition of 'E' was here
+sha1c.c:406: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:406: error: initializer element is not constant
+sha1c.c:406: warning: data definition has no type or storage class
+sha1c.c:406: error: redefinition of 'A'
+sha1c.c:404: error: previous definition of 'A' was here
+sha1c.c:406: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:406: error: initializer element is not constant
+sha1c.c:406: warning: data definition has no type or storage class
+sha1c.c:407: error: redefinition of 'D'
+sha1c.c:403: error: previous definition of 'D' was here
+sha1c.c:407: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:407: error: initializer element is not constant
+sha1c.c:407: warning: data definition has no type or storage class
+sha1c.c:407: error: conflicting types for 'X'
+sha1c.c:406: error: previous definition of 'X' was here
+sha1c.c:407: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:407: error: invalid initializer
+sha1c.c:407: warning: data definition has no type or storage class
+sha1c.c:407: error: redefinition of 'D'
+sha1c.c:407: error: previous definition of 'D' was here
+sha1c.c:407: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:407: error: initializer element is not constant
+sha1c.c:407: warning: data definition has no type or storage class
+sha1c.c:407: error: redefinition of 'T'
+sha1c.c:405: error: previous definition of 'T' was here
+sha1c.c:407: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:407: error: initializer element is not constant
+sha1c.c:407: warning: data definition has no type or storage class
+sha1c.c:408: error: redefinition of 'C'
+sha1c.c:404: error: previous definition of 'C' was here
+sha1c.c:408: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:408: error: initializer element is not constant
+sha1c.c:408: warning: data definition has no type or storage class
+sha1c.c:408: error: conflicting types for 'X'
+sha1c.c:407: error: previous definition of 'X' was here
+sha1c.c:408: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:408: error: invalid initializer
+sha1c.c:408: warning: data definition has no type or storage class
+sha1c.c:408: error: redefinition of 'C'
+sha1c.c:408: error: previous definition of 'C' was here
+sha1c.c:408: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:408: error: initializer element is not constant
+sha1c.c:408: warning: data definition has no type or storage class
+sha1c.c:408: error: redefinition of 'E'
+sha1c.c:406: error: previous definition of 'E' was here
+sha1c.c:408: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:408: error: initializer element is not constant
+sha1c.c:408: warning: data definition has no type or storage class
+sha1c.c:409: error: redefinition of 'B'
+sha1c.c:405: error: previous definition of 'B' was here
+sha1c.c:409: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:409: error: initializer element is not constant
+sha1c.c:409: warning: data definition has no type or storage class
+sha1c.c:409: error: conflicting types for 'X'
+sha1c.c:408: error: previous definition of 'X' was here
+sha1c.c:409: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:409: error: invalid initializer
+sha1c.c:409: warning: data definition has no type or storage class
+sha1c.c:409: error: redefinition of 'B'
+sha1c.c:409: error: previous definition of 'B' was here
+sha1c.c:409: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:409: error: initializer element is not constant
+sha1c.c:409: warning: data definition has no type or storage class
+sha1c.c:409: error: redefinition of 'D'
+sha1c.c:407: error: previous definition of 'D' was here
+sha1c.c:409: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:409: error: initializer element is not constant
+sha1c.c:409: warning: data definition has no type or storage class
+sha1c.c:410: error: redefinition of 'A'
+sha1c.c:406: error: previous definition of 'A' was here
+sha1c.c:410: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:410: error: initializer element is not constant
+sha1c.c:410: warning: data definition has no type or storage class
+sha1c.c:410: error: conflicting types for 'X'
+sha1c.c:409: error: previous definition of 'X' was here
+sha1c.c:410: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:410: error: invalid initializer
+sha1c.c:410: warning: data definition has no type or storage class
+sha1c.c:410: error: redefinition of 'A'
+sha1c.c:410: error: previous definition of 'A' was here
+sha1c.c:410: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:410: error: initializer element is not constant
+sha1c.c:410: warning: data definition has no type or storage class
+sha1c.c:410: error: redefinition of 'C'
+sha1c.c:408: error: previous definition of 'C' was here
+sha1c.c:410: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:410: error: initializer element is not constant
+sha1c.c:410: warning: data definition has no type or storage class
+sha1c.c:411: error: redefinition of 'T'
+sha1c.c:407: error: previous definition of 'T' was here
+sha1c.c:411: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:411: error: initializer element is not constant
+sha1c.c:411: warning: data definition has no type or storage class
+sha1c.c:411: error: conflicting types for 'X'
+sha1c.c:410: error: previous definition of 'X' was here
+sha1c.c:411: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:411: error: invalid initializer
+sha1c.c:411: warning: data definition has no type or storage class
+sha1c.c:411: error: redefinition of 'T'
+sha1c.c:411: error: previous definition of 'T' was here
+sha1c.c:411: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:411: error: initializer element is not constant
+sha1c.c:411: warning: data definition has no type or storage class
+sha1c.c:411: error: redefinition of 'B'
+sha1c.c:409: error: previous definition of 'B' was here
+sha1c.c:411: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:411: error: initializer element is not constant
+sha1c.c:411: warning: data definition has no type or storage class
+sha1c.c:412: error: redefinition of 'E'
+sha1c.c:408: error: previous definition of 'E' was here
+sha1c.c:412: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:412: error: initializer element is not constant
+sha1c.c:412: warning: data definition has no type or storage class
+sha1c.c:412: error: conflicting types for 'X'
+sha1c.c:411: error: previous definition of 'X' was here
+sha1c.c:412: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:412: error: invalid initializer
+sha1c.c:412: warning: data definition has no type or storage class
+sha1c.c:412: error: redefinition of 'E'
+sha1c.c:412: error: previous definition of 'E' was here
+sha1c.c:412: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:412: error: initializer element is not constant
+sha1c.c:412: warning: data definition has no type or storage class
+sha1c.c:412: error: redefinition of 'A'
+sha1c.c:410: error: previous definition of 'A' was here
+sha1c.c:412: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:412: error: initializer element is not constant
+sha1c.c:412: warning: data definition has no type or storage class
+sha1c.c:413: error: redefinition of 'D'
+sha1c.c:409: error: previous definition of 'D' was here
+sha1c.c:413: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:413: error: initializer element is not constant
+sha1c.c:413: warning: data definition has no type or storage class
+sha1c.c:413: error: conflicting types for 'X'
+sha1c.c:412: error: previous definition of 'X' was here
+sha1c.c:413: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:413: error: invalid initializer
+sha1c.c:413: warning: data definition has no type or storage class
+sha1c.c:413: error: redefinition of 'D'
+sha1c.c:413: error: previous definition of 'D' was here
+sha1c.c:413: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:413: error: initializer element is not constant
+sha1c.c:413: warning: data definition has no type or storage class
+sha1c.c:413: error: redefinition of 'T'
+sha1c.c:411: error: previous definition of 'T' was here
+sha1c.c:413: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:413: error: initializer element is not constant
+sha1c.c:413: warning: data definition has no type or storage class
+sha1c.c:414: error: redefinition of 'C'
+sha1c.c:410: error: previous definition of 'C' was here
+sha1c.c:414: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:414: error: initializer element is not constant
+sha1c.c:414: warning: data definition has no type or storage class
+sha1c.c:414: error: conflicting types for 'X'
+sha1c.c:413: error: previous definition of 'X' was here
+sha1c.c:414: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:414: error: invalid initializer
+sha1c.c:414: warning: data definition has no type or storage class
+sha1c.c:414: error: redefinition of 'C'
+sha1c.c:414: error: previous definition of 'C' was here
+sha1c.c:414: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:414: error: initializer element is not constant
+sha1c.c:414: warning: data definition has no type or storage class
+sha1c.c:414: error: redefinition of 'E'
+sha1c.c:412: error: previous definition of 'E' was here
+sha1c.c:414: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:414: error: initializer element is not constant
+sha1c.c:414: warning: data definition has no type or storage class
+sha1c.c:415: error: redefinition of 'B'
+sha1c.c:411: error: previous definition of 'B' was here
+sha1c.c:415: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:415: error: initializer element is not constant
+sha1c.c:415: warning: data definition has no type or storage class
+sha1c.c:415: error: conflicting types for 'X'
+sha1c.c:414: error: previous definition of 'X' was here
+sha1c.c:415: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:415: error: invalid initializer
+sha1c.c:415: warning: data definition has no type or storage class
+sha1c.c:415: error: redefinition of 'B'
+sha1c.c:415: error: previous definition of 'B' was here
+sha1c.c:415: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:415: error: initializer element is not constant
+sha1c.c:415: warning: data definition has no type or storage class
+sha1c.c:415: error: redefinition of 'D'
+sha1c.c:413: error: previous definition of 'D' was here
+sha1c.c:415: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:415: error: initializer element is not constant
+sha1c.c:415: warning: data definition has no type or storage class
+sha1c.c:416: error: redefinition of 'A'
+sha1c.c:412: error: previous definition of 'A' was here
+sha1c.c:416: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:416: error: initializer element is not constant
+sha1c.c:416: warning: data definition has no type or storage class
+sha1c.c:416: error: conflicting types for 'X'
+sha1c.c:415: error: previous definition of 'X' was here
+sha1c.c:416: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:416: error: invalid initializer
+sha1c.c:416: warning: data definition has no type or storage class
+sha1c.c:416: error: redefinition of 'A'
+sha1c.c:416: error: previous definition of 'A' was here
+sha1c.c:416: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:416: error: initializer element is not constant
+sha1c.c:416: warning: data definition has no type or storage class
+sha1c.c:416: error: redefinition of 'C'
+sha1c.c:414: error: previous definition of 'C' was here
+sha1c.c:416: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:416: error: initializer element is not constant
+sha1c.c:416: warning: data definition has no type or storage class
+sha1c.c:417: error: redefinition of 'T'
+sha1c.c:413: error: previous definition of 'T' was here
+sha1c.c:417: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:417: error: initializer element is not constant
+sha1c.c:417: warning: data definition has no type or storage class
+sha1c.c:417: error: conflicting types for 'X'
+sha1c.c:416: error: previous definition of 'X' was here
+sha1c.c:417: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:417: error: invalid initializer
+sha1c.c:417: warning: data definition has no type or storage class
+sha1c.c:417: error: redefinition of 'T'
+sha1c.c:417: error: previous definition of 'T' was here
+sha1c.c:417: error: redefinition of 'T'
+sha1c.c:338: error: previous definition of 'T' was here
+sha1c.c:417: error: initializer element is not constant
+sha1c.c:417: warning: data definition has no type or storage class
+sha1c.c:417: error: redefinition of 'B'
+sha1c.c:415: error: previous definition of 'B' was here
+sha1c.c:417: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:417: error: initializer element is not constant
+sha1c.c:417: warning: data definition has no type or storage class
+sha1c.c:418: error: redefinition of 'E'
+sha1c.c:414: error: previous definition of 'E' was here
+sha1c.c:418: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:418: error: initializer element is not constant
+sha1c.c:418: warning: data definition has no type or storage class
+sha1c.c:418: error: conflicting types for 'X'
+sha1c.c:417: error: previous definition of 'X' was here
+sha1c.c:418: error: conflicting types for 'X'
+sha1c.c:352: error: previous definition of 'X' was here
+sha1c.c:418: error: invalid initializer
+sha1c.c:418: warning: data definition has no type or storage class
+sha1c.c:418: error: redefinition of 'E'
+sha1c.c:418: error: previous definition of 'E' was here
+sha1c.c:418: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:418: error: initializer element is not constant
+sha1c.c:418: warning: data definition has no type or storage class
+sha1c.c:418: error: redefinition of 'A'
+sha1c.c:416: error: previous definition of 'A' was here
+sha1c.c:418: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:418: error: initializer element is not constant
+sha1c.c:418: warning: data definition has no type or storage class
+sha1c.c:420: error: syntax error before '->' token
+sha1c.c:429: error: redefinition of 'A'
+sha1c.c:418: error: previous definition of 'A' was here
+sha1c.c:429: error: redefinition of 'A'
+sha1c.c:337: error: previous definition of 'A' was here
+sha1c.c:429: error: request for member `h0' in something not a structure or union
+sha1c.c:429: warning: data definition has no type or storage class
+sha1c.c:430: error: redefinition of 'B'
+sha1c.c:417: error: previous definition of 'B' was here
+sha1c.c:430: error: redefinition of 'B'
+sha1c.c:336: error: previous definition of 'B' was here
+sha1c.c:430: error: request for member `h1' in something not a structure or union
+sha1c.c:430: warning: data definition has no type or storage class
+sha1c.c:431: error: redefinition of 'C'
+sha1c.c:416: error: previous definition of 'C' was here
+sha1c.c:431: error: redefinition of 'C'
+sha1c.c:339: error: previous definition of 'C' was here
+sha1c.c:431: error: request for member `h2' in something not a structure or union
+sha1c.c:431: warning: data definition has no type or storage class
+sha1c.c:432: error: redefinition of 'D'
+sha1c.c:415: error: previous definition of 'D' was here
+sha1c.c:432: error: redefinition of 'D'
+sha1c.c:338: error: previous definition of 'D' was here
+sha1c.c:432: error: request for member `h3' in something not a structure or union
+sha1c.c:432: warning: data definition has no type or storage class
+sha1c.c:433: error: redefinition of 'E'
+sha1c.c:418: error: previous definition of 'E' was here
+sha1c.c:433: error: redefinition of 'E'
+sha1c.c:337: error: previous definition of 'E' was here
+sha1c.c:433: error: request for member `h4' in something not a structure or union
+sha1c.c:433: warning: data definition has no type or storage class
+sha1c.c:435: error: syntax error before '+=' token
+sha1c.c: In function `SHA1_Final':
+sha1c.c:442: error: syntax error before "SHA_CTX"
+sha1c.c:445: error: `u_int32_t' undeclared (first use in this function)
+sha1c.c:445: error: (Each undeclared identifier is reported only once
+sha1c.c:445: error: for each function it appears in.)
+sha1c.c:445: error: syntax error before "l"
+sha1c.c:451: error: invalid type argument of `->'
+sha1c.c:452: error: invalid type argument of `->'
+sha1c.c:462: error: invalid type argument of `->'
+sha1c.c:471: error: invalid type argument of `->'
+sha1c.c:472: error: invalid type argument of `->'
+sha1c.c:479: error: invalid type argument of `->'
+sha1c.c:480: error: invalid type argument of `->'
+sha1c.c:481: error: invalid type argument of `->'
+sha1c.c:482: error: invalid type argument of `->'
+sha1c.c:483: error: invalid type argument of `->'
+sha1c.c:487: error: invalid type argument of `->'
+sha1hl.c:10:23: sys/cdefs.h: No such file or directory
+sha1hl.c:11: error: syntax error before string constant
+sha1hl.c:11: warning: data definition has no type or storage class
+In file included from sha1hl.c:16:
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:37: error: syntax error before "off_t"
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:38: error: syntax error before "off_t"
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h: In function `ftruncate':
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: `__fd' undeclared (first use in this function)
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: (Each undeclared identifier is reported only once
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: for each function it appears in.)
+d:/bin/mingw/bin/../lib/gcc/mingw32/3.4.5/../../../../include/unistd.h:40: error: `__length' undeclared (first use in this function)
+In file included from sha1hl.c:22:
+sha.h: At top level:
+sha.h:74: error: syntax error before "u_int32_t"
+sha.h:74: warning: no semicolon at end of struct or union
+sha.h:75: warning: data definition has no type or storage class
+sha.h:76: error: syntax error before "data"
+sha.h:76: warning: data definition has no type or storage class
+sha.h:78: error: syntax error before '}' token
+sha.h:78: warning: data definition has no type or storage class
+sha.h:82: error: syntax error before "void"
+sha.h:82: error: syntax error before '*' token
+sha.h:83: error: syntax error before '*' token
+sha.h:84: error: syntax error before "SHA_CTX"
+sha.h:85: error: syntax error before '*' token
+sha.h:87: error: syntax error before "off_t"
+sha.h:89: error: syntax error before '*' token
+sha.h:90: error: syntax error before '*' token
+sha.h:91: error: syntax error before "SHA_CTX"
+sha.h:92: error: syntax error before '*' token
+sha.h:94: error: syntax error before "off_t"
+sha1hl.c:24: error: syntax error before "char"
+sha1hl.c:25: error: syntax error before '*' token
+sha1hl.c: In function `SHA1_End':
+sha1hl.c:31: error: `buf' undeclared (first use in this function)
+sha1hl.c:35: error: `ctx' undeclared (first use in this function)
+sha1hl.c: At top level:
+sha1hl.c:51: error: syntax error before "off_t"
+sha1hl.c: In function `SHA1_FileChunk':
+sha1hl.c:54: error: syntax error before "ctx"
+sha1hl.c:55: error: storage size of 'stbuf' isn't known
+sha1hl.c:57: error: `off_t' undeclared (first use in this function)
+sha1hl.c:57: error: syntax error before "n"
+sha1hl.c:59: error: `ctx' undeclared (first use in this function)
+sha1hl.c:60: error: `filename' undeclared (first use in this function)
+sha1hl.c:60: error: `O_RDONLY' undeclared (first use in this function)
+sha1hl.c:65: error: `ofs' undeclared (first use in this function)
+sha1hl.c:67: error: `len' undeclared (first use in this function)
+sha1hl.c:71: error: `n' undeclared (first use in this function)
+sha1hl.c:88: error: `buf' undeclared (first use in this function)
+sha1hl.c: In function `SHA1_Data':
+sha1hl.c:94: error: syntax error before "ctx"
+sha1hl.c:96: error: `ctx' undeclared (first use in this function)
+make: *** [compile] Error 1

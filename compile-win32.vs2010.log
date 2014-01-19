@@ -1,0 +1,45 @@
+1>------ Build started: Project: journal, Configuration: Debug Win32 ------
+1>  validate.c
+1>..\validate.c(16): fatal error C1083: Cannot open include file: 'stdbool.h': No such file or directory
+1>  slre.c
+1>  sha1hl.c
+1>..\sha1hl.c(10): fatal error C1083: Cannot open include file: 'sys/cdefs.h': No such file or directory
+1>  sha1c.c
+1>..\sha1c.c(59): fatal error C1083: Cannot open include file: 'sys/cdefs.h': No such file or directory
+1>  mongoose.c
+1>..\mongoose.c(22): warning C4005: '_CRT_SECURE_NO_WARNINGS' : macro redefinition
+1>          command-line arguments :  see previous definition of '_CRT_SECURE_NO_WARNINGS'
+1>..\mongoose.c(2000): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _close. See online help for details.
+1>          C:\Program\Microsoft Visual Studio 10.0\VC\include\io.h(302) : see declaration of 'close'
+1>..\mongoose.c(2268): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _strdup. See online help for details.
+1>          C:\Program\Microsoft Visual Studio 10.0\VC\include\string.h(238) : see declaration of 'strdup'
+1>..\mongoose.c(2494): warning C4996: 'rmdir': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _rmdir. See online help for details.
+1>          C:\Program\Microsoft Visual Studio 10.0\VC\include\direct.h(125) : see declaration of 'rmdir'
+1>..\mongoose.c(2577): warning C4996: 'write': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _write. See online help for details.
+1>          C:\Program\Microsoft Visual Studio 10.0\VC\include\io.h(318) : see declaration of 'write'
+1>..\mongoose.c(3471): warning C4996: 'close': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _close. See online help for details.
+1>          C:\Program\Microsoft Visual Studio 10.0\VC\include\io.h(302) : see declaration of 'close'
+1>..\mongoose.c(3498): warning C4996: 'read': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _read. See online help for details.
+1>          C:\Program\Microsoft Visual Studio 10.0\VC\include\io.h(313) : see declaration of 'read'
+1>  journal.c
+1>..\journal.c(21): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+1>  stack.c
+1>  markdown.c
+1>  html_smartypants.c
+1>  html_blocks.c
+1>  html.c
+1>  escape.c
+1>  buffer.c
+1>  autolink.c
+1>  frozen.c
+1>..\frozen.c(320): warning C4013: 'snprintf' undefined; assuming extern returning int
+1>  embed.c
+1>  cmd_serve.c
+1>  cmd_new.c
+1>..\cmd_new.c(15): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+1>  cmd_init.c
+1>..\cmd_init.c(14): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+1>  cmd_build.c
+1>e:\lenny\workspace\journal-vs2010\validate.h(13): fatal error C1083: Cannot open include file: 'stdbool.h': No such file or directory
+1>  Generating Code...
+========== Build: 0 succeeded, 1 failed, 0 up-to-date, 0 skipped ==========
