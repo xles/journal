@@ -37,5 +37,7 @@ void parse_options(char *options);
 extern int runscript(char *string);
 extern int mkpage(void);
 extern void usage(void);
+extern int copy_pages(void) ;
+extern int markdown(char *inf, char *outf);
 
 #endif
