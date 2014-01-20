@@ -39,5 +39,6 @@ extern int mkpage(void);
 extern void usage(void);
 extern int copy_pages(void) ;
 extern int markdown(char *inf, char *outf);
+extern int render_template(void);
 
 #endif

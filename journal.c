@@ -23,8 +23,6 @@
 #include <errno.h>
 
 #include "journal.h"
- 
-#include "slre.h"
 
 #define OPTIONS "asdf"
 

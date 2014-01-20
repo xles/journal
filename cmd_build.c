@@ -9,20 +9,20 @@
  */
 
 #include <stdio.h>
-#include <string.h>
 #include <errno.h>
+#include <string.h>
 #include <sys/stat.h>
 
-#include "journal.h"
 #include "validate.h"
+#include "journal.h"
 #include "frozen.h"
 #include "sha.h"
 
+#include "hoedown/autolink.h"
 #include "hoedown/markdown.h"
 #include "hoedown/buffer.h"
-#include "hoedown/html.h"
 #include "hoedown/html5.h"
-#include "hoedown/autolink.h"
+#include "hoedown/html.h"
 
 #define OPT_SMARTYPANTS 1
 #define OPT_HTML5 1
