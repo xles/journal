@@ -9,9 +9,43 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 
 #include "journal.h"
 #include "slre.h"
+
+static char *rdelim = "}}";
+static char *ldelim = "{{";
+
+static int tag_variable() 
+{
+	char *re = "";
+}
+static int tag_section() 
+{
+	char *re = "";
+
+}
+static int tag_comment() 
+{
+	char *re = "";
+
+}
+static int tag_partial() 
+{
+	char *re = "";
+
+}
+static int tag_delimiter(const char *buff) 
+{
+	char *re = ldelim "=(\\S+)\\s+(\\S+)=" rdelim;
+	struct slre_cap caps[2];
+
+	if (slre_match(re, buff, strlen(buff), caps, 2) > 0) {
+		ldelim = strncpy(buff, caps[0].ptr, caps[0].len);
+		rdelim = strncpy(buff, caps[1].ptr, caps[1].len);
+	}
+}
 
 int render_template(void)
 {
