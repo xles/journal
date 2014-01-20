@@ -29,7 +29,8 @@
 
 int cmd_build(int argc, char **argv)
 {
-	markdown("test/syntax.md", ".journal/posts/syntax.md");
+//	markdown("test/syntax.md", ".journal/posts/syntax.html");
+	markdown("test/pants.md", ".journal/posts/pants.html");
 	//copy_pages();
 	return 0;
 }
@@ -61,7 +62,7 @@ int markdown(char *inf, char *outf)
 	ob = hoedown_buffer_new(64);
 	
 
-	if(OPT_HTML5)
+	if (OPT_HTML5)
 		renderer = hoedown_html5_renderer_new(0, 0);
 	else
 		renderer = hoedown_html_renderer_new(0, 0);
@@ -71,13 +72,16 @@ int markdown(char *inf, char *outf)
 
 	hoedown_markdown_free(markdown);
 	
-	if(OPT_HTML5)
+	if (OPT_HTML5)
 		hoedown_html5_renderer_free(renderer);
 	else
 		hoedown_html_renderer_free(renderer);
 
-	if(OPT_SMARTYPANTS)
-		hoedown_html_smartypants(ob, ob->data, ob->size);
+	if (OPT_SMARTYPANTS) {
+		ib = ob;
+		ob = hoedown_buffer_new(64);
+		hoedown_html_smartypants(ob, ib->data, ib->size);
+	}
 
 	(void)fwrite(ob->data, 1, ob->size, out);
 
