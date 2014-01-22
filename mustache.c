@@ -31,7 +31,17 @@ static char *tag_section(char *str)
 }
 static char *tag_comment(char *str) 
 {
-//	char *re = "";
+	char *re = malloc(0), *search;
+	sprintf(re, "(%s![\\S\\s]+%s)", ldelim, rdelim);
+	struct slre_cap caps[2];
+	int i, j = 0, str_len = strlen(str);
+
+	while (j < str_len && 
+		(i = slre_match(re, str+j, str_len-j, caps, 2)) > 0) {
+		sprintf(search,"%.*s", caps[0].len, caps[0].ptr)
+		str = str_replace(str, search,"fpp");
+		j += i;
+	}
 	return str;
 }
 static char *tag_partial(char *str) 
@@ -129,46 +139,14 @@ int find_urls(void) {
 static char *reg_replace(char *str, char *regex, struct tags replace, 
 	struct slre_cap caps, int numcaps)
 {
-	char *result, *ins, *tmp;
-	int ls, lr, len_front, count;
-
-//	if ((slre_match(regex, str, strlen(str), ) > 0)
-//		r = str_replace
-
-
-	if (!str)
-		return NULL;
-	if (!search)
-		search = "";
-	ls = strlen(search);
-	if (!replace)
-		replace = "";
-	lr = strlen(replace);
-
-	ins = str;
-	for (count = 0; (tmp = strstr(ins, search)); ++count) {
-		ins = tmp + ls;
+	if ((slre_match(regex, str, strlen(str), caps, numcaps) > 0) {
+		str = str_replace(str, sprintf("%.*s", caps[0].len, caps[0].ptr),"fpp");
 	}
-
-	tmp = result = malloc(strlen(str) + (lr - ls) * count + 1);
-
-	if (!result)
-		return NULL;
-
-	while (count--) {
-		ins = strstr(str, search);
-		len_front = ins - str;
-		tmp = strncpy(tmp, str, len_front) + len_front;
-		tmp = strcpy(tmp, replace) + lr;
-		str += len_front + ls;
-	}
-	strcpy(tmp, str);
-	return result;
 }
 
 int render_template(void)
 {
-	parse_tags();
+	parse_tags("Everything's foo today");
 	char *str = "Everything's foo today";
 	char *search = "foo";
 	char *replace = "bar";
