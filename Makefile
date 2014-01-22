@@ -8,6 +8,7 @@ PROGRAM = journal
 SOURCE_FILES = 	journal.c \
 		cmd_*.c \
 		validate.c \
+		mustache.c \
 		slre.c \
 		frozen.c \
 		mongoose.c \

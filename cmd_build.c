@@ -13,6 +13,7 @@
 #include <string.h>
 #include <sys/stat.h>
 
+#include "mustache.h"
 #include "validate.h"
 #include "journal.h"
 #include "frozen.h"
@@ -31,6 +32,7 @@ int cmd_build(int argc, char **argv)
 {
 //	markdown("test/syntax.md", ".journal/posts/syntax.html");
 	markdown("test/pants.md", ".journal/posts/pants.html");
+	render_template();
 	//copy_pages();
 	return 0;
 }
