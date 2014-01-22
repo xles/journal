@@ -8,4 +8,11 @@
  *    Main source file for the journal project.
  */
 
+struct tags {
+	struct tags *next;
+	const char *key;
+	const char *value;
+};
+
+
 extern int render_template(void);
