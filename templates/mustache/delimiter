@@ -1,0 +1,5 @@
+{{! moustaches! }}
+{{=<? ?>=}}
+<?! php style delimiters! ?>
+<?={{ }}=?>
+{{! normal delimiters!}}
