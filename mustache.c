@@ -12,64 +12,169 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "mustache.h"
 #include "journal.h"
 #include "slre.h"
+
+static char *tpldir = "templates/mustache/";
 
 static char *rdelim = "}}";
 static char *ldelim = "{{";
 
+static char *str_replace(char *str, char *search, char *replace);
+static char *parse_tags(char *str);
 
-static char *tag_variable(char *str) 
+static char *tag_variable(char *str, char *search) 
 {
 //	char *re = "";
 	return str;
 }
-static char *tag_section(char *str) 
+static char *tag_section(char *str, char *search) 
 {
 //	char *re = "";
 	return str;
 }
-static char *tag_comment(char *str) 
+static char *tag_comment(char *str, char *search) 
 {
-	char *re = malloc(0), *search;
-	sprintf(re, "(%s![\\S\\s]+%s)", ldelim, rdelim);
-	struct slre_cap caps[2];
-	int i, j = 0, str_len = strlen(str);
+	char *buff = malloc(1024);
+	buff = str_replace(str,search,NULL);
+	strcpy(str, buff);
+	return str;
+}
+static char *tag_partial(char *str, char *search) 
+{
+	char *re = calloc(1, 1024);
+	char *file = calloc(1, 256);
+	char *buff = malloc(1024);
 
-	while (j < str_len && 
-		(i = slre_match(re, str+j, str_len-j, caps, 2)) > 0) {
-		sprintf(search,"%.*s", caps[0].len, caps[0].ptr)
-		str = str_replace(str, search,"fpp");
-		j += i;
-	}
+	sprintf(re, "%s>([^}]+)%s", ldelim, rdelim);
+	struct slre_cap caps[1];
+
+	if (slre_match(re, search, strlen(search), caps, 1) > 0) {
+		sprintf(file,"%s%.*s", tpldir, caps[0].len, caps[0].ptr);
+		buff = read_file(file);
+		buff = parse_tags(buff);
+		puts(buff);
+		buff = str_replace(str, search, buff);
+		free(file);
+	} 
+	strcpy(str, buff);
 	return str;
 }
-static char *tag_partial(char *str) 
-{
-//	char *re = "";
-	return str;
-}
-static char *tag_delimiter(char *str) 
-{
-	char *re = malloc(NULL);
+static char *tag_delimiter(char *str, char *search) 
+{/*
+	char *re = malloc(1024);
 	sprintf(re, "%s=(\\S+)\\s+(\\S+)=%s", ldelim, rdelim);
 	struct slre_cap caps[2];
 
-	if (slre_match(re, buff, strlen(buff), caps, 2) > 0) {
-		ldelim = strncpy(buff, caps[0].ptr, caps[0].len);
-		rdelim = strncpy(buff, caps[1].ptr, caps[1].len);
+	if (slre_match(re, str, strlen(str), caps, 2) > 0) {
+		ldelim = strncpy(str, caps[0].ptr, caps[0].len);
+		rdelim = strncpy(str, caps[1].ptr, caps[1].len);
 	}
-	return 0;
+*/	return str;
 }
 
 static char *parse_tags(char *str)
 {
-	str = tag_comment(str);
-	str = tag_partial(str);
-	str = tag_section(str);
-	str = tag_variable(str);
-	str = tag_delimiter(str);
+
+	char *re = malloc(1024), *search = malloc(1024);
+	sprintf(re, "(%s[\\S\\s]+?%s)", ldelim, rdelim);
+	struct slre_cap caps[1];
+	int i, j = 0, str_len = strlen(str);
+
+	while (j < str_len && 
+		(i = slre_match(re, str+j, str_len-j, caps, 1)) > 0) {
+		sprintf(search,"%.*s", caps[0].len, caps[0].ptr);
+		
+		switch (search[(strlen(ldelim))]) {
+			case '!':
+				printf("tag found: comment: \"%s\"\n",search);
+				str = tag_comment(str, search);
+				break;
+			case '>':
+				printf("tag found: partial: \"%s\"\n",search);
+				str = tag_partial(str, search);
+				break;
+			case '=':
+				printf("tag found: set delimiter: \"%s\"\n",search);
+				str = tag_delimiter(str, search);
+				break;
+			case '#':
+			case '^':
+			case '/':
+				printf("tag found: section: \"%s\"\n",search);
+				str = tag_section(str, search);
+				break;
+			default:
+				printf("tag found: variable: \"%s\"\n",search);
+				str = tag_variable(str, search);
+				break;
+		}
+		j += i;
+	}
 	return str;
+}
+int render_template(void)
+{
+	char *foo = read_file("templates/mustache/test");
+	foo = parse_tags(foo);
+	printf("\"%s\"\n", foo);
+	free(foo);
+	return 0;
+}
+/*
+ * SLRE supported syntax reference:
+ *
+ *   (?i)    Must be at the beginning of the regex. 
+ *              Makes match case-insensitive
+ *   ^       Match beginning of a buffer
+ *   $       Match end of a buffer
+ *   ()      Grouping and substring capturing
+ *   \s      Match whitespace
+ *   \S      Match non-whitespace
+ *   \d      Match decimal digit
+ *   +       Match one or more times (greedy)
+ *   +?      Match one or more times (non-greedy)
+ *   *       Match zero or more times (greedy)
+ *   *?      Match zero or more times (non-greedy)
+ *   ?       Match zero or once (non-greedy)
+ *   x|y     Match x or y (alternation operator)
+ *   \meta   Match one of the meta character: ^$().[]*+?|\
+ *   \xHH    Match byte with hex value 0xHH, e.g. \x4a
+ *   [...]   Match any character from set. 
+ *              Ranges like [a-z] are supported
+ *   [^...]  Match any character but ones from set
+ */
+char *read_file(char *file)
+{
+	puts(file);
+	FILE    *inf;
+	char    *buff;
+	long    flen, mem = 1024;
+	 
+	inf = fopen(file, "r");
+	 
+	if (inf == NULL)
+	    return NULL;
+	
+	 
+	fseek(inf, 0L, SEEK_END);
+	flen = ftell(inf);
+	 
+	fseek(inf, 0L, SEEK_SET);	
+	
+	while (mem < flen)
+		mem *= 2;
+
+	buff = (char*)calloc(mem, sizeof(char));	
+	 
+	if (buff == NULL)
+	    return NULL;
+	 
+	fread(buff, sizeof(char), flen, inf);
+	fclose(inf);
+	 
+	return buff;
 }
 // You must free the result if result is non-NULL.
 static char *str_replace(char *str, char *search, char *replace) 
@@ -106,75 +211,3 @@ static char *str_replace(char *str, char *search, char *replace)
 	strcpy(tmp, str);
 	return result;
 }
-char *replace_str(char *str, char *orig, char *rep)
-{
-	static char buffer[4096];
-	char *p;
-
-	if(!(p = strstr(str, orig)))  // Is 'orig' even in 'str'?
-		return str;
-
-	strncpy(buffer, str, p-str); // Copy characters from 'str' start to 'orig' st$
-	buffer[p-str] = '\0';
-
-	sprintf(buffer+(p-str), "%s%s", rep, p+strlen(orig));
-
-	return buffer;
-}
-int find_urls(void) {
-	static const char *str =
-		"<img src=\"HTTPS://FOO.COM/x?b#c=tab1\"/> "
-		"  <a href=\"http://cesanta.com\">some link</a>";
-
-	static const char *regex = "(?i)((https?://)[^\\s/'\"<>]+/?[^\\s'\"<>]*)";
-	struct slre_cap caps[2];
-	int i, j = 0, str_len = strlen(str);
-
-	while (j < str_len && (i = slre_match(regex, str + j, str_len - j, caps, 2, NULL)) > 0) {
-		printf("Found URL: [%.*s]\n", caps[0].len, caps[0].ptr);
-		j += i;
-	}
-}
-
-static char *reg_replace(char *str, char *regex, struct tags replace, 
-	struct slre_cap caps, int numcaps)
-{
-	if ((slre_match(regex, str, strlen(str), caps, numcaps) > 0) {
-		str = str_replace(str, sprintf("%.*s", caps[0].len, caps[0].ptr),"fpp");
-	}
-}
-
-int render_template(void)
-{
-	parse_tags("Everything's foo today");
-	char *str = "Everything's foo today";
-	char *search = "foo";
-	char *replace = "bar";
-	char *out;
-	str = str_replace(str,search,replace); 
-	puts(str);
-	return 0;
-}
-/*
- * SLRE supported syntax reference:
- *
- *   (?i)    Must be at the beginning of the regex. 
- *              Makes match case-insensitive
- *   ^       Match beginning of a buffer
- *   $       Match end of a buffer
- *   ()      Grouping and substring capturing
- *   \s      Match whitespace
- *   \S      Match non-whitespace
- *   \d      Match decimal digit
- *   +       Match one or more times (greedy)
- *   +?      Match one or more times (non-greedy)
- *   *       Match zero or more times (greedy)
- *   *?      Match zero or more times (non-greedy)
- *   ?       Match zero or once (non-greedy)
- *   x|y     Match x or y (alternation operator)
- *   \meta   Match one of the meta character: ^$().[]*+?|\
- *   \xHH    Match byte with hex value 0xHH, e.g. \x4a
- *   [...]   Match any character from set. 
- *              Ranges like [a-z] are supported
- *   [^...]  Match any character but ones from set
- */

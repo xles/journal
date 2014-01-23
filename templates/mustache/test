@@ -1,0 +1,4 @@
+This is a test of the {{! This should be ignored
+even if wrapped across several lines}} mustache.c templating engine.
+It will test things such as {{>partial}} and more.
+{{! one more comment for good measure}}

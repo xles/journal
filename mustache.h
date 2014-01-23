@@ -16,3 +16,4 @@ struct tags {
 
 
 extern int render_template(void);
+extern char *read_file(char *file);

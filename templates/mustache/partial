@@ -1,0 +1,3 @@
+partials, sections such as 
+{{#section}}{{foo}}{{/section}}
+and plain variables like {{bar}}. Also, this {{>comment}}
