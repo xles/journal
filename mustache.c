@@ -18,8 +18,8 @@
 
 static char *tpldir = "templates/mustache/";
 
-static char *rdelim = "}}";
-static char *ldelim = "{{";
+char *rdelim = "}}";
+char *ldelim = "{{"; 
 
 static char *str_replace(char *str, char *search, char *replace);
 static char *parse_tags(char *str);
@@ -38,8 +38,8 @@ static char *tag_comment(char *str, char *search)
 {
 	char *buff = malloc(1024);
 	buff = str_replace(str,search,NULL);
-	strcpy(str, buff);
-	return str;
+	//strcpy(str, buff);
+	return buff;
 }
 static char *tag_partial(char *str, char *search) 
 {
@@ -54,24 +54,27 @@ static char *tag_partial(char *str, char *search)
 		sprintf(file,"%s%.*s", tpldir, caps[0].len, caps[0].ptr);
 		buff = read_file(file);
 		buff = parse_tags(buff);
-		puts(buff);
 		buff = str_replace(str, search, buff);
 		free(file);
 	} 
 	strcpy(str, buff);
-	return str;
+	return buff;
 }
 static char *tag_delimiter(char *str, char *search) 
-{/*
-	char *re = malloc(1024);
+{
+	char *re = malloc(1024), *buff = malloc(1024);
 	sprintf(re, "%s=(\\S+)\\s+(\\S+)=%s", ldelim, rdelim);
 	struct slre_cap caps[2];
 
-	if (slre_match(re, str, strlen(str), caps, 2) > 0) {
-		ldelim = strncpy(str, caps[0].ptr, caps[0].len);
-		rdelim = strncpy(str, caps[1].ptr, caps[1].len);
+	if (slre_match(re, search, strlen(search), caps, 2) > 0) {
+	printf("uhm...\n");
+		strncpy(ldelim, caps[0].ptr, caps[0].len);
+		strncpy(rdelim, caps[1].ptr, caps[1].len);
+		buff = str_replace(str, search, NULL);
 	}
-*/	return str;
+	//strcpy(str,buff);
+	strcpy(str,buff);
+	return str;
 }
 
 static char *parse_tags(char *str)
@@ -117,6 +120,7 @@ static char *parse_tags(char *str)
 int render_template(void)
 {
 	char *foo = read_file("templates/mustache/test");
+//	char *foo = read_file("templates/mustache/delimiter");
 	foo = parse_tags(foo);
 	printf("\"%s\"\n", foo);
 	free(foo);
