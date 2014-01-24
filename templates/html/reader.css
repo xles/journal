@@ -200,6 +200,9 @@
 }
 
 @media print {
+	* {
+		color:#000;
+	}
 	html, body {
 		padding:0;
 		margin:0;
@@ -245,7 +248,7 @@
 			content: counter(page);
 		}
 	}
-	h1, h2 {
+	h2 {
 		page-break-before: right;
 	}
 	h1, h2, h3, h4, h5, h6 {
@@ -255,7 +258,7 @@
 	}
 	body > header,
 	body > footer, 
-	menu, nav {
+	menu, nav, #disqus_thread {
 		display: none;
 	}
 }
