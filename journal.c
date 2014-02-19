@@ -13,6 +13,7 @@
  *    Regex: SLRE, http://cesanta.com/#docs,SLRE.md
  *    JSON: cJSON, http://cjson.sourceforge.net/
  *    Markdown: Hoedown, https://github.com/hoedown/hoedown
+ *    Strings: Simple Dynamic Strings, https://github.com/antirez/sds
  * See respective project for further copyright and license information.
  */
 
