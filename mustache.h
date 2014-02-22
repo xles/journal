@@ -7,6 +7,7 @@
  * mustache.c
  *    Main source file for the journal project.
  */
+#include "sds.h"
 
 struct tags {
 	struct tags *next;
@@ -15,5 +16,5 @@ struct tags {
 };
 
 
-extern int render_template(void);
+extern sds render_template(char *tpl);
 extern char *read_file(char *file);

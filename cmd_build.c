@@ -28,11 +28,22 @@
 #define OPT_SMARTYPANTS 1
 #define OPT_HTML5 1
 
+/*
+int render_template(void)
+{
+//	char *foo = read_file("templates/mustache/delimiter");
+	foo = match_tags(foo);
+	return 0;
+}
+*/
 int cmd_build(int argc, char **argv)
 {
 //	markdown("test/syntax.md", ".journal/posts/syntax.html");
 	markdown("test/pants.md", ".journal/posts/pants.html");
-	render_template();
+	
+	sds foo = sdsnew(render_template("templates/mustache/test"));
+	printf("\"%s\"\n", foo);
+	sdsfree(foo);
 	//copy_pages();
 	return 0;
 }
