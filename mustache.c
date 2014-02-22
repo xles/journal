@@ -17,16 +17,8 @@
 #include "slre.h"
 #include "sds.h"
 
-static char *tpldir = "templates/mustache/";
+sds tpldir, ldelim, rdelim; 
 
-char *rdelim = "}}";
-char *ldelim = "{{"; 
-
-static char *str_replace(char *str, char *search, char *replace);
-static sds sdsreplace(sds str, sds search, char *replace) ;
-
-static sds parse_tag(sds search);
-static sds match_tags(sds str);
 
 static sds tag_variable(sds tag) 
 {
@@ -204,14 +196,6 @@ static sds match_tags(sds str)
 	return str;
 }
 /*
-*/
-sds render_template(char *tpl)
-{
-	sds buff = sdsnew(read_file(tpl));
-	buff = match_tags(buff);
-	return buff;
-}
-/*
  * SLRE supported syntax reference:
  *
  *   (?i)    Must be at the beginning of the regex. 
@@ -282,4 +266,24 @@ static sds sdsreplace(sds str, sds search, char *replace)
 	str = sdscpylen(str,buff,sdslen(buff)); 
 	sdsfree(buff);
 	return str;
+}
+
+int mustache_init(char *td, char *rd, char *ld)
+{
+	rdelim = rd ? sdsnew(rd) : sdsnew("}}");
+	ldelim = ld ? sdsnew(ld) : sdsnew("{{"); 
+	tpldir = td ? sdsnew(td) : sdsnew("templates/mustache/");
+
+	return 0;
+}
+
+/**
+
+ */
+sds render_template(char *tpl)
+{
+
+	sds buff = sdsnew(read_file(tpl));
+	buff = match_tags(buff);
+	return buff;
 }

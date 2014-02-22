@@ -41,6 +41,7 @@ int cmd_build(int argc, char **argv)
 //	markdown("test/syntax.md", ".journal/posts/syntax.html");
 	markdown("test/pants.md", ".journal/posts/pants.html");
 	
+	mustache_init(NULL, NULL, NULL);
 	sds foo = sdsnew(render_template("templates/mustache/test"));
 	printf("\"%s\"\n", foo);
 	sdsfree(foo);
