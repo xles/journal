@@ -14,6 +14,7 @@
 
 #include "mustache.h"
 #include "journal.h"
+#include "frozen.h"
 #include "slre.h"
 #include "sds.h"
 
@@ -45,7 +46,15 @@ static sds tag_partial(sds tag)
 
 	if (slre_match(re, tag, strlen(tag), caps, 1) > 0) {
 		file = sdscatprintf(file,"%s%.*s", tpldir, caps[0].len, caps[0].ptr);
-		buff = render_template(file);
+
+		FILE * f;
+		if ((f = fopen(file, "r")) != NULL) {
+			fclose(f);
+			buff = render_template(file);
+		} else {
+			buff = sdscpy(buff,tag);
+		}
+		
 	} 
 	sdsfree(file);
 //	sdsfree(buff);
