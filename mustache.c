@@ -15,6 +15,7 @@
 #include "mustache.h"
 #include "journal.h"
 #include "slre.h"
+#include "sds.h"
 
 static char *tpldir = "templates/mustache/";
 
@@ -119,11 +120,11 @@ static char *parse_tags(char *str)
 }
 int render_template(void)
 {
-	char *foo = read_file("templates/mustache/test");
+	sds foo = sdsnew(read_file("templates/mustache/test"));
 //	char *foo = read_file("templates/mustache/delimiter");
 	foo = parse_tags(foo);
 	printf("\"%s\"\n", foo);
-	free(foo);
+	sdsfree(foo);
 	return 0;
 }
 /*
@@ -182,6 +183,41 @@ char *read_file(char *file)
 }
 // You must free the result if result is non-NULL.
 static char *str_replace(char *str, char *search, char *replace) 
+{
+	char *result, *ins, *tmp;
+	int ls, lr, len_front, count;
+
+	if (!str)
+		return NULL;
+	if (!search)
+		search = "";
+	ls = strlen(search);
+	if (!replace)
+		replace = "";
+	lr = strlen(replace);
+
+	ins = str;
+	for (count = 0; (tmp = strstr(ins, search)); ++count) {
+		ins = tmp + ls;
+	}
+
+	tmp = result = malloc(strlen(str) + (lr - ls) * count + 1);
+
+	if (!result)
+		return NULL;
+
+	while (count--) {
+		ins = strstr(str, search);
+		len_front = ins - str;
+		tmp = strncpy(tmp, str, len_front) + len_front;
+		tmp = strcpy(tmp, replace) + lr;
+		str += len_front + ls;
+	}
+	strcpy(tmp, str);
+	return result;
+}
+
+static char *sdsreplace(char *str, char *search, char *replace) 
 {
 	char *result, *ins, *tmp;
 	int ls, lr, len_front, count;
