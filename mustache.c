@@ -40,11 +40,7 @@ static sds tag_section(sds tag)
 }
 static sds tag_comment(sds tag) 
 {
-//	sds buff = sdsempty();
-//	buff = sdsreplace(str, search, NULL);
-//	str = sdscpylen(str,buff,sdslen(buff)); 
-//	sdsfree(buff);
-	return sdsnew("");
+	return sdsempty();
 }
 static sds tag_partial(sds tag) 
 {
@@ -286,39 +282,4 @@ static sds sdsreplace(sds str, sds search, char *replace)
 	str = sdscpylen(str,buff,sdslen(buff)); 
 	sdsfree(buff);
 	return str;
-}
-// You must free the result if result is non-NULL.
-static char *str_replace(char *str, char *search, char *replace) 
-{
-	char *result, *ins, *tmp;
-	int ls, lr, len_front, count;
-
-	if (!str)
-		return NULL;
-	if (!search)
-		search = "";
-	ls = strlen(search);
-	if (!replace)
-		replace = "";
-	lr = strlen(replace);
-
-	ins = str;
-	for (count = 0; (tmp = strstr(ins, search)); ++count) {
-		ins = tmp + ls;
-	}
-
-	tmp = result = malloc(strlen(str) + (lr - ls) * count + 1);
-
-	if (!result)
-		return NULL;
-
-	while (count--) {
-		ins = strstr(str, search);
-		len_front = ins - str;
-		tmp = strncpy(tmp, str, len_front) + len_front;
-		tmp = strcpy(tmp, replace) + lr;
-		str += len_front + ls;
-	}
-	strcpy(tmp, str);
-	return result;
 }
