@@ -16,6 +16,6 @@ struct tags {
 };
 
 
-extern int mustache_init(char *td, char *rd, char *ld);
+extern void mustache_init(char *td, char *rd, char *ld);
 extern sds render_template(char *tpl);
 extern char *read_file(char *file);

@@ -7,6 +7,29 @@
  * mustache.c
  *    Main source file for the journal project.
  */
+/*
+ * SLRE supported syntax reference:
+ *
+ *   (?i)    Must be at the beginning of the regex. 
+ *              Makes match case-insensitive
+ *   ^       Match beginning of a buffer
+ *   $       Match end of a buffer
+ *   ()      Grouping and substring capturing
+ *   \s      Match whitespace
+ *   \S      Match non-whitespace
+ *   \d      Match decimal digit
+ *   +       Match one or more times (greedy)
+ *   +?      Match one or more times (non-greedy)
+ *   *       Match zero or more times (greedy)
+ *   *?      Match zero or more times (non-greedy)
+ *   ?       Match zero or once (non-greedy)
+ *   x|y     Match x or y (alternation operator)
+ *   \meta   Match one of the meta character: ^$().[]*+?|\
+ *   \xHH    Match byte with hex value 0xHH, e.g. \x4a
+ *   [...]   Match any character from set. 
+ *              Ranges like [a-z] are supported
+ *   [^...]  Match any character but ones from set
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -20,22 +43,80 @@
 
 sds tpldir, ldelim, rdelim; 
 
-static sds sdsreplace(sds str, sds search, char *replace);
+/**
+ * Replaces the string `search` with `replace` in string `sds`
+ * 
+ * @param sds str  The string to be manipulated
+ * @param sds search  The search string
+ * @param char *replace  The replacement string
+ *
+ * @retval sds str  The manipulated string.
+ */
+static sds sdsreplace(sds str, sds search, char *replace) 
+{
+	sds buff = sdsempty();
+	char *p;
 
+	if (!(p = strstr(str, search)))
+		return str;
+
+	buff = sdscatlen(buff, str, p-str);
+	if (replace != NULL) {
+		buff = sdscat(buff, replace);
+	}
+	buff = sdscat(buff, p+sdslen(search));
+	//sdsfree(search);
+
+	str = sdscpylen(str,buff,sdslen(buff)); 
+	sdsfree(buff);
+	return str;
+}
+
+/**
+ * Takes comment tags and replaces them with an empty string
+ * 
+ * @param sds tag  The tag 
+ *
+ * @retval sdsempty()  Empty sds string.
+ */
+static sds tag_comment(sds tag) 
+{
+	return sdsempty();
+}
+
+/**
+ * Takes variable tags and replaces them with their value.
+ * 
+ * @param sds tag  The tag 
+ *
+ * @retval sds str  The manipulated string.
+ */
 static sds tag_variable(sds tag) 
 {
 //	char *re = "";
 	return sdsnew(tag);
 }
+
+/**
+ * Takes section tags and replaces them with the looped variable.
+ * 
+ * @param sds tag  The tag 
+ *
+ * @retval sds str  The manipulated string.
+ */
 static sds tag_section(sds tag) 
 {
 //	char *re = "";
 	return sdsnew(tag);
 }
-static sds tag_comment(sds tag) 
-{
-	return sdsempty();
-}
+
+/**
+ * Takes partial tags and replaces them with a parsed partial template.
+ * 
+ * @param sds tag  The tag 
+ *
+ * @retval sds buff  Partial template buffer.
+ */
 static sds tag_partial(sds tag) 
 {
 	sds re = sdsempty();
@@ -62,6 +143,14 @@ static sds tag_partial(sds tag)
 	sdsfree(re);
 	return buff;
 }
+
+/**
+ * Takes delimiter tags and sets the delimiter for the parser.
+ * 
+ * @param sds tag  The tag 
+ *
+ * @retval sdsempty()  Emtpy sds string.
+ */
 static sds tag_delimiter(sds tag) 
 {
 	sds re = sdsempty();
@@ -89,6 +178,17 @@ static sds tag_delimiter(sds tag)
 	return sdsempty();
 }
 
+/**
+ * Wrapper for slre_match that returns all matches as an array.
+ * 
+ * @param const char *regexp  The regular expression to be matched.
+ * @param const char *buf  The buffer to search in.
+ * @param int buf_len  Length of buffer.
+ * @param struct slre_cap *caps  Array to store subpatterns in.
+ * @param int num_caps  Number of subpatterns in regular expression.
+ *
+ * @retval struct slre_cap*  Array of slre_cap structures.
+ */
 static struct slre_cap* slre_match_all(
 		const char *regexp, 
 		const char *buf, 
@@ -119,6 +219,18 @@ static struct slre_cap* slre_match_all(
 
 	return res;
 }
+
+/**
+ * Wrapper for slre_match that counts the matches.
+ * 
+ * @param const char *regexp  The regular expression to be matched.
+ * @param const char *buf  The buffer to search in.
+ * @param int buf_len  Length of buffer.
+ * @param struct slre_cap *caps  Array to store subpatterns in.
+ * @param int num_caps  Number of subpatterns in regular expression.
+ *
+ * @retval int count  The number of matches in regular expression.
+ */
 static int slre_match_count(
 		const char *regexp, 
 		const char *buf, 
@@ -137,7 +249,13 @@ static int slre_match_count(
 	return count;
 }
 
-
+/**
+ * Parses a matched tag and routes it to the relevant function.
+ *
+ * @param sds tag  The matched tag.
+ *
+ * @retval sds tag  The parsed tag.
+ */
 static sds parse_tag(sds tag)
 {
 	sds buff = sdsempty(); 
@@ -170,6 +288,14 @@ static sds parse_tag(sds tag)
 	sdsfree(buff); 
 	return tag;
 }
+
+/**
+ * Parses a string buffer for mustache tags.
+ *
+ * @param sds str  The string buffer to parse.
+ *
+ * @retval sds str  The parsed string buffer.
+ */
 static sds match_tags(sds str)
 {
 	sds re = sdsempty(), search, buff = sdsempty(); 
@@ -210,28 +336,16 @@ static sds match_tags(sds str)
 	sdsfree(re);
 	return str;
 }
-/*
- * SLRE supported syntax reference:
+
+/**
+ * Opens a file and reads it to a buffer.
+ * 
+ * @todo  Switch function over to SDS strings.
  *
- *   (?i)    Must be at the beginning of the regex. 
- *              Makes match case-insensitive
- *   ^       Match beginning of a buffer
- *   $       Match end of a buffer
- *   ()      Grouping and substring capturing
- *   \s      Match whitespace
- *   \S      Match non-whitespace
- *   \d      Match decimal digit
- *   +       Match one or more times (greedy)
- *   +?      Match one or more times (non-greedy)
- *   *       Match zero or more times (greedy)
- *   *?      Match zero or more times (non-greedy)
- *   ?       Match zero or once (non-greedy)
- *   x|y     Match x or y (alternation operator)
- *   \meta   Match one of the meta character: ^$().[]*+?|\
- *   \xHH    Match byte with hex value 0xHH, e.g. \x4a
- *   [...]   Match any character from set. 
- *              Ranges like [a-z] are supported
- *   [^...]  Match any character but ones from set
+ * @param char *file  The filename to open.
+ *
+ * @retval char *buff  The file buffer.
+ * @retval NULL  on failure
  */
 char *read_file(char *file)
 {
@@ -263,37 +377,32 @@ char *read_file(char *file)
 	 
 	return buff;
 }
-static sds sdsreplace(sds str, sds search, char *replace) 
-{
-	sds buff = sdsempty();
-	char *p;
 
-	if (!(p = strstr(str, search)))
-		return str;
-
-	buff = sdscatlen(buff, str, p-str);
-	if (replace != NULL) {
-		buff = sdscat(buff, replace);
-	}
-	buff = sdscat(buff, p+sdslen(search));
-	//sdsfree(search);
-
-	str = sdscpylen(str,buff,sdslen(buff)); 
-	sdsfree(buff);
-	return str;
-}
-
-int mustache_init(char *td, char *rd, char *ld)
+/**
+ * Initializer for the mustache template engine.
+ *
+ * @param char *td  The template directory.
+ * @param char *rd  The right delimiter.
+ * @param char *ld  The left delimiter.
+ *
+ * Typical usage:
+ * @code
+ *    mustache_init(NULL, NULL, NULL); // Init with defaults
+ * @endcode
+ */
+void mustache_init(char *td, char *rd, char *ld)
 {
 	rdelim = rd ? sdsnew(rd) : sdsnew("}}");
 	ldelim = ld ? sdsnew(ld) : sdsnew("{{"); 
 	tpldir = td ? sdsnew(td) : sdsnew("templates/mustache/");
-
-	return 0;
 }
 
 /**
-
+ * Renders a template file 
+ *
+ * @param char *tpl  The template to open.
+ *
+ * @retval sds buff  The template buffer.
  */
 sds render_template(char *tpl)
 {
