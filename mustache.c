@@ -338,14 +338,7 @@ static sds match_tags(sds str)
 }
 
 /**
- * Opens a file and reads it to a buffer.
- * 
  * @todo  Switch function over to SDS strings.
- *
- * @param char *file  The filename to open.
- *
- * @retval char *buff  The file buffer.
- * @retval NULL  on failure
  */
 char *read_file(char *file)
 {
@@ -378,18 +371,6 @@ char *read_file(char *file)
 	return buff;
 }
 
-/**
- * Initializer for the mustache template engine.
- *
- * @param char *td  The template directory.
- * @param char *rd  The right delimiter.
- * @param char *ld  The left delimiter.
- *
- * Typical usage:
- * @code
- *    mustache_init(NULL, NULL, NULL); // Init with defaults
- * @endcode
- */
 void mustache_init(char *td, char *rd, char *ld)
 {
 	rdelim = rd ? sdsnew(rd) : sdsnew("}}");
@@ -397,13 +378,6 @@ void mustache_init(char *td, char *rd, char *ld)
 	tpldir = td ? sdsnew(td) : sdsnew("templates/mustache/");
 }
 
-/**
- * Renders a template file 
- *
- * @param char *tpl  The template to open.
- *
- * @retval sds buff  The template buffer.
- */
 sds render_template(char *tpl)
 {
 
