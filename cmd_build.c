@@ -34,8 +34,9 @@ int cmd_build(int argc, char **argv)
 	markdown("test/pants.md", ".journal/posts/pants.html");
 	
 	mustache_init(NULL, NULL, NULL);
-//	sds foo = sdsnew(render_template("templates/mustache/test"));
-	sds foo = sdsnew(render_template("templates/mustache/delimiter"));
+	//sds tpl = sdsnew("test");
+	sds foo = sdsnew(render_template(sdsnew("test")));
+//	sds foo = sdsnew(render_template("delimiter"));
 	printf("\"%s\"\n", foo);
 	sdsfree(foo);
 	//copy_pages();

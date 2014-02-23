@@ -37,7 +37,7 @@ extern void mustache_init(char *td, char *rd, char *ld);
  *
  * @retval sds buff  The template buffer.
  */
-extern sds render_template(char *tpl);
+extern sds render_template(sds tpl);
 
 /**
  * Opens a file and reads it to a buffer.

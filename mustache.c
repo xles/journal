@@ -111,6 +111,19 @@ static sds tag_section(sds tag)
 }
 
 /**
+ * Takes inverted section tags and replaces them with the looped variable.
+ * 
+ * @param sds tag  The tag 
+ *
+ * @retval sds str  The manipulated string.
+ */
+static sds tag_inverted(sds tag) 
+{
+//	char *re = "";
+	return sdsnew(tag);
+}
+
+/**
  * Takes partial tags and replaces them with a parsed partial template.
  * 
  * @param sds tag  The tag 
@@ -127,15 +140,17 @@ static sds tag_partial(sds tag)
 	struct slre_cap caps[1];
 
 	if (slre_match(re, tag, strlen(tag), caps, 1) > 0) {
-		file = sdscatprintf(file,"%s%.*s", tpldir, caps[0].len, caps[0].ptr);
+		file = sdscatprintf(file,"%.*s", caps[0].len, caps[0].ptr);
+		sds filename = sdscatprintf(sdsempty(),"%s%s", tpldir, file);
 
 		FILE * f;
-		if ((f = fopen(file, "r")) != NULL) {
+		if ((f = fopen(filename, "r")) != NULL) {
 			fclose(f);
 			buff = render_template(file);
 		} else {
 			buff = sdscpy(buff,tag);
 		}
+		sdsfree(filename);
 		
 	} 
 	sdsfree(file);
@@ -272,12 +287,6 @@ static sds parse_tag(sds tag)
 			printf("tag found: set delimiter: \"%s\"\n",tag);
 			buff = tag_delimiter(tag);
 			break;
-		case '#':
-		case '^':
-		case '/':
-			printf("tag found: section: \"%s\"\n",tag);
-			buff = tag_section(tag);
-			break;
 		default:
 			printf("tag found: variable: \"%s\"\n",tag);
 			buff = tag_variable(tag);
@@ -288,6 +297,36 @@ static sds parse_tag(sds tag)
 	sdsfree(buff); 
 	return tag;
 }
+
+/**
+ *
+ */
+static sds parse_section(sds str, char *tag, char type)
+{
+	sds buff = sdsempty(); 
+	switch (type) {
+		case '#':
+			printf("tag found: section: \"%s\"\n",tag);
+			//buff = tag_partial(tag);
+			break;
+		case '^':
+			printf("tag found: inverted: \"%s\"\n",tag);
+			//buff = tag_inverted(tag);
+			break;
+	}
+
+//	tag = sdscpylen(tag,buff,sdslen(buff)); 
+	sdsfree(buff); 
+//	return tag;
+
+
+	printf("section str: '%s'\n", str);
+	printf("section tag: '%s'\n", tag);
+	printf("section type: '%c'\n", type);
+
+	return str;
+}
+
 
 /**
  * Parses a string buffer for mustache tags.
@@ -309,21 +348,57 @@ static sds match_tags(sds str)
 	
 	sds remain = sdsdup(str);
 	sds part = sdsempty();
-	char *pos;
+	char *pos, *end, type;
 	
 	for (i=0; i < matches; i++) {
+	//while (sdslen(remain) > 0) {
 		search = sdsempty(); 
 		search = sdscatprintf(search,"%.*s", match[i].len, match[i].ptr);
 		
-		pos = strstr(remain, search);
+		if (!(pos = strstr(remain, search)))
+			continue;
 
 		part = sdscpylen(part, remain, pos-remain); 
 
 		remain = sdscpy(remain, pos+sdslen(search)); 
 	
 		buff = sdscat(buff,part);
+
+		type = search[(strlen(ldelim))];
 		
-		buff = sdscat(buff,parse_tag(search));		
+		if (type == '#' || type == '^') {
+			sds endtag = sdsdup(search);
+			sds tag = sdscpylen( 
+				sdsempty(), 
+				( search + sdslen(ldelim) + 1 ),
+				(
+					sdslen(search) 
+					- sdslen(ldelim) 
+					- sdslen(rdelim) - 1
+				)
+			);
+
+			endtag[(sdslen(ldelim))] = '/';
+
+			end = strstr(remain, endtag);// + sdslen(endtag);
+			printf("part: '%s'\n", part);
+			
+			search = sdscatlen(sdsempty(), remain, end-remain); 
+			printf("search: '%s'\n", search);
+			
+			remain = sdscpy(remain, end+sdslen(endtag)); 
+			printf("remain: '%s'\n", remain);
+
+			//sds tmp = sdsempty();
+			//tmp = match_tags(tmp);
+			buff = parse_section(search, tag, type);
+			//sdsfree(tmp);
+			//buff = sdscat(buff, tmp);
+		} else {
+			buff = sdscat(buff,parse_tag(search));		
+		}
+
+
 	}
 
 	buff = sdscat(buff,remain);
@@ -378,10 +453,13 @@ void mustache_init(char *td, char *rd, char *ld)
 	tpldir = td ? sdsnew(td) : sdsnew("templates/mustache/");
 }
 
-sds render_template(char *tpl)
+sds render_template(sds tpl)
 {
+	sds file = sdsdup(tpldir);
+	file = sdscat(file, tpl);
 
-	sds buff = sdsnew(read_file(tpl));
+	sds buff = sdsnew(read_file(file));
+	sdsfree(file);
 	buff = match_tags(buff);
 	return buff;
 }
