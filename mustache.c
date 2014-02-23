@@ -89,8 +89,13 @@ static sds tag_delimiter(sds tag)
 	return sdsempty();
 }
 
-static struct slre_cap* slre_match_all(const char *regexp, const char *buf, int buf_len,
-               struct slre_cap *caps, int num_caps) {
+static struct slre_cap* slre_match_all(
+		const char *regexp, 
+		const char *buf, 
+		int buf_len,
+		struct slre_cap *caps, 
+		int num_caps) 
+{
 	
 	int count = 0, i = 0, j = 0;
 	
@@ -114,8 +119,13 @@ static struct slre_cap* slre_match_all(const char *regexp, const char *buf, int 
 
 	return res;
 }
-static int slre_match_count(const char *regexp, const char *buf, int buf_len,
-               struct slre_cap *caps, int num_caps) {
+static int slre_match_count(
+		const char *regexp, 
+		const char *buf, 
+		int buf_len,
+		struct slre_cap *caps, 
+		int num_caps) 
+{
 	
 	int count = 0, i = 0, j = 0;
 	
