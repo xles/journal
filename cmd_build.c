@@ -33,7 +33,7 @@ int cmd_build(int argc, char **argv)
 //	markdown("test/syntax.md", ".journal/posts/syntax.html");
 	markdown("test/pants.md", ".journal/posts/pants.html");
 	
-	mustache_init(NULL, NULL, NULL);
+	mustache_init(NULL, NULL, NULL, NULL);
 	//sds tpl = sdsnew("test");
 	sds foo = sdsnew(render_template(sdsnew("test")));
 //	sds foo = sdsnew(render_template("delimiter"));

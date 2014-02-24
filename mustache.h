@@ -28,7 +28,7 @@ struct tags {
  *    mustache_init(NULL, NULL, NULL); // Init with defaults
  * @endcode
  */
-extern void mustache_init(char *td, char *rd, char *ld);
+extern void mustache_init(char *td, char *te, char *rd, char *ld);
 
 /**
  * Renders a template file.

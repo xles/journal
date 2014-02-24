@@ -41,7 +41,7 @@
 #include "slre.h"
 #include "sds.h"
 
-sds tpldir, ldelim, rdelim; 
+sds tpldir, ldelim, rdelim, tplext; 
 
 /**
  * Replaces the string `search` with `replace` in string `sds`
@@ -104,7 +104,7 @@ static sds tag_variable(sds tag)
  *
  * @retval sds str  The manipulated string.
  */
-static sds tag_section(sds tag) 
+static sds tag_section(sds str, char *tag) 
 {
 //	char *re = "";
 	return sdsnew(tag);
@@ -117,7 +117,7 @@ static sds tag_section(sds tag)
  *
  * @retval sds str  The manipulated string.
  */
-static sds tag_inverted(sds tag) 
+static sds tag_inverted(sds str, char *tag) 
 {
 //	char *re = "";
 	return sdsnew(tag);
@@ -141,14 +141,15 @@ static sds tag_partial(sds tag)
 
 	if (slre_match(re, tag, strlen(tag), caps, 1) > 0) {
 		file = sdscatprintf(file,"%.*s", caps[0].len, caps[0].ptr);
+		sdstrim(file," ");
 		sds filename = sdscatprintf(sdsempty(),"%s%s", tpldir, file);
+		filename = sdscat(filename,tplext);
+		//puts(filename);
 
 		FILE * f;
 		if ((f = fopen(filename, "r")) != NULL) {
 			fclose(f);
 			buff = render_template(file);
-		} else {
-			buff = sdscpy(buff,tag);
 		}
 		sdsfree(filename);
 		
@@ -307,11 +308,11 @@ static sds parse_section(sds str, char *tag, char type)
 	switch (type) {
 		case '#':
 			printf("tag found: section: \"%s\"\n",tag);
-			//buff = tag_partial(tag);
+			buff = tag_section(str, tag);
 			break;
 		case '^':
 			printf("tag found: inverted: \"%s\"\n",tag);
-			//buff = tag_inverted(tag);
+			buff = tag_inverted(str, tag);
 			break;
 	}
 
@@ -372,9 +373,9 @@ static sds match_tags(sds str)
 				sdsempty(), 
 				( search + sdslen(ldelim) + 1 ),
 				(
-					sdslen(search) 
-					- sdslen(ldelim) 
-					- sdslen(rdelim) - 1
+					sdslen(search) -
+					sdslen(ldelim) - 
+					sdslen(rdelim) - 1
 				)
 			);
 
@@ -446,11 +447,12 @@ char *read_file(char *file)
 	return buff;
 }
 
-void mustache_init(char *td, char *rd, char *ld)
+void mustache_init(char *td, char *te, char *rd, char *ld)
 {
 	rdelim = rd ? sdsnew(rd) : sdsnew("}}");
 	ldelim = ld ? sdsnew(ld) : sdsnew("{{"); 
 	tpldir = td ? sdsnew(td) : sdsnew("templates/mustache/");
+	tplext = te ? sdsnew(te) : sdsnew(".mustache");
 }
 
 sds render_template(sds tpl)
