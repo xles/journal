@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="{{description}}">
+	<meta name="author" content="{{author}}">
+	<meta name="generator" content="{{generator}}">
+	<meta name="keywords" content="{{keywords}}">
+	
+	<link rel="stylesheet" href="reader.css">
+	<link rel="stylesheet" href="journal.css">
+</head>
+<body>
+	<header>
+		<p>{{title}}</p>
+		<p>{{description}}</p>
+	</header>
+	<nav>
+		{{#posts}}
+		<a href="{{url}}">
+			{{title}}
+			<time datetime="{{datetime}}">{{date}}</time>
+		</a>
+		{{/posts}}
+		<hr>
+		{{#archive}}
+		<a href="{{url}}">Archive</a>
+		{{/archive}}
+		{{#rss}}
+		<a href="{{url}}">RSS feed</a>
+		{{/rss}}
+		<hr>
+		{{#links}}
+		<a href="{{url}}">{{title}}</a>
+		{{/links}}
+	</nav>
+	<main>
+		{{#posts}}
+		<article>
+			<header>
+				<a href="{{url}}" id="{{anchor}}">
+					<h1>{{title}}</h1>
+					<time datetime="{{datetime}}">{{date}}</time>
+				</a>
+			</header>
+			{{body}}
+		</article>
+		{{/posts}}
+		<footer>
+			<time datetime="2014-01-15">Last updated on 2014-01-15</time>
+		</footer>
+	</main>
+	<footer>
+		Generated with <a href="http://github.com/xles/journal">journal</a> v0.1
+	</footer>
+{{>disqus}}
+</body>
+</html>

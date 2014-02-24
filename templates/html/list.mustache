@@ -1,0 +1,14 @@
+		{{#posts}}
+		<article>
+			<header>
+				<a href="{{url}}" id="{{anchor}}">
+					<h1>{{title}}</h1>
+					<time datetime="{{datetime}}">{{date}}</time>
+				</a>
+			</header>
+			{{body}}
+		</article>
+		{{/posts}}
+		<footer>
+			<time datetime="2014-01-15">Last updated on 2014-01-15</time>
+		</footer>
