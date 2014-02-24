@@ -54,6 +54,7 @@ sds tpldir, ldelim, rdelim, tplext;
  */
 static sds sdsreplace(sds str, sds search, char *replace) 
 {
+	puts("sdsreplace");
 	sds buff = sdsempty();
 	char *p;
 
@@ -81,6 +82,8 @@ static sds sdsreplace(sds str, sds search, char *replace)
  */
 static sds tag_comment(sds tag) 
 {
+	puts("tag_comment");
+	printf("tag found: '%s'\n",tag);
 	return sdsempty();
 }
 
@@ -93,6 +96,8 @@ static sds tag_comment(sds tag)
  */
 static sds tag_variable(sds tag) 
 {
+	puts("tag_variable");
+	printf("tag found: '%s'\n",tag);
 //	char *re = "";
 	return sdsnew(tag);
 }
@@ -106,12 +111,14 @@ static sds tag_variable(sds tag)
  */
 static sds tag_section(sds str, char *tag) 
 {
+	puts("tag_section");
+	printf("tag found: '%s'\n",tag);
 //	char *re = "";
 	return sdsnew(tag);
 }
 
 /**
- * Takes inverted section tags and replaces them with the looped variable.
+ * Takes inverted sections and replaces them with the looped variable.
  * 
  * @param sds tag  The tag 
  *
@@ -119,6 +126,8 @@ static sds tag_section(sds str, char *tag)
  */
 static sds tag_inverted(sds str, char *tag) 
 {
+	puts("tag_inverted");
+	printf("tag found: '%s'\n",tag);
 //	char *re = "";
 	return sdsnew(tag);
 }
@@ -132,29 +141,31 @@ static sds tag_inverted(sds str, char *tag)
  */
 static sds tag_partial(sds tag) 
 {
+	puts("tag_partial");
+	printf("tag found: '%s'\n",tag);
 	sds re = sdsempty();
-	sds file = sdsempty();
+	sds f = sdsempty();
 	sds buff = sdsempty();
 
 	re = sdscatprintf(re, "%s>([^}]+)%s", ldelim, rdelim);
 	struct slre_cap caps[1];
 
 	if (slre_match(re, tag, strlen(tag), caps, 1) > 0) {
-		file = sdscatprintf(file,"%.*s", caps[0].len, caps[0].ptr);
-		sdstrim(file," ");
-		sds filename = sdscatprintf(sdsempty(),"%s%s", tpldir, file);
-		filename = sdscat(filename,tplext);
-		//puts(filename);
+		f = sdscatprintf(f,"%.*s", caps[0].len, caps[0].ptr);
+		sdstrim(f," ");
+		sds fname = sdscatprintf(sdsempty(),"%s%s", tpldir, f);
+		fname = sdscat(fname,tplext);
+		//puts(fname);
 
-		FILE * f;
-		if ((f = fopen(filename, "r")) != NULL) {
-			fclose(f);
-			buff = render_template(file);
+		FILE * fp;
+		if ((fp = fopen(fname, "r")) != NULL) {
+			fclose(fp);
+			buff = render_template(f);
 		}
-		sdsfree(filename);
+		sdsfree(fname);
 		
 	} 
-	sdsfree(file);
+	sdsfree(f);
 //	sdsfree(buff);
 	sdsfree(re);
 	return buff;
@@ -169,6 +180,8 @@ static sds tag_partial(sds tag)
  */
 static sds tag_delimiter(sds tag) 
 {
+	puts("tag_delimiter");
+	printf("tag found: '%s'\n",tag);
 	sds re = sdsempty();
 	sds oldl = sdsdup(ldelim), oldr = sdsdup(rdelim);
 	re = sdscatprintf(re, "(%s=\\S+)\\s+(\\S+=%s)", oldl, oldr);
@@ -197,35 +210,37 @@ static sds tag_delimiter(sds tag)
 /**
  * Wrapper for slre_match that returns all matches as an array.
  * 
- * @param const char *regexp  The regular expression to be matched.
+ * @param const char *re  The regular expression to be matched.
  * @param const char *buf  The buffer to search in.
- * @param int buf_len  Length of buffer.
+ * @param int bl  Length of buffer.
  * @param struct slre_cap *caps  Array to store subpatterns in.
  * @param int num_caps  Number of subpatterns in regular expression.
  *
  * @retval struct slre_cap*  Array of slre_cap structures.
  */
 static struct slre_cap* slre_match_all(
-		const char *regexp, 
+		const char *re, 
 		const char *buf, 
-		int buf_len,
+		int bl,
 		struct slre_cap *caps, 
 		int num_caps) 
 {
+	puts("slre_match_all");
 	
 	int count = 0, i = 0, j = 0;
 	
-	struct slre_cap* buffer;     // this will be the array
-	buffer = (struct slre_cap*)malloc(1024*sizeof(struct slre_cap));    // allocate storage for the array
+	struct slre_cap* buffer;
+	buffer = (struct slre_cap*)malloc(1024*sizeof(struct slre_cap)); 
 
-	while (j < buf_len && 
-		(i = slre_match(regexp, buf+j, buf_len-j, caps, num_caps)) > 0) {
+	while (j < bl && 
+		(i = slre_match(re, buf+j, bl-j, caps, num_caps)) > 0) {
 		
 		buffer[count]=caps[0];
 		count++; j += i;
 	}
 
-	struct slre_cap *res = (struct slre_cap*)malloc(count*sizeof(struct slre_cap));
+	struct slre_cap *res = 
+		(struct slre_cap*)malloc(count*sizeof(struct slre_cap));
 	
 	for (i=0; i<count; i++) {
 		res[i] = buffer[i];
@@ -239,26 +254,27 @@ static struct slre_cap* slre_match_all(
 /**
  * Wrapper for slre_match that counts the matches.
  * 
- * @param const char *regexp  The regular expression to be matched.
+ * @param const char *re  The regular expression to be matched.
  * @param const char *buf  The buffer to search in.
- * @param int buf_len  Length of buffer.
+ * @param int bl  Length of buffer.
  * @param struct slre_cap *caps  Array to store subpatterns in.
  * @param int num_caps  Number of subpatterns in regular expression.
  *
  * @retval int count  The number of matches in regular expression.
  */
 static int slre_match_count(
-		const char *regexp, 
+		const char *re, 
 		const char *buf, 
-		int buf_len,
+		int bl,
 		struct slre_cap *caps, 
 		int num_caps) 
 {
+	puts("slre_match_count");
 	
 	int count = 0, i = 0, j = 0;
 	
-	while (j < buf_len && 
-		(i = slre_match(regexp, buf+j, buf_len-j, caps, num_caps)) > 0) {
+	while (j < bl && 
+		(i = slre_match(re, buf+j, bl-j, caps, num_caps)) > 0) {
 		count++;
 		j += i;
 	}
@@ -274,22 +290,19 @@ static int slre_match_count(
  */
 static sds parse_tag(sds tag)
 {
+	puts("parse_tag");
 	sds buff = sdsempty(); 
 	switch (tag[(strlen(ldelim))]) {
 		case '!':
-			printf("tag found: comment: \"%s\"\n",tag);
 			buff = tag_comment(tag);
 			break;
 		case '>':
-			printf("tag found: partial: \"%s\"\n",tag);
 			buff = tag_partial(tag);
 			break;
 		case '=':
-			printf("tag found: set delimiter: \"%s\"\n",tag);
 			buff = tag_delimiter(tag);
 			break;
 		default:
-			printf("tag found: variable: \"%s\"\n",tag);
 			buff = tag_variable(tag);
 			break;
 	}
@@ -304,14 +317,13 @@ static sds parse_tag(sds tag)
  */
 static sds parse_section(sds str, char *tag, char type)
 {
+	puts("parse_section");
 	sds buff = sdsempty(); 
 	switch (type) {
 		case '#':
-			printf("tag found: section: \"%s\"\n",tag);
 			buff = tag_section(str, tag);
 			break;
 		case '^':
-			printf("tag found: inverted: \"%s\"\n",tag);
 			buff = tag_inverted(str, tag);
 			break;
 	}
@@ -338,42 +350,42 @@ static sds parse_section(sds str, char *tag, char type)
  */
 static sds match_tags(sds str)
 {
-	sds re = sdsempty(), search, buff = sdsempty(); 
+	puts("match_tags");
+	sds re = sdsempty(), s = sdsempty(), buff = sdsempty(); 
 	re = sdscatprintf(re, "(%s[\\S\\s]+?%s)", ldelim, rdelim);
 
 	struct slre_cap caps[1];
-	int i, str_len = sdslen(str);
+	int i, sl = sdslen(str);
 
-	struct slre_cap* match = slre_match_all(re, str, str_len, caps, 1);
-	int matches = slre_match_count(re, str, str_len, caps, 1);
+	struct slre_cap* match = slre_match_all(re, str, sl, caps, 1);
+	int matches = slre_match_count(re, str, sl, caps, 1);
 	
 	sds remain = sdsdup(str);
 	sds part = sdsempty();
 	char *pos, *end, type;
 	
 	for (i=0; i < matches; i++) {
-	//while (sdslen(remain) > 0) {
-		search = sdsempty(); 
-		search = sdscatprintf(search,"%.*s", match[i].len, match[i].ptr);
+		s = sdsempty(); 
+		s = sdscatprintf(s,"%.*s", match[i].len, match[i].ptr);
 		
-		if (!(pos = strstr(remain, search)))
+		if (!(pos = strstr(remain, s)))
 			continue;
 
 		part = sdscpylen(part, remain, pos-remain); 
 
-		remain = sdscpy(remain, pos+sdslen(search)); 
+		remain = sdscpy(remain, pos+sdslen(s)); 
 	
 		buff = sdscat(buff,part);
 
-		type = search[(strlen(ldelim))];
+		type = s[(strlen(ldelim))];
 		
 		if (type == '#' || type == '^') {
-			sds endtag = sdsdup(search);
+			sds endtag = sdsdup(s);
 			sds tag = sdscpylen( 
 				sdsempty(), 
-				( search + sdslen(ldelim) + 1 ),
+				( s + sdslen(ldelim) + 1 ),
 				(
-					sdslen(search) -
+					sdslen(s) -
 					sdslen(ldelim) - 
 					sdslen(rdelim) - 1
 				)
@@ -381,22 +393,22 @@ static sds match_tags(sds str)
 
 			endtag[(sdslen(ldelim))] = '/';
 
-			end = strstr(remain, endtag);// + sdslen(endtag);
+			end = strstr(remain, endtag);
 			printf("part: '%s'\n", part);
 			
-			search = sdscatlen(sdsempty(), remain, end-remain); 
-			printf("search: '%s'\n", search);
+			s = sdscatlen(sdsempty(), remain, end-remain); 
+			printf("search: '%s'\n", s);
 			
 			remain = sdscpy(remain, end+sdslen(endtag)); 
 			printf("remain: '%s'\n", remain);
 
 			//sds tmp = sdsempty();
 			//tmp = match_tags(tmp);
-			buff = parse_section(search, tag, type);
+			buff = parse_section(s, tag, type);
 			//sdsfree(tmp);
 			//buff = sdscat(buff, tmp);
 		} else {
-			buff = sdscat(buff,parse_tag(search));		
+			buff = sdscat(buff,parse_tag(s));		
 		}
 
 
@@ -407,9 +419,9 @@ static sds match_tags(sds str)
 	
 	sdsfree(part);
 	sdsfree(remain);
-	sdsfree(search);
 	sdsfree(buff);
 	sdsfree(re);
+	sdsfree(s);
 	return str;
 }
 
@@ -418,6 +430,7 @@ static sds match_tags(sds str)
  */
 char *read_file(char *file)
 {
+	puts("read_file");
 	FILE    *inf;
 	char    *buff;
 	long    flen, mem = 1024;
@@ -449,6 +462,7 @@ char *read_file(char *file)
 
 void mustache_init(char *td, char *te, char *rd, char *ld)
 {
+	puts("mustache_init");
 	rdelim = rd ? sdsnew(rd) : sdsnew("}}");
 	ldelim = ld ? sdsnew(ld) : sdsnew("{{"); 
 	tpldir = td ? sdsnew(td) : sdsnew("templates/mustache/");
@@ -457,8 +471,10 @@ void mustache_init(char *td, char *te, char *rd, char *ld)
 
 sds render_template(sds tpl)
 {
+	puts("render_template");
 	sds file = sdsdup(tpldir);
 	file = sdscat(file, tpl);
+	file = sdscat(file, tplext);
 
 	sds buff = sdsnew(read_file(file));
 	sdsfree(file);
