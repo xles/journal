@@ -1,33 +1,33 @@
 {
-
-	"title" : "fancy blog title",
-	"description" : "",
+	"title" : "fancy progmatic blog title",
+	"description" : "fancy progmatic blog description",
 	"meta" : {
-		"description" : "",
-		"author" : "",
-		"generator" : "",
-		"keywords" : ""
+		"title" : "fancy blog title",
+		"description" : "fancy blog description",
+		"author" : "xles",
+		"generator" : "journal 0.1",
+		"keywords" : "fancy,blog,and,stuff"
 	},
 	"posts" : [
 		{
-			"anchor" : "",
-			"url" : "",
-			"title" : "",
-			"datetime" : "",
-			"date" : "",
-			"body" : ""
+			"anchor" : "fancy-post",
+			"url" : "fancy-post",
+			"title" : "Fancy Post",
+			"datetime" :"2014-01-15",
+			"date" : "2014-01-15",
+			"body" : "hoooraaaay, blog post!"
 		}
 	],
 	"archive" : {
-		"url" : ""
+		"url" : "archive"
 	},
 	"rss" : {
-		"url" : ""
+		"url" : "feed"
 	},
 	"links" : [
 		{
-			"url" : "",
-			"title" : ""
+			"url" : "http:\/\/github.com\/",
+			"title" : "Github is pretty neat!"
 		}
 	],
 	"updated" : {
