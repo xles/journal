@@ -1,0 +1,37 @@
+{
+
+	"title" : "fancy blog title",
+	"description" : "",
+	"meta" : {
+		"description" : "",
+		"author" : "",
+		"generator" : "",
+		"keywords" : ""
+	},
+	"posts" : [
+		{
+			"anchor" : "",
+			"url" : "",
+			"title" : "",
+			"datetime" : "",
+			"date" : "",
+			"body" : ""
+		}
+	],
+	"archive" : {
+		"url" : ""
+	},
+	"rss" : {
+		"url" : ""
+	},
+	"links" : [
+		{
+			"url" : "",
+			"title" : ""
+		}
+	],
+	"updated" : {
+		"datetime" :"2014-01-15",
+		"date" : "2014-01-15"
+	}
+}
