@@ -17,6 +17,7 @@ static int level;
 
 static sds json_indent(sds str)
 {
+	puts("json_indent");
 	int i;
 	for(i=0; i < (level); i++)
 		str = sdscat(str,"\t");
@@ -25,11 +26,13 @@ static sds json_indent(sds str)
 
 static sds escape_string(sds str)
 {
+	puts("escape_string");
 	return str;
 }
 
 sds json_new(sds json, ...)
 {
+	puts("json_new");
 	level = 1;
 	va_list ap;
 	sds arg = sdsempty(), tmp = sdsnew("{\n");
@@ -51,6 +54,7 @@ sds json_new(sds json, ...)
 
 sds json_add_object(sds key, ...)
 {
+	puts("json_add_object");
 	int count=0;
 	va_list ap;
 	sds arg = sdsempty(), tmp = sdsempty();
@@ -84,6 +88,7 @@ sds json_add_object(sds key, ...)
 
 sds json_add_array(char *key, sds *values)
 {
+	puts("json_add_array");
 	sds tmp = sdsempty();
 	int count=0;
 
@@ -95,7 +100,6 @@ sds json_add_array(char *key, sds *values)
 		if (count > 0)
 			tmp = sdscat(tmp,",\n");
 		tmp = sdscatprintf(tmp,"%s",values[count]);
-		puts(values[count]);
 		count++;
 	}
 	tmp = sdscat(tmp,"\n]");
@@ -104,6 +108,7 @@ sds json_add_array(char *key, sds *values)
 }
 sds json_add_string(char *key, sds value)
 {
+	puts("json_add_string");
 	sds tmp = sdsempty();
 	if (key != NULL)
 		tmp = sdscatprintf(tmp,"\"%s\" : ",key);
@@ -113,6 +118,7 @@ sds json_add_string(char *key, sds value)
 }
 sds json_add_int(char *key, int value)
 {
+	puts("json_add_int");
 	sds tmp = sdsempty();
 	if (key != NULL)
 		tmp = sdscatprintf(tmp,"\"%s\" : ",key);
@@ -121,6 +127,7 @@ sds json_add_int(char *key, int value)
 }
 sds json_add_float(char *key, float value)
 {
+	puts("json_add_float");
 	sds tmp = sdsempty();
 	if (key != NULL)
 		tmp = sdscatprintf(tmp,"\"%s\" : ",key);
