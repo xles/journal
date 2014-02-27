@@ -18,6 +18,8 @@
 #include "journal.h"
 #include "frozen.h"
 #include "sha.h"
+#include "sdsjson.h"
+#include "colour.h"
 
 #include "hoedown/autolink.h"
 #include "hoedown/markdown.h"
@@ -33,12 +35,73 @@ int cmd_build(int argc, char **argv)
 //	markdown("test/syntax.md", ".journal/posts/syntax.html");
 	markdown("test/pants.md", ".journal/posts/pants.html");
 	
-	mustache_init(NULL, NULL, NULL, NULL);
+	mustache_init("templates/html/", NULL, NULL, NULL);
+
+	int i, elements=3;
+	sds *posts, *links;
+	posts = malloc(sizeof(sds)*elements);
+	links = malloc(sizeof(sds)*elements);
+
+	posts[0] = json_add_object(NULL,
+		json_add_string("anchor" , "fancy-post"),
+		json_add_string("url" , "fancy-post"),
+		json_add_string("title" , "Fancy Post"),
+		json_add_string("datetime" ,"2014-01-15"),
+		json_add_string("date" , "2014-01-15"),
+		json_add_string("body" , "hoooraaaay, blog post!"),
+	NULL);
+	posts[1] = NULL;
+	
+	links[0] = json_add_object(NULL,
+		json_add_string("url" , "http:\/\/github.com\/"),
+		json_add_string("title" , "Github is pretty neat!"),
+	NULL);
+	links[1] = NULL;
+
+	sds json = json_new(
+		json_add_string("title", "fancy progmatic blog title"),
+		json_add_string("description" , "fancy progmatic blog description"),
+		json_add_object("meta",
+			json_add_string("title", "fancy blog title"),
+			json_add_string("description" , "fancy blog description"),
+			json_add_string("author" , "xles"),
+			json_add_string("generator" , "journal 0.1"),
+			json_add_string("keywords" , "fancy,blog,and,stuff"),
+		NULL),
+		json_add_array("posts" , posts),
+		json_add_object("archive",
+			json_add_string("url" , "archive"),
+		NULL),
+		json_add_object("rss",
+			json_add_string("url" , "feed"),
+		NULL),
+		json_add_array("links", links),
+		json_add_object("updated",
+			json_add_string("datetime", "2014-01-15"),
+			json_add_string("date" , "2014-01-15"),
+		NULL),
+	NULL);
+
+//	for (i = 0; i < elements; i++) {
+//		sdsfree(posts[i]);
+//		sdsfree(links[i]);
+//	}
+//	puts("fubar");
+//	free(posts);
+//	free(links);
+
 	//sds tpl = sdsnew("test");
-	sds foo = sdsnew(render_template(sdsnew("test")));
+	if (set_context(json)) {
+		sds foo = sdsnew(render_template(sdsnew("layout")));
+		printf("\"%s\"\n", foo);
+		sdsfree(foo);
+	} else {
+		puts("error reading context");
+	}
 //	sds foo = sdsnew(render_template("delimiter"));
-	printf("\"%s\"\n", foo);
-	sdsfree(foo);
+
+//	puts(sdscatprintf(sdsempty(),"%s%s%s",ANSI_COLOUR_MAGENTA,json,ANSI_COLOUR_RESET));
+	//puts(json);
 	//copy_pages();
 	return 0;
 }

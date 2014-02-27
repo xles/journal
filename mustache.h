@@ -7,6 +7,7 @@
  * mustache.c
  *    Main source file for the journal project.
  */
+#include <stdbool.h>
 #include "sds.h"
 
 struct tags {
@@ -15,6 +16,8 @@ struct tags {
 	const char *value;
 };
 
+
+bool set_context(sds json);
 
 /**
  * Initializer for the mustache template engine.

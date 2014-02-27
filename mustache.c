@@ -7,33 +7,11 @@
  * mustache.c
  *    Main source file for the journal project.
  */
-/*
- * SLRE supported syntax reference:
- *
- *   (?i)    Must be at the beginning of the regex. 
- *              Makes match case-insensitive
- *   ^       Match beginning of a buffer
- *   $       Match end of a buffer
- *   ()      Grouping and substring capturing
- *   \s      Match whitespace
- *   \S      Match non-whitespace
- *   \d      Match decimal digit
- *   +       Match one or more times (greedy)
- *   +?      Match one or more times (non-greedy)
- *   *       Match zero or more times (greedy)
- *   *?      Match zero or more times (non-greedy)
- *   ?       Match zero or once (non-greedy)
- *   x|y     Match x or y (alternation operator)
- *   \meta   Match one of the meta character: ^$().[]*+?|\
- *   \xHH    Match byte with hex value 0xHH, e.g. \x4a
- *   [...]   Match any character from set. 
- *              Ranges like [a-z] are supported
- *   [^...]  Match any character but ones from set
- */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 #include "mustache.h"
 #include "journal.h"
@@ -42,6 +20,7 @@
 #include "sds.h"
 
 sds tpldir, ldelim, rdelim, tplext; 
+struct json_token ctx[1234];
 
 /**
  * Replaces the string `search` with `replace` in string `sds`
@@ -69,7 +48,8 @@ static sds sdsreplace(sds str, sds search, char *replace)
 	//sdsfree(search);
 
 	str = sdscpylen(str,buff,sdslen(buff)); 
-	sdsfree(buff);
+	puts("free buff");
+	//sdsfree(buff);
 	return str;
 }
 
@@ -99,7 +79,7 @@ static sds tag_variable(sds tag)
 	puts("tag_variable");
 	printf("tag found: '%s'\n",tag);
 //	char *re = "";
-	return sdsnew(tag);
+	return tag;
 }
 
 /**
@@ -114,7 +94,7 @@ static sds tag_section(sds str, char *tag)
 	puts("tag_section");
 	printf("tag found: '%s'\n",tag);
 //	char *re = "";
-	return sdsnew(tag);
+	return str;
 }
 
 /**
@@ -129,7 +109,7 @@ static sds tag_inverted(sds str, char *tag)
 	puts("tag_inverted");
 	printf("tag found: '%s'\n",tag);
 //	char *re = "";
-	return sdsnew(tag);
+	return str;
 }
 
 /**
@@ -162,11 +142,14 @@ static sds tag_partial(sds tag)
 			fclose(fp);
 			buff = render_template(f);
 		}
+		puts("free fname");
 		sdsfree(fname);
 		
 	} 
+	puts("free f");
 	sdsfree(f);
-//	sdsfree(buff);
+//	//sdsfree(buff);
+	puts("free re");
 	sdsfree(re);
 	return buff;
 }
@@ -203,6 +186,7 @@ static sds tag_delimiter(sds tag)
 		printf("rdelim: '%s'\n", rdelim);
 	}
 	printf("Matched:  %d\n",i);
+	puts("free oldl); sdsfree(oldr); sdsfree(re");
 	sdsfree(oldl); sdsfree(oldr); sdsfree(re);
 	return sdsempty();
 }
@@ -308,7 +292,8 @@ static sds parse_tag(sds tag)
 	}
 
 	tag = sdscpylen(tag,buff,sdslen(buff)); 
-	sdsfree(buff); 
+	puts("free buff");
+	//sdsfree(buff); 
 	return tag;
 }
 
@@ -329,7 +314,8 @@ static sds parse_section(sds str, char *tag, char type)
 	}
 
 //	tag = sdscpylen(tag,buff,sdslen(buff)); 
-	sdsfree(buff); 
+	puts("free buff");
+	//sdsfree(buff); 
 //	return tag;
 
 
@@ -408,7 +394,8 @@ static sds match_tags(sds str)
 			//sdsfree(tmp);
 			//buff = sdscat(buff, tmp);
 		} else {
-			buff = sdscat(buff,parse_tag(s));		
+			buff = sdscat(buff,parse_tag(s));
+			puts("foo");		
 		}
 
 
@@ -417,11 +404,17 @@ static sds match_tags(sds str)
 	buff = sdscat(buff,remain);
 	str = sdscpylen(str,buff,sdslen(buff)); 
 	
+	puts("free part");
 	sdsfree(part);
+	puts("free remain");
 	sdsfree(remain);
-	sdsfree(buff);
+	puts("free buff");
+	//sdsfree(buff);
+	puts("free re");
 	sdsfree(re);
-	sdsfree(s);
+	puts("free s");
+//	sdsfree(s);
+//	puts("return");
 	return str;
 }
 
@@ -460,6 +453,27 @@ char *read_file(char *file)
 	return buff;
 }
 
+bool set_context(sds json)
+{
+	int err, ctx_size = sizeof(ctx) / sizeof(ctx[0]);
+	if ((err = parse_json(json, strlen(json), ctx, ctx_size)) > 0) {
+		return true;
+	} else {
+		switch (err) {
+			case JSON_STRING_INVALID:
+				fputs("JSON string invalid", stderr);
+				break;
+			case JSON_STRING_INCOMPLETE:
+				fputs("JSON string incomplete", stderr);
+				break;
+			case JSON_TOKEN_ARRAY_TOO_SMALL:
+				fputs("Token array too small", stderr);
+				break;
+		}
+		return false;
+	}
+}
+
 void mustache_init(char *td, char *te, char *rd, char *ld)
 {
 	puts("mustache_init");
@@ -477,6 +491,7 @@ sds render_template(sds tpl)
 	file = sdscat(file, tplext);
 
 	sds buff = sdsnew(read_file(file));
+	puts("free file");
 	sdsfree(file);
 	buff = match_tags(buff);
 	return buff;

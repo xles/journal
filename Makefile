@@ -10,6 +10,7 @@ SOURCE_FILES = 	journal.c \
 		validate.c \
 		mustache.c \
 		sds.c \
+		sdsjson.c \
 		slre.c \
 		frozen.c \
 		mongoose.c \
